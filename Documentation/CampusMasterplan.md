@@ -55,7 +55,7 @@ The table below details each major campus landmark, its real-world geospatial co
 
 | Landmark | Real Lat / Lon | Distance from Curzon | Unreal Location (X, Y, Z cm) | Massing / Mesh Spec | Status |
 | :--- | :---: | :---: | :---: | :--- | :---: |
-| **Curzon Hall (Anchor)** | `23.727326, 90.401933` | 0.0 m | `(0, 0, 1600)` | Central Pavilion (120m×50m×32m), Authentic Corner & Parapet Chattris, East/West Wings, Octagonal Towers | **PASS** |
+| **Curzon Hall (Anchor)** | `23.727326, 90.401933` | 0.0 m | `(0, 0, 1600)` | Hero Indo-Saracenic Architecture (`Hero_Buildings/Curzon_Detail`, 53 modular actors: 12-bay two-tiered verandas, cusped/rusticated arches, monumental portal, corner towers, 6 chhatris, lamps, benches) | **PHASE 2 HERO BENCHMARK** |
 | **Doyel Chattar Roundabout** | `23.727976, 90.400304` | 181.2 m | `(7507, -16487, 20)` | Circular Roundabout Hub, Island, Magpie Robin Monument | **PASS** |
 | **Central Shaheed Minar** | `23.727211, 90.396637` | 540.4 m | `(-282, -54042, 20)` | Marble Altar (60m×60m), Mother Pillar (slanted 15°), Crimson Sun, Flanking Pillars | **PASS** |
 | **Teacher-Student Centre (TSC)** | `23.731787, 90.396033` | 778.8 m | `(50519, -59269, 800)` | Doxiadis Modernist Auditorium, Cantilevered Roof, Circular Cafeteria Ring, Gathering Lawn | **PASS** |
