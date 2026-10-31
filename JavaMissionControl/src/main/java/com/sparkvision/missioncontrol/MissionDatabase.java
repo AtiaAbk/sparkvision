@@ -137,6 +137,25 @@ public class MissionDatabase {
         return set;
     }
 
+    public synchronized Set<String> getDiscoveredArchives(String sessionId) {
+        if (sessionId == null || sessionId.isBlank()) {
+            return getDiscoveredArchives();
+        }
+        Set<String> set = new HashSet<>();
+        String sql = "SELECT archive_id FROM discovered_archives WHERE session_id = ?;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sessionId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    set.add(rs.getString("archive_id"));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error getting session archives: " + e.getMessage());
+        }
+        return set;
+    }
+
     public synchronized void completeLevel(String sessionId, String chapterId) {
         String sql = "UPDATE sessions SET completed = 1 WHERE session_id = ? OR chapter_id = ?;";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -152,6 +171,21 @@ public class MissionDatabase {
         String sql = "SELECT 1 FROM sessions WHERE chapter_id = ? AND completed = 1;";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, chapterId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                return rs.next();
+            }
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    public synchronized boolean isChapterCompleted(String chapterId, String sessionId) {
+        if (sessionId == null || sessionId.isBlank()) {
+            return isChapterCompleted(chapterId);
+        }
+        String sql = "SELECT 1 FROM sessions WHERE session_id = ? AND completed = 1;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sessionId);
             try (ResultSet rs = pstmt.executeQuery()) {
                 return rs.next();
             }

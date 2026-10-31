@@ -94,7 +94,23 @@ public class MissionControlServer {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
             if ("GET".equalsIgnoreCase(exchange.getRequestMethod())) {
-                Set<String> discovered = db.getDiscoveredArchives();
+                String sessionId = null;
+                String query = exchange.getRequestURI().getQuery();
+                if (query != null) {
+                    for (String param : query.split("&")) {
+                        if (param.startsWith("sessionId=")) {
+                            sessionId = param.substring("sessionId=".length());
+                            break;
+                        }
+                    }
+                }
+                if (sessionId == null || sessionId.isBlank()) {
+                    sessionId = exchange.getRequestHeaders().getFirst("X-Session-ID");
+                }
+
+                Set<String> discovered = (sessionId != null && !sessionId.isBlank())
+                        ? db.getDiscoveredArchives(sessionId)
+                        : db.getDiscoveredArchives();
 
                 MissionModels.ChapterMissionResponse resp = new MissionModels.ChapterMissionResponse();
                 resp.chapterId = "chapter-01";
@@ -103,7 +119,9 @@ public class MissionControlServer {
                 resp.setting = "Dhaka University — Curzon Hall Heritage Precinct";
                 resp.totalArchivesRequired = 5;
                 resp.archivesFound = discovered.size();
-                resp.level2Unlocked = db.isChapterCompleted("chapter-01") || discovered.size() >= 5;
+                resp.level2Unlocked = (sessionId != null && !sessionId.isBlank())
+                        ? (db.isChapterCompleted("chapter-01", sessionId) || discovered.size() >= 5)
+                        : (db.isChapterCompleted("chapter-01") || discovered.size() >= 5);
 
                 List<MissionModels.ArchiveInfo> list = new ArrayList<>();
                 list.add(new MissionModels.ArchiveInfo("archive_01", "Curzon Hall Arcade Founding Record", "Curzon Hall Central Arcade", discovered.contains("archive_01")));
