@@ -49,22 +49,22 @@ All landmark positions, distances, and road alignments are derived from verified
 
 ---
 
-## 4. Landmark Register & Metric Coordinates
+## 4. Landmark Register & Metric Coordinates (WGS 84 / UTM Zone 46N Audited)
 
-The table below details each major campus landmark, its real-world geospatial coordinates, distance from the Curzon Hall anchor, corresponding Unreal Engine vector coordinates, and blockout implementation status.
+The table below details each major campus landmark, its real-world geospatial coordinates, distance from the Curzon Hall anchor, corresponding Unreal Engine vector coordinates, and blockout implementation status based on WGS 84 / UTM Zone 46N (EPSG:32646):
 
 | Landmark | Real Lat / Lon | Distance from Curzon | Unreal Location (X, Y, Z cm) | Massing / Mesh Spec | Status |
 | :--- | :---: | :---: | :---: | :--- | :---: |
-| **Curzon Hall (Anchor)** | `23.727326, 90.401933` | 0.0 m | `(0, 0, 1600)` | Central Pavilion (120m×50m×32m), Mughal Dome, Spire, East/West Wings, Octagonal Towers | **PASS** |
-| **Doyel Chattar Roundabout** | `23.729650, 90.401150` | 269.5 m | `(25744, -7981, 20)` | Circular Roundabout Hub, Island, Magpie Robin Monument | **PASS** |
-| **Central Shaheed Minar** | `23.727211, 90.396637` | 539.9 m | `(-1273, -53973, 20)` | Marble Altar (60m×60m), Mother Pillar (slanted 15°), Crimson Sun, Flanking Pillars | **PASS** |
-| **Teacher-Student Centre (TSC)** | `23.732750, 90.395950` | 856.0 m | `(60083, -60974, 800)` | Doxiadis Modernist Auditorium, Cantilevered Roof, Circular Cafeteria Ring, Gathering Lawn | **PASS** |
-| **Raju Memorial Sculpture** | `23.732649, 90.395680` | 868.2 m | `(58964, -63725, 100)` | Pedestal + Figure Massing + Custom Art Mesh (`SM_RajuSculpture`) | **PASS** |
-| **Hakim Chattar & Central Library** | `23.733836, 90.394774` | 1025.8 m | `(72112, -72959, 1000)` | Multi-Storey Academic Block (80m×50m×20m), Student Discussion Hub | **PASS** |
-| **Kazi Nazrul Islam Mausoleum** | `23.734550, 90.394850` | 1077.7 m | `(80021, -72184, 120)` | Open White Marble Cenotaph, Historic Inscribed Wall | **PASS** |
-| **DU Central Mosque** | `23.734659, 90.394710` | 1085.0 m | `(81500, -71000, 1200)` | Grand Classical Mosque Dome & Minaret Footprint | **PASS** |
-| **Aparajeyo Bangla (Arts Faculty)** | `23.733799, 90.392412` | 1206.5 m | `(71703, -97030, 100)` | Pedestal + Trio Hero Massing + Custom Art Mesh (`SM_AparajeyoBangla`) | **PASS** |
-| **Arts Faculty (Kala Bhaban)** | `23.734000, 90.392412` | 1230.0 m | `(74500, -97030, 1200)` | Grand Modernist Academic Block (160m×50m×24m) | **PASS** |
+| **Curzon Hall (Anchor)** | `23.727326, 90.401933` | 0.0 m | `(0, 0, 1600)` | Central Pavilion (120m×50m×32m), Authentic Corner & Parapet Chattris, East/West Wings, Octagonal Towers | **PASS** |
+| **Doyel Chattar Roundabout** | `23.727976, 90.400304` | 181.2 m | `(7507, -16487, 20)` | Circular Roundabout Hub, Island, Magpie Robin Monument | **PASS** |
+| **Central Shaheed Minar** | `23.727211, 90.396637` | 540.4 m | `(-282, -54042, 20)` | Marble Altar (60m×60m), Mother Pillar (slanted 15°), Crimson Sun, Flanking Pillars | **PASS** |
+| **Teacher-Student Centre (TSC)** | `23.731787, 90.396033` | 778.8 m | `(50519, -59269, 800)` | Doxiadis Modernist Auditorium, Cantilevered Roof, Circular Cafeteria Ring, Gathering Lawn | **PASS** |
+| **Raju Memorial Sculpture** | `23.732649, 90.395680` | 868.8 m | `(60139, -62695, 100)` | Pedestal + Figure Massing + Custom Art Mesh (`SM_RajuSculpture`) at TSC Mor | **PASS** |
+| **Hakim Chattar & Central Library** | `23.733836, 90.394774` | 1026.5 m | `(73459, -71699, 1000)` | Multi-Storey Academic Block (80m×50m×20m), Student Discussion Hub | **PASS** |
+| **DU Central Mosque** | `23.734659, 90.394710` | 1096.8 m | `(82582, -72180, 1200)` | Grand Classical Mosque Dome & Minaret Footprint | **PASS** |
+| **Kazi Nazrul Islam Mausoleum** | `23.735078, 90.394743` | 1129.5 m | `(87224, -71761, 120)` | Open White Marble Cenotaph, Historic Inscribed Wall | **PASS** |
+| **Aparajeyo Bangla (Arts Faculty)** | `23.733799, 90.392412` | 1207.3 m | `(73486, -95794, 100)` | Pedestal + Trio Hero Massing + Custom Art Mesh (`SM_AparajeyoBangla`) | **PASS** |
+| **Arts Faculty (Kala Bhaban)** | `23.734232, 90.392793` | 1206.2 m | `(78214, -91827, 1200)` | Grand Modernist Academic Block (160m×50m×24m) | **PASS** |
 
 ---
 
@@ -118,12 +118,12 @@ All primary roads are raised slabs (`Z = 6 cm`) with continuous collision (`ECC_
 
 ---
 
-## 7. Curzon Hall Hero Massing Architecture
+## 7. Curzon Hall Hero Massing Architecture (Authentic Roofline)
 
-Curzon Hall is the primary hero building of Level 1. Its blockout represents its distinctive Indo-Saracenic silhouette:
+Curzon Hall is the primary hero building of Level 1. Its blockout represents its authentic Indo-Saracenic silhouette derived from architectural photographs:
 - **Central Pavilion (`Curzon_Central_Pavilion`)**: Footprint of `120m × 50m`, height `32m`, finished in custom terracotta red-brick material (`MI_Curzon_Brick`).
-- **Mughal Onion Dome (`Curzon_Central_MughalDome`)**: `18m` diameter hemispherical dome centered over the main ceremonial hall.
-- **Finial Spire (`Curzon_Central_FinialSpire`)**: Traditional brass/white finial crowning the central dome reaching `43.5m` world height.
+- **Authentic Corner Chattris (`Curzon_East_Chattri_Dome` & `Curzon_West_Chattri_Dome`)**: Octagonal domed kiosks capping the corner towers, replacing the fictional central onion dome.
+- **Parapet Accent Chattris (`Curzon_Center_Parapet_Chattri1` & `_2`)**: Symmetrical pillared domed chattris flanking the central ceremonial hall parapet.
 - **Flanking East and West Wings (`Curzon_East_WingPavilion` & `Curzon_West_WingPavilion`)**: Double-storey symmetrical pavilions (`70m × 40m × 24m`) housing lecture halls and verandas.
 - **Octagonal Corner Towers (`Curzon_East_OctagonalTower` & `Curzon_West_OctagonalTower`)**: Dual towers (`16m × 16m × 32m`) anchoring the outer corners.
 - **Front Portico (`Curzon_Front_GrandPortico`)**: Projecting entrance veranda with monumental cusped arch profile.
@@ -133,15 +133,14 @@ Curzon Hall is the primary hero building of Level 1. Its blockout represents its
 
 ## 8. Outliner Hierarchy Organization
 
-The map is systematically structured into 10 designated Outliner folders:
+The map is systematically structured into designated Outliner folders without artificial perimeter enclosure walls:
 
 | Outliner Folder | Actor Count | Primary Contents |
 | :--- | :---: | :--- |
 | `Campus_Ground` | 5 | Main terrain slab (1.6km×1.4km), Curzon botanical plaza, pond, North reference needle & pillar |
-| `Campus_Boundary` | 4 | South Nimtoli, East High Court, North Shahbagh, West Nilkhet perimeter walls |
 | `Primary_Roads` | 10 | Curzon Ave, Doyel Roundabout & Island, University Ave 1 & 2, TSC Mor, Nazrul Ave 1 & 2, Mall Road, Fuller Road |
 | `Pedestrian_Paths` | 4 | Curzon South Promenade, Hakim Chattar Hub, Aparajeyo Bangla Plaza, Shaheed Minar Marble Altar |
-| `Hero_Buildings` | 24 | Curzon Hall complex (7 components), TSC (2 blocks), Raju Sculpture (3 actors), Central Library, Nazrul Mausoleum, Central Mosque, Aparajeyo Bangla & Kala Bhaban (3 actors), Shaheed Minar (4 pillars & sun) |
+| `Hero_Buildings` | 26 | Curzon Hall complex (7 components + 4 authentic chattris), TSC (2 blocks), Raju Sculpture (3 actors), Central Library, Nazrul Mausoleum, Central Mosque, Aparajeyo Bangla & Kala Bhaban (3 actors), Shaheed Minar (4 pillars & sun) |
 | `Supporting_Buildings` | 5 | Bangla Academy, Curzon Science Labs, Jagannath Hall, Surja Sen Hall, Mohsin Hall |
 | `Green_Spaces` | 3 | Suhrawardy Udyan Scenic Border, Mall Chattar Open Lawns, TSC Gathering Lawn |
 | `Restricted_Areas` | 3 | Curzon North Lab Gate, Jagannath Hall Perimeter Fence, Arts Dean Archive Barrier |
@@ -153,17 +152,16 @@ The map is systematically structured into 10 designated Outliner folders:
 
 ## 9. Verification & Screenshots
 
-Three high-resolution verification captures have been saved to `Documentation/Screenshots/`:
+High-resolution verification captures are archived under `Documentation/Screenshots/`:
 
-1. **Complete Top-Down Overview (`TopDown_CampusMaster_Overview.png`)**:
-   - Camera: `X = 35000, Y = -50000, Z = 130000`, `Pitch = -89.9°`.
-   - Displays the complete University of Dhaka campus layout, roads, boundaries, and spatial relationships.
-2. **Angled Cinematic Aerial View (`AerialView_CurzonToTSC.png`)**:
-   - Camera: `X = -15000, Y = 15000, Z = 22000`, `Pitch = -30.0°, Yaw = -125.0°`.
-   - Displays Curzon Hall in the foreground, framing the road network sweeping towards Doyel Chattar, Suhrawardy Udyan, and TSC.
-3. **Third-Person Player Spawn Perspective (`ThirdPerson_CurzonSpawn_View.png`)**:
-   - Camera: `X = -4500, Y = 0, Z = 250`, `Pitch = 10.0°, Yaw = 0.0°`.
-   - Frames the player character's initial viewpoint facing North towards the iconic Curzon Hall entrance portico, red-brick verandas, and central Mughal dome.
+1. **Top-Down Campus Masterplan (UTM Zone 46N Corrected) (`TopDown_Campus_Corrected_UTM46N.png`)**:
+   - Displays the corrected locations of Doyel Chattar, TSC, Raju Sculpture, and open urban road corridors.
+2. **Angled Cinematic Aerial View (`AerialView_CurzonToDoyelAndTSC.png`)**:
+   - Frames Curzon Hall in the foreground with realigned roads leading towards Doyel Chattar and TSC.
+3. **Curzon Hall Authentic Silhouette (`CurzonHall_Authentic_Silhouette.png`)**:
+   - Close architectural view displaying the authentic corner/parapet chattris, towers, and veranda rhythm with the unhistorical onion dome removed.
+4. **Third-Person Player Spawn Perspective (`ThirdPerson_PlayerSpawn_Corrected.png`)**:
+   - Player spawn perspective facing the Curzon Hall southern facade with active grounded collision.
 
 ---
 
