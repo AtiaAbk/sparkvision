@@ -1,0 +1,32 @@
+# Unreal Engine generated files and folders
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+.idea/
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Java Gradle generated files
+JavaMissionControl/.gradle/
+JavaMissionControl/build/
+JavaMissionControl/out/
+JavaMissionControl/*.db
+JavaMissionControl/*.db-journal
+JavaMissionControl/*.log
