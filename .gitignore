@@ -30,3 +30,15 @@ JavaMissionControl/out/
 JavaMissionControl/*.db
 JavaMissionControl/*.db-journal
 JavaMissionControl/*.log
+
+# Python cache & temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Local environment & temporary files
+.env
+.env.local
+*.tmp
+*.bak
