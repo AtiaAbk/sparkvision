@@ -13,14 +13,14 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :---: |
 | **LM-01** | **Curzon Hall Hero Complex** | 23.727326° N, 90.401933° E | `(0, 0, 0)` | `/Game/SparkVision/Campus/CurzonModular/SM_Curzon_*` | `Hero_Buildings/Curzon_Hall` | `COMPLETED` |
 | **LM-02** | **Doyel Chattar Monument** | 23.727999° N, 90.400318° E | `(7507, -16487, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_DoyelMonument` | `Hero_Buildings/Doyel_Chattar` | `COMPLETED` |
-| **LM-03** | **Shaheed Minar Monument** | 23.727500° N, 90.396800° E | `(12600, -52400, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_ShaheedMinar_Monument` | `Hero_Buildings/Shaheed_Minar` | `COMPLETED` |
-| **LM-04** | **Kazi Nazrul Islam Mausoleum**| 23.730300° N, 90.398000° E | `(33000, -40000, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_NazrulMausoleum` | `Hero_Buildings/Nazrul_Mausoleum` | `COMPLETED` |
-| **LM-05** | **Teacher-Student Centre (TSC)**| 23.731900° N, 90.392700° E | `(43000, -149000, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_TSC_Building` | `Hero_Buildings/TSC_Mor` | `IN PROGRESS` |
-| **LM-06** | **Raju Memorial Sculpture** | 23.731700° N, 90.392900° E | `(41500, -147500, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_RajuSculpture` | `Hero_Buildings/TSC_Mor` | `IN PROGRESS` |
-| **LM-07** | **DU Central Library** | 23.732500° N, 90.393600° E | `(48000, -140000, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_CentralLibrary` | `Hero_Buildings/Central_Library` | `IN PROGRESS` |
-| **LM-08** | **Aparajeyo Bangla Sculpture** | 23.733500° N, 90.391600° E | `(51000, -160000, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_AparajeyoBangla` | `Hero_Buildings/Arts_Faculty` | `IN PROGRESS` |
+| **LM-03** | **Shaheed Minar Monument** | 23.727500° N, 90.396800° E | `(-282, -54042, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_ShaheedMinar_Monument` | `Hero_Buildings/Shaheed_Minar` | `COMPLETED` |
+| **LM-04** | **Kazi Nazrul Islam Mausoleum**| 23.730300° N, 90.398000° E | `(87224, -71761, 120)` | `/Game/SparkVision/Campus/Landmarks/SM_NazrulMausoleum` | `Hero_Buildings/Nazrul_Mausoleum` | `COMPLETED` |
+| **LM-05** | **Teacher-Student Centre (TSC)**| 23.731900° N, 90.392700° E | `(61200, -59500, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_TSC_Building` | `Hero_Buildings/TSC_Raju` | `COMPLETED` |
+| **LM-06** | **Raju Memorial Sculpture** | 23.731700° N, 90.392900° E | `(58964, -63725, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_RajuSculpture` | `Hero_Buildings/TSC_Raju` | `COMPLETED` |
+| **LM-07** | **DU Central Library** | 23.732500° N, 90.393600° E | `(73459, -71699, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_CentralLibrary` | `Hero_Buildings/Central_Library` | `COMPLETED` |
+| **LM-08** | **Aparajeyo Bangla Sculpture** | 23.733500° N, 90.391600° E | `(73486, -95794, 20)` | `/Game/SparkVision/Campus/Landmarks/SM_AparajeyoBangla` | `Hero_Buildings/Arts_Faculty` | `COMPLETED` |
 | **LM-09** | **Curzon Botanical Pond** | 23.726500° N, 90.401900° E | `(-2200, 0, 8)` | Level Geometry & Water Plane | `Hero_Buildings/Curzon_Hall` | `COMPLETED` |
-| **LM-10** | **Hero Campus Shade Tree** | Distributed Campus Routes | Multiple coordinates | `/Game/SparkVision/Campus/Foliage/SM_Campus_Tree_Hero` | `Foliage_And_Nature` | `COMPLETED` |
+| **LM-10** | **Hero Campus Shade Tree** | Distributed Campus Routes | 12 Campus-wide coordinates | `/Game/SparkVision/Campus/Foliage/SM_Campus_Tree_Hero` | `Foliage_And_Nature` | `COMPLETED` |
 
 ---
 

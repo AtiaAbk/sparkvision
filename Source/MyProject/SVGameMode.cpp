@@ -4,10 +4,12 @@
 #include "Kismet/GameplayStatics.h"
 #include "SVMissionControlSubsystem.h"
 #include "SVCharacter.h"
+#include "SVHUD.h"
 
 ASVGameMode::ASVGameMode()
 {
 	DefaultPawnClass = ASVCharacter::StaticClass();
+	HUDClass = ASVHUD::StaticClass();
 }
 
 void ASVGameMode::BeginPlay()
