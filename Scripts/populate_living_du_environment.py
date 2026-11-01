@@ -13,6 +13,7 @@ Populates LV_Campus_Blockout with a rich, authentic Bangladeshi ecosystem:
 import json
 import subprocess
 import math
+import sys
 
 ENV_PATH = "/Game/SparkVision/Campus/Environment"
 
@@ -62,8 +63,8 @@ def main():
     banyan_locs = [
         {"x": -1200.0, "y": -6500.0, "z": 20.0, "yaw": 45.0, "scale": 1.1},
         {"x": -1200.0, "y": 6500.0, "z": 20.0, "yaw": -45.0, "scale": 1.1},
-        {"x": -4800.0, "y": -6500.0, "z": 20.0, "yaw": 120.0, "scale": 1.0},
-        {"x": -4800.0, "y": 6500.0, "z": 20.0, "yaw": -120.0, "scale": 1.0},
+        {"x": -5400.0, "y": -7500.0, "z": 20.0, "yaw": 120.0, "scale": 0.75},
+        {"x": -5400.0, "y": 7500.0, "z": 20.0, "yaw": -120.0, "scale": 0.75},
     ]
     for idx, b in enumerate(banyan_locs):
         ref = spawn_env_actor("SM_Tree_Banyan_Mature", f"Curzon_Banyan_Corner_{idx+1}", 
@@ -135,13 +136,14 @@ def main():
 
     # --------------------------------------------------------------------------
     # ZONE 2: CURZON BOTANICAL POND ECOLOGY
-    # Pond Center: X = -2800, Y = -2200, Extents 85m x 45m (8500 x 4500 UU)
+    # Pond Center: X = -5200, Y = -3800, Extents 85m x 45m (8500 x 4500 UU)
+    # Offset from Curzon West Wing so riparian canopy does not intersect veranda
     # --------------------------------------------------------------------------
     print("\n--- Zone 2: Curzon Botanical Pond Ecology ---")
     
     # Historic Stepped Brick Pukur Ghat
     spawn_env_actor("SM_Curzon_Pond_Ghat", "Curzon_Pond_MainGhat",
-                    loc={"x": -2300.0, "y": -2200.0, "z": 20.0},
+                    loc={"x": -4700.0, "y": -3800.0, "z": 20.0},
                     rot={"pitch": 0.0, "yaw": 0.0, "roll": 0.0},
                     scale={"x": 1.0, "y": 1.0, "z": 1.0},
                     folder="Environment/Curzon_Pond/Pond_Architecture")
@@ -149,12 +151,12 @@ def main():
 
     # 6 Moisture-loving Purple Jarul trees along the pond margin
     jarul_locs = [
-        {"x": -2400.0, "y": -3200.0, "z": 20.0, "yaw": 10.0},
-        {"x": -2900.0, "y": -3300.0, "z": 20.0, "yaw": 80.0},
-        {"x": -3400.0, "y": -3100.0, "z": 20.0, "yaw": 140.0},
-        {"x": -3500.0, "y": -2200.0, "z": 20.0, "yaw": 180.0},
-        {"x": -3300.0, "y": -1400.0, "z": 20.0, "yaw": -120.0},
-        {"x": -2600.0, "y": -1300.0, "z": 20.0, "yaw": -40.0},
+        {"x": -4800.0, "y": -4800.0, "z": 20.0, "yaw": 10.0},
+        {"x": -5300.0, "y": -4900.0, "z": 20.0, "yaw": 80.0},
+        {"x": -5800.0, "y": -4700.0, "z": 20.0, "yaw": 140.0},
+        {"x": -5900.0, "y": -3800.0, "z": 20.0, "yaw": 180.0},
+        {"x": -5700.0, "y": -3000.0, "z": 20.0, "yaw": -120.0},
+        {"x": -5000.0, "y": -2900.0, "z": 20.0, "yaw": -40.0},
     ]
     for idx, j in enumerate(jarul_locs):
         ref = spawn_env_actor("SM_Tree_Jarul_Purple", f"CurzonPond_Jarul_{idx+1}",
@@ -165,12 +167,12 @@ def main():
 
     # 6 Leaning Coconut Palms overhanging the water
     palm_locs = [
-        {"x": -2350.0, "y": -2800.0, "z": 20.0, "yaw": 25.0},
-        {"x": -2700.0, "y": -3350.0, "z": 20.0, "yaw": 75.0},
-        {"x": -3200.0, "y": -3250.0, "z": 20.0, "yaw": 115.0},
-        {"x": -3550.0, "y": -2500.0, "z": 20.0, "yaw": 165.0},
-        {"x": -3450.0, "y": -1700.0, "z": 20.0, "yaw": -135.0},
-        {"x": -2450.0, "y": -1600.0, "z": 20.0, "yaw": -45.0},
+        {"x": -4750.0, "y": -4400.0, "z": 20.0, "yaw": 25.0},
+        {"x": -5100.0, "y": -4950.0, "z": 20.0, "yaw": 75.0},
+        {"x": -5600.0, "y": -4850.0, "z": 20.0, "yaw": 115.0},
+        {"x": -5950.0, "y": -4100.0, "z": 20.0, "yaw": 165.0},
+        {"x": -5850.0, "y": -3300.0, "z": 20.0, "yaw": -135.0},
+        {"x": -4850.0, "y": -3200.0, "z": 20.0, "yaw": -45.0},
     ]
     for idx, p in enumerate(palm_locs):
         ref = spawn_env_actor("SM_Tree_Palm_Coconut", f"CurzonPond_Palm_{idx+1}",
@@ -179,16 +181,16 @@ def main():
                               folder="Environment/Curzon_Pond/Riparian_Trees")
         if ref: total_spawned += 1
 
-    # 8 Floating Water Lily (Shapla) clusters on the pond surface (Z = 20)
+    # 8 Floating Water Lily (Shapla) clusters on the pond surface (Z = 22)
     lily_locs = [
-        {"x": -2600.0, "y": -2000.0, "z": 22.0, "yaw": 15.0},
-        {"x": -2750.0, "y": -2400.0, "z": 22.0, "yaw": 45.0},
-        {"x": -2900.0, "y": -2100.0, "z": 22.0, "yaw": 85.0},
-        {"x": -3100.0, "y": -2500.0, "z": 22.0, "yaw": -30.0},
-        {"x": -3250.0, "y": -2200.0, "z": 22.0, "yaw": 120.0},
-        {"x": -2850.0, "y": -2700.0, "z": 22.0, "yaw": -70.0},
-        {"x": -3000.0, "y": -1800.0, "z": 22.0, "yaw": 60.0},
-        {"x": -2700.0, "y": -2600.0, "z": 22.0, "yaw": -110.0},
+        {"x": -5000.0, "y": -3600.0, "z": 22.0, "yaw": 15.0},
+        {"x": -5150.0, "y": -4000.0, "z": 22.0, "yaw": 45.0},
+        {"x": -5300.0, "y": -3700.0, "z": 22.0, "yaw": 85.0},
+        {"x": -5500.0, "y": -4100.0, "z": 22.0, "yaw": -30.0},
+        {"x": -5650.0, "y": -3800.0, "z": 22.0, "yaw": 120.0},
+        {"x": -5250.0, "y": -4300.0, "z": 22.0, "yaw": -70.0},
+        {"x": -5400.0, "y": -3400.0, "z": 22.0, "yaw": 60.0},
+        {"x": -5100.0, "y": -4200.0, "z": 22.0, "yaw": -110.0},
     ]
     for idx, ly in enumerate(lily_locs):
         ref = spawn_env_actor("SM_Pond_WaterLily_Cluster", f"CurzonPond_WaterLily_{idx+1}",
@@ -200,14 +202,14 @@ def main():
 
     # 8 Kashful & Wetland Reed stands along the natural pond bank
     reed_locs = [
-        {"x": -2350.0, "y": -3100.0, "z": 20.0, "yaw": 10.0},
-        {"x": -2550.0, "y": -3350.0, "z": 20.0, "yaw": 60.0},
-        {"x": -3100.0, "y": -3300.0, "z": 20.0, "yaw": 90.0},
-        {"x": -3450.0, "y": -2900.0, "z": 20.0, "yaw": 130.0},
-        {"x": -3550.0, "y": -2000.0, "z": 20.0, "yaw": 170.0},
-        {"x": -3400.0, "y": -1550.0, "z": 20.0, "yaw": -150.0},
-        {"x": -3050.0, "y": -1350.0, "z": 20.0, "yaw": -90.0},
-        {"x": -2500.0, "y": -1450.0, "z": 20.0, "yaw": -30.0},
+        {"x": -4750.0, "y": -4700.0, "z": 20.0, "yaw": 10.0},
+        {"x": -4950.0, "y": -4950.0, "z": 20.0, "yaw": 60.0},
+        {"x": -5500.0, "y": -4900.0, "z": 20.0, "yaw": 90.0},
+        {"x": -5850.0, "y": -4500.0, "z": 20.0, "yaw": 130.0},
+        {"x": -5950.0, "y": -3600.0, "z": 20.0, "yaw": 170.0},
+        {"x": -5800.0, "y": -3150.0, "z": 20.0, "yaw": -150.0},
+        {"x": -5450.0, "y": -2950.0, "z": 20.0, "yaw": -90.0},
+        {"x": -4900.0, "y": -3050.0, "z": 20.0, "yaw": -30.0},
     ]
     for idx, rd in enumerate(reed_locs):
         ref = spawn_env_actor("SM_Plant_Reeds_Kashful", f"CurzonPond_Reeds_{idx+1}",
@@ -248,10 +250,10 @@ def main():
     
     arts_trees = [
         # Framing Aparajeyo Bangla
-        ("SM_Tree_Krishnachura_Bloom", "Arts_Aparajeyo_Krishnachura_1", 76000.0, -88000.0, 30.0, 1.05),
-        ("SM_Tree_Krishnachura_Bloom", "Arts_Aparajeyo_Krishnachura_2", 76500.0, -94000.0, -45.0, 1.0),
-        ("SM_Tree_Radhachura_Yellow", "Arts_Aparajeyo_Radhachura_1", 79500.0, -88500.0, 60.0, 1.0),
-        ("SM_Tree_Radhachura_Yellow", "Arts_Aparajeyo_Radhachura_2", 80000.0, -94500.0, -30.0, 1.0),
+        ("SM_Tree_Krishnachura_Bloom", "Arts_Aparajeyo_Krishnachura_1", 71200.0, -98200.0, 30.0, 1.25),
+        ("SM_Tree_Krishnachura_Bloom", "Arts_Aparajeyo_Krishnachura_2", 75200.0, -94500.0, -45.0, 1.10),
+        ("SM_Tree_Radhachura_Yellow", "Arts_Aparajeyo_Radhachura_1", 72500.0, -93800.0, 60.0, 1.15),
+        ("SM_Tree_Radhachura_Yellow", "Arts_Aparajeyo_Radhachura_2", 75500.0, -97500.0, -30.0, 1.10),
         # Courtyard shade neems
         ("SM_Tree_Neem_Delicate", "Arts_Courtyard_Neem_1", 77200.0, -90500.0, 15.0, 0.95),
         ("SM_Tree_Neem_Delicate", "Arts_Courtyard_Neem_2", 79200.0, -92500.0, 85.0, 0.95),

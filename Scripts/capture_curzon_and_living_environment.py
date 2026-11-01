@@ -27,29 +27,29 @@ CURZON_CAMERAS = [
         "id": "C01",
         "name": "C01_Curzon_Full_Front_Elevation",
         "desc": "Full Front Southern Elevation showing bilateral symmetry, 128m facade, and balanced towers",
-        "location": {"x": -5800.0, "y": 0.0, "z": 800.0},
-        "rotation": {"pitch": -5.0, "yaw": 0.0, "roll": 0.0}
+        "location": {"x": -9500.0, "y": 0.0, "z": 1200.0},
+        "rotation": {"pitch": -6.0, "yaw": 0.0, "roll": 0.0}
     },
     {
         "id": "C02",
         "name": "C02_Curzon_Front_Left_Oblique",
         "desc": "Front-Left 3/4 Perspective framing West Wing, Southwest Tower & Botanical Lawn",
-        "location": {"x": -5200.0, "y": -3800.0, "z": 650.0},
-        "rotation": {"pitch": -6.0, "yaw": 35.0, "roll": 0.0}
+        "location": {"x": -7200.0, "y": -3500.0, "z": 850.0},
+        "rotation": {"pitch": -6.0, "yaw": 25.0, "roll": 0.0}
     },
     {
         "id": "C03",
         "name": "C03_Curzon_Front_Right_Oblique",
         "desc": "Front-Right 3/4 Perspective framing East Wing, Southeast Tower & Parterre Garden",
-        "location": {"x": -5200.0, "y": 3800.0, "z": 650.0},
-        "rotation": {"pitch": -6.0, "yaw": -35.0, "roll": 0.0}
+        "location": {"x": -7200.0, "y": 3500.0, "z": 850.0},
+        "rotation": {"pitch": -6.0, "yaw": -25.0, "roll": 0.0}
     },
     {
         "id": "C04",
         "name": "C04_Curzon_Rear_Courtyard_Elevation",
-        "desc": "Rear North Courtyard Elevation showing inner colonnades and symmetric wings",
-        "location": {"x": 500.0, "y": 0.0, "z": 700.0},
-        "rotation": {"pitch": -8.0, "yaw": 180.0, "roll": 0.0}
+        "desc": "Elevated Rear Courtyard View looking South over symmetrical inner gardens, wings, and twin rooftop chhatris",
+        "location": {"x": 2600.0, "y": 0.0, "z": 2600.0},
+        "rotation": {"pitch": -20.0, "yaw": 180.0, "roll": 0.0}
     },
     {
         "id": "C05",
@@ -68,9 +68,9 @@ CURZON_CAMERAS = [
     {
         "id": "C07",
         "name": "C07_Curzon_Courtyard_Inner_View",
-        "desc": "Courtyard Inner View looking across shaded student garden to north wings",
-        "location": {"x": -600.0, "y": 0.0, "z": 380.0},
-        "rotation": {"pitch": -5.0, "yaw": 180.0, "roll": 0.0}
+        "desc": "Interior Veranda Colonnade Walkway looking West along rhythmic horseshoe arches and terracotta floor",
+        "location": {"x": -2460.0, "y": -1400.0, "z": 180.0},
+        "rotation": {"pitch": -2.0, "yaw": -90.0, "roll": 0.0}
     },
     {
         "id": "C08",
@@ -90,8 +90,8 @@ CURZON_CAMERAS = [
         "id": "C10",
         "name": "C10_Curzon_Tower_Chhatri_Parapet",
         "desc": "25.2m Tower Chhatri Kiosk, Lotus Crest, Brass Finial & Stepped Parapet Merlons",
-        "location": {"x": -3200.0, "y": -5800.0, "z": 1900.0},
-        "rotation": {"pitch": 4.0, "yaw": 65.0, "roll": 0.0}
+        "location": {"x": -2500.0, "y": -4200.0, "z": 1450.0},
+        "rotation": {"pitch": 16.0, "yaw": -90.0, "roll": 0.0}
     },
     {
         "id": "C11",
@@ -128,15 +128,15 @@ ENV_CAMERAS = [
         "id": "ENV_02",
         "name": "ENV_02_Curzon_Botanical_Pond_Ecology",
         "desc": "Curzon Botanical Pond: Floating Shapla water lilies, leaning coconut palms, and ghat",
-        "location": {"x": -1800.0, "y": -2200.0, "z": 240.0},
-        "rotation": {"pitch": -12.0, "yaw": -135.0, "roll": 0.0}
+        "location": {"x": -4500.0, "y": -3200.0, "z": 180.0},
+        "rotation": {"pitch": -5.0, "yaw": -140.0, "roll": 0.0}
     },
     {
         "id": "ENV_03",
         "name": "ENV_03_Curzon_Bamboo_Groves",
-        "desc": "Bengal Golden Bamboo thickets buffering the southern compound wall",
-        "location": {"x": -100.0, "y": -3200.0, "z": 200.0},
-        "rotation": {"pitch": -4.0, "yaw": -90.0, "roll": 0.0}
+        "desc": "Curzon Southern Buffer: Bengal Golden Bamboo thickets with sunlight filtering through arching culms",
+        "location": {"x": -550.0, "y": 2800.0, "z": 150.0},
+        "rotation": {"pitch": 2.0, "yaw": 60.0, "roll": 0.0}
     },
     {
         "id": "ENV_04",
@@ -149,8 +149,8 @@ ENV_CAMERAS = [
         "id": "ENV_05",
         "name": "ENV_05_Arts_Faculty_Flowering_Canopy",
         "desc": "Kala Bhaban & Aparajeyo Bangla framed by Krishnachura & Radhachura blooms",
-        "location": {"x": 73500.0, "y": -91000.0, "z": 320.0},
-        "rotation": {"pitch": -5.0, "yaw": 15.0, "roll": 0.0}
+        "location": {"x": 69800.0, "y": -98000.0, "z": 300.0},
+        "rotation": {"pitch": 3.0, "yaw": 28.0, "roll": 0.0}
     },
     {
         "id": "ENV_06",
@@ -169,8 +169,8 @@ ENV_CAMERAS = [
     {
         "id": "ENV_08",
         "name": "ENV_08_Shahidullah_Lake_Reflections",
-        "desc": "Dr. Muhammad Shahidullah Hall Lake: Lakeside coconut palms, purple jarul & water lilies",
-        "location": {"x": 11500.0, "y": 21000.0, "z": 300.0},
+        "desc": "Shahidullah Lake Ecology: Lakeside coconut palms, water lilies, and serene surface reflections",
+        "location": {"x": 11500.0, "y": 19500.0, "z": 320.0},
         "rotation": {"pitch": -8.0, "yaw": 45.0, "roll": 0.0}
     },
     {
@@ -196,25 +196,82 @@ def run_mcp(toolset, tool, args):
     ])
     return json.loads(res) if res.strip() else {}
 
+def preflight_cleanup():
+    print("\n=== RUNNING PREFLIGHT CLEANUP (PARKING HELPERS & HIDING DEBUG GIZMOS) ===")
+    try:
+        actors_res = run_mcp("editor_toolset.toolsets.scene.SceneTools", "find_actors", {"name": "", "tag": "", "collision_channels": []})
+        actors = actors_res.get("returnValue", actors_res) if isinstance(actors_res, dict) else []
+        
+        park_keywords = ['DirectionalLight', 'SkyLight', 'PostProcessVolume', 'VolumetricCloud', 'SkyAtmosphere', 'ChaosDebugDrawActor']
+        for a in actors:
+            ref = a.get("refPath", "")
+            if any(k in ref for k in park_keywords):
+                xform = {
+                    "location": {"x": -150000.0, "y": -150000.0, "z": 50000.0},
+                    "rotation": {"pitch": -50.0, "yaw": -30.0, "roll": 0.0} if "DirectionalLight" in ref else {"pitch": 0.0, "yaw": 0.0, "roll": 0.0},
+                    "scale": {"x": 1.0, "y": 1.0, "z": 1.0}
+                }
+                try:
+                    run_mcp("editor_toolset.toolsets.actor.ActorTools", "set_actor_transform", {
+                        "actor": {"refPath": ref}, "xform": xform, "worldspace": True
+                    })
+                except Exception:
+                    pass
+        
+        for a in actors:
+            ref = a.get("refPath", "")
+            if any(k in ref for k in ['SVStudentNPC', 'SVHostileOpponent', 'SVPlayerPawn', 'PlayerStart', 'SVArchiveTerminal']):
+                comps_res = run_mcp("editor_toolset.toolsets.actor.ActorTools", "get_components", {"actor": a})
+                comps = comps_res.get("returnValue", comps_res) if isinstance(comps_res, dict) else []
+                for c in comps:
+                    cref = c.get("refPath", "")
+                    if any(name in cref for name in ['CollisionCylinder', 'Arrow', 'InteractionSphere', 'Sprite']):
+                        try:
+                            run_mcp("editor_toolset.toolsets.object.ObjectTools", "set_properties", {
+                                "instance": {"refPath": cref},
+                                "values": json.dumps({"bVisible": False, "bHiddenInGame": True})
+                            })
+                        except Exception:
+                            pass
+        
+        run_mcp("EditorToolset.EditorAppToolset", "SelectActors", {"actors": []})
+        print("Preflight cleanup completed successfully.")
+    except Exception as e:
+        print(f"Warning during preflight cleanup: {e}")
+
 def capture_suite(cams, out_primary_dir, suite_name):
     print(f"\n=== CAPTURING {suite_name.upper()} ({len(cams)} VIEWPOINTS) ===")
     
     for cam in cams:
         cid = cam["id"]
         cname = cam["name"]
-        print(f"\nSetting Viewport Camera for {cid}: {cname}...")
+        print(f"\nSetting Viewport Camera & Capturing {cid}: {cname}...")
         
         try:
-            # Set camera position
-            run_mcp("EditorToolset.EditorAppToolset", "SetViewportCamera", {
-                "location": cam["location"],
-                "rotation": cam["rotation"]
-            })
-            time.sleep(0.4) # Wait for Lumen & texture streaming to settle
+            # Deselect any actors to prevent selection outlines / gizmos from rendering in screenshots
+            run_mcp("EditorToolset.EditorAppToolset", "SelectActors", {"actors": []})
             
-            # Capture Viewport
-            cap_res = run_mcp("EditorToolset.EditorAppToolset", "CaptureViewport", {})
-            img_b64 = cap_res.get("returnValue", "")
+            cap_args = {
+                "captureTransform": {
+                    "location": cam["location"],
+                    "rotation": cam["rotation"],
+                    "scale": {"x": 1.0, "y": 1.0, "z": 1.0}
+                },
+                "annotations": {
+                    "gridSpacing": 0, "gridExtent": 0, "gridHeight": 0,
+                    "maxLabelDistance": 0, "classFilter": {"refPath": "/Script/Engine.Actor"}, "maxLabels": 0
+                },
+                "bShowUI": False
+            }
+            cap_res = run_mcp("EditorToolset.EditorAppToolset", "CaptureViewport", cap_args)
+            
+            img_b64 = None
+            if isinstance(cap_res, dict):
+                ret = cap_res.get("returnValue", {})
+                if isinstance(ret, dict) and "image" in ret:
+                    img_b64 = ret["image"].get("data")
+                elif "image" in cap_res:
+                    img_b64 = cap_res["image"].get("data")
             
             if img_b64:
                 raw_bytes = base64.b64decode(img_b64)
@@ -241,6 +298,7 @@ def capture_suite(cams, out_primary_dir, suite_name):
             print(f"  [ERROR] Exception on {cid}: {e}")
 
 if __name__ == "__main__":
+    preflight_cleanup()
     capture_suite(CURZON_CAMERAS, CURZON_RUNTIME_DIR, "Curzon Hall Architectural Reconstruction Suite")
     capture_suite(ENV_CAMERAS, ENV_RUNTIME_DIR, "Living University of Dhaka Environment Suite")
     print("\n=== ALL 23 BENCHMARK VIEWPOINTS CAPTURED SUCCESSFULLY! ===")

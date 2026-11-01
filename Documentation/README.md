@@ -44,6 +44,21 @@ Documentation/
 │   ├── LandmarkRegister.md                    # Complete catalog of campus landmarks & coordinates
 │   └── CurzonHall_Architecture.md             # Curzon Hall Indo-Saracenic modular construction
 │
+├── CurzonHall/                                # Curzon Hall Historical Reconstruction Suite
+│   ├── README.md                              # Curzon Hall documentation index
+│   ├── CURZON_HALL_VISUAL_DOSSIER.md          # Visual verification dossier for C01–C13 viewpoints
+│   ├── CurzonHall_Architectural_Analysis.md   # Architectural breakdown of Indo-Saracenic elements
+│   ├── CurzonHall_Measurement_Register.md     # 1:1 metric specifications & tolerances
+│   ├── CurzonHall_3D_Reconstruction_Plan.md   # Modular asset assembly plan
+│   └── Screenshots/Runtime/                   # Clean 4K captures of C01–C13
+│
+├── WorldEnvironment/                          # Living Campus World Environment Suite
+│   ├── README.md                              # World environment documentation index
+│   ├── LIVING_CAMPUS_VISUAL_DOSSIER.md        # Environmental visual dossier for ENV_01–ENV_10
+│   ├── Campus_Environment_Art_Validation_Report.md # Compliance report (Where Winds Meet & Ghost of Tsushima)
+│   ├── Campus_Tree_Inventory_And_Placement_Matrix.md # 216 botanical asset placement matrix
+│   └── Screenshots/Runtime/                   # Clean 4K captures of ENV_01–ENV_10
+│
 ├── Gameplay/                                  # Design, mechanics, characters & progression
 │   ├── README.md                              # Gameplay design index
 │   ├── Level1_GameplayDesign.md               # Chapter 1: Curzon Hall & Campus historical narrative
@@ -91,7 +106,8 @@ Documentation/
 | Area | Status | Key Deliverables Completed | Next Priorities |
 | :--- | :---: | :--- | :--- |
 | **Campus Geography** | `COMPLETED` | UTM Zone 46N reprojection, 7 core landmarks, road network | Micro-terrain blending |
-| **Curzon Hall Hero** | `COMPLETED` | 8 modular FBX kits, PBR materials, authentic silhouette | Interior hall layout |
+| **Curzon Hall Reconstruction** | `COMPLETED` | 41 modular architectural modules, 128m facade, 25.2m towers, 13/13 verified clean captures (C01–C13) | Interior hall layout |
+| **Living Campus Environment** | `COMPLETED` | 216 botanical/living assets across 8 zones, WPO wind shaders, 10/10 verified clean captures (ENV_01–ENV_10) | Interactive wildlife AI |
 | **Java Mission Control** | `COMPLETED` | Session isolation, 5/5 archive tracking, Level 2 unlock | Dynamic event streaming |
 | **Unreal MCP Workflow** | `COMPLETED` | 19 toolsets verified, headless PIE automation, viewport capture | PCG volume scripting |
 | **Full Campus Detailing** | `IN PROGRESS` | Doyel Chattar, Shaheed Minar, TSC, Hero shade trees | Arts Faculty & Library mesh detail |
