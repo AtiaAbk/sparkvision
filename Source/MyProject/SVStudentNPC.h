@@ -7,6 +7,18 @@
 #include "SVInteractableInterface.h"
 #include "SVStudentNPC.generated.h"
 
+USTRUCT(BlueprintType)
+struct FSVDialogueEntry
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Dialogue")
+	FText BengaliText;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Dialogue")
+	FText EnglishSubtitle;
+};
+
 UCLASS()
 class MYPROJECT_API ASVStudentNPC : public ACharacter, public ISVInteractableInterface
 {
@@ -20,14 +32,23 @@ protected:
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
+	FString NPCId = TEXT("NPC_Tanvir");
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
 	FText NPCName = FText::FromString(TEXT("Tanvir (Student Organizer)"));
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
-	TArray<FText> DialogueLines;
+	FText NPCRole = FText::FromString(TEXT("Curzon Science Faculty Representative"));
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
+	TArray<FSVDialogueEntry> DialogueEntries;
 
 	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|NPC")
 	int32 CurrentDialogueIndex = 0;
 
 	virtual FText GetInteractionPrompt_Implementation() override;
 	virtual void OnInteract_Implementation(AActor* Interactor) override;
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|NPC")
+	bool GetCurrentDialogue(FText& OutBengali, FText& OutEnglish) const;
 };

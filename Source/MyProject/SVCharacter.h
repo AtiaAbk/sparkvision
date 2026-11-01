@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "SVInteractableInterface.h"
+#include "SVSaveGame.h"
 #include "SVCharacter.generated.h"
 
 class USpringArmComponent;
@@ -18,6 +19,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChangedSignature, float, C
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnQiChangedSignature, float, CurrentQi, float, MaxQi);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCombatVictorySignature);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnParrySuccessSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMissionUpdatedSignature, const FString&, MissionId, const FText&, MissionDesc);
 
 UCLASS()
 class MYPROJECT_API ASVCharacter : public ACharacter
@@ -61,16 +63,7 @@ protected:
 	UInputAction* InteractAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
-	UInputAction* StrikeAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* SprintAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
-	UInputAction* ParryAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
-	UInputAction* DashAction;
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
@@ -81,19 +74,10 @@ public:
 	void Interact();
 
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
-	void Strike();
-
-	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
 	void StartSprint();
 
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
 	void StopSprint();
-
-	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
-	void StartParry();
-
-	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
-	void StopParry();
 
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
 	void Dash();
@@ -105,6 +89,17 @@ public:
 	void MoveLeftDirect(float Val);
 	void LookYawDirect(float Val);
 	void LookPitchDirect(float Val);
+
+	/** Number Key and Menu Handlers */
+	void OnNumberKeyPressed(int32 Number);
+	void OnKey1() { OnNumberKeyPressed(1); }
+	void OnKey2() { OnNumberKeyPressed(2); }
+	void OnKey3() { OnNumberKeyPressed(3); }
+	void OnKey4() { OnNumberKeyPressed(4); }
+	void OnKey5() { OnNumberKeyPressed(5); }
+	void OnKey6() { OnNumberKeyPressed(6); }
+	void OnKeyEsc();
+	void OnKeySpace();
 
 	/** Campus Landmark Fast Travel */
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
@@ -125,58 +120,46 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
 	void TeleportToKalaBhaban();
 
-	/** Health & Vitals (Where Winds Meet standard) */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Combat")
+	/** Vitals (Health & Qi stamina) */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Vitals")
 	float MaxHealth = 100.0f;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Vitals")
 	float CurrentHealth = 100.0f;
 
-	/** Internal Energy / Qi / Stamina (Where Winds Meet standard) */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Combat")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Vitals")
 	float MaxQi = 100.0f;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Vitals")
 	float CurrentQi = 100.0f;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
-	bool bIsAttacking = false;
-
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Controls")
 	bool bIsSprinting = false;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Controls")
 	bool bIsParrying = false;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Controls")
 	bool bIsBlocking = false;
 
-	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
-	int32 ComboStep = 0;
-
-	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Vitals")
 	FOnHealthChangedSignature OnHealthChanged;
 
-	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Combat")
+	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Vitals")
 	FOnQiChangedSignature OnQiChanged;
-
-	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Combat")
-	FOnCombatVictorySignature OnCombatVictory;
-
-	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Combat")
-	FOnParrySuccessSignature OnParrySuccess;
 
 	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Interaction")
 	FOnNearbyInteractableChanged OnNearbyInteractableChanged;
 
-	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
-	void TakeDamageAmount(float Damage);
+	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Mission")
+	FOnMissionUpdatedSignature OnMissionUpdated;
 
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
-	void ResetHealth();
-
-	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
-	bool TryDeflectAttack(float IncomingDamage, AActor* Attacker);
+	void TakeDamageAmount(float Damage)
+	{
+		CurrentHealth = FMath::Clamp(CurrentHealth - Damage, 0.0f, MaxHealth);
+		OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
+	}
 
 	UFUNCTION(BlueprintPure, Category = "SparkVision|Vitals")
 	float GetHealthPercent() const { return (MaxHealth > 0.f) ? (CurrentHealth / MaxHealth) : 0.f; }
@@ -189,6 +172,43 @@ public:
 
 	FString GetCurrentLandmarkName() const;
 
+	/** Mission Progression & Quest System */
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	FString ActiveMissionId = TEXT("L1_M01");
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	TArray<FString> DiscoveredArchiveIds;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	TArray<FString> SpokenNPCIds;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	TArray<FString> VisitedLandmarkNames;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	bool bLevel1Completed = false;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	bool bLevel2Unlocked = false;
+
+	void OnNPCSpoken(const FString& InNPCId);
+	void OnArchiveRecovered(const FString& InArchiveId);
+	void CheckMissionProgression();
+	void CompleteLevel1Chapter();
+
+	UFUNCTION(BlueprintPure, Category = "SparkVision|Mission")
+	FText GetActiveMissionDescription() const;
+
+	UFUNCTION(BlueprintPure, Category = "SparkVision|Mission")
+	int32 GetDiscoveredArchiveCount() const { return DiscoveredArchiveIds.Num(); }
+
+	/** Persistence */
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Persistence")
+	void SaveGameProgress(const FString& SlotName = TEXT("SVSave_Slot0"));
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Persistence")
+	bool LoadGameProgress(const FString& SlotName = TEXT("SVSave_Slot0"));
+
 private:
 	void ScanForInteractables();
 	void UpdateCameraFraming(float DeltaTime);
@@ -199,10 +219,10 @@ private:
 
 	FText CurrentPromptText;
 
-	float ParryWindowTimer = 0.0f;
-	const float ParryWindowDuration = 0.20f;
-
-	float AttackResetTimer = 0.0f;
+	// Initial movement detection for L1_M01
+	FVector SpawnLocation;
+	bool bHasMovedSignificantly = false;
+	bool bHasJumped = false;
 
 	// Camera Framing Targets
 	float TargetArmDistance = 380.0f;
