@@ -166,3 +166,133 @@ To strictly adhere to the **Vegetation Scale & Natural Density Override**, all s
 * **Visual Characteristics**: Dense, fine-textured bright green foliage trimmed into clean rectangular geometric parterres.
 * **Campus Placement**: Bordering the Curzon Hall plinth walkway and botanical parterres, exactly matching reference photograph `REF-01`.
 * **Unreal Asset**: `SM_Curzon_Hedge_Low` | **Materials**: `MI_Curzon_Hedge`
+
+---
+
+#### 11. Debdaru / Mast Tree (*Polyalthia longifolia* var. *pendula*)
+* **Bengali Name**: দেবদারু (Debdaru)
+* **Family**: Annonaceae | **Origin**: Native to southern India and Sri Lanka; naturalized throughout Bengal
+* **Mature Dimensions**:
+  * **Height**: $14.0 - 18.0\text{ m}$ ($1400 - 1800\text{ UU}$)
+  * **Canopy Spread**: $2.5 - 4.0\text{ m}$ ($250 - 400\text{ UU}$)
+  * **Trunk Diameter (DBH)**: $0.4 - 0.6\text{ m}$
+* **Visual Characteristics**:
+  * Striking weeping columnar pyramidal crown with slender pendulous branches.
+  * Glossy dark green lanceolate leaves with undulate/wavy margins.
+  * Dark grey-black smooth bark.
+* **July Monsoon Phenology**: Fresh lime-green new leaves at the branch tips contrasting with deep dark evergreen body.
+* **Campus Placement**: Linear roadside framing along University Avenue, Fuller Road boundary lines, and Curzon rear science garden.
+* **Unreal Asset**: `SM_Tree_Debdaru_Columnar` | **Materials**: `MI_Bark_Tree`, `MI_Foliage_Debdaru_Dark`
+
+---
+
+#### 12. Mahogany (*Swietenia macrophylla*)
+* **Bengali Name**: মেহগনি (Mehogani)
+* **Family**: Meliaceae | **Origin**: Introduced (Neotropical, naturalized timber tree; #1 tree by count in DU Census)
+* **Mature Dimensions**:
+  * **Height**: $18.0 - 24.0\text{ m}$ ($1800 - 2400\text{ UU}$)
+  * **Canopy Spread**: $16.0 - 22.0\text{ m}$ ($1600 - 2200\text{ UU}$)
+  * **Trunk Diameter (DBH)**: $1.0 - 1.6\text{ m}$
+* **Visual Characteristics**:
+  * Tall, sturdy upright trunk with dark reddish-brown deeply fissured bark.
+  * Broad dense symmetrical rounded canopy casting deep shade.
+  * Large dark green pinnate leaves.
+* **July Monsoon Phenology**: Deep lustrous foliage; woody capsule fruit development.
+* **Campus Placement**: Campus forest groves, perimeter buffers, and academic avenues.
+* **Unreal Asset**: `SM_Tree_Mahogany_Grand` | **Materials**: `MI_Bark_Tree`, `MI_Foliage_Raintree_Leaf`
+
+---
+
+#### 13. Kadam / Burflower-tree (*Neolamarckia cadamba*)
+* **Bengali Name**: কদম (Kadam)
+* **Family**: Rubiaceae | **Origin**: Native to Bangladesh and Bengal Basin
+* **Mature Dimensions**:
+  * **Height**: $12.0 - 16.0\text{ m}$ ($1200 - 1600\text{ UU}$)
+  * **Canopy Spread**: $10.0 - 14.0\text{ m}$ ($1000 - 1400\text{ UU}$)
+* **Visual Characteristics**:
+  * Umbrella-like horizontal tiered branching.
+  * Large glossy elliptical leaves ($15 - 30\text{ cm}$).
+  * Iconic globe-like, golden-orange fragrant flowers with white stamens resembling miniature pom-poms.
+* **July Monsoon Phenology**: **The quintessential monsoon flower of Bengal** (*Borshar Phul*); peak bloom occurs throughout July rains.
+* **Campus Placement**: Botanical grove pockets, Curzon garden perimeter, Mall open field boundary.
+* **Unreal Asset**: `SM_Tree_Kadam_Bloom` | **Materials**: `MI_Bark_Tree`, `MI_Foliage_Kadam_Golden`
+
+---
+
+#### 14. Rangan / Flame of the Woods (*Ixora coccinea*)
+* **Bengali Name**: রঙ্গন (Rangan)
+* **Family**: Rubiaceae | **Origin**: Native to South Asia
+* **Dimensions**: $1.2 - 1.8\text{ m}$ height, dense bushy habit
+* **Visual Characteristics**: Dense glossy dark green foliage bearing dense corymbs of bright scarlet-red star-shaped tubular flowers.
+* **July Monsoon Phenology**: Profuse blooming throughout monsoon months.
+* **Campus Placement**: Central Library garden, TSC flowerbeds, Curzon courtyard borders.
+* **Unreal Asset**: `SM_Bush_Rangan_Scarlet` | **Materials**: `MI_Foliage_Banyan_Leaf`, `MI_Flower_Rangan_Scarlet`
+
+---
+
+#### 15. Gandharaj / Cape Jasmine (*Gardenia jasminoides*)
+* **Bengali Name**: গন্ধরাজ (Gandharaj)
+* **Family**: Rubiaceae | **Origin**: Naturalized Asian ornamental shrub
+* **Dimensions**: $1.2 - 1.6\text{ m}$ height, compact rounded shrub
+* **Visual Characteristics**: Lustrous dark green opposite leaves; large creamy-white intensely fragrant double flowers.
+* **Campus Placement**: Curzon formal entrance garden, Vice-Chancellor's lawn, Shahidullah Hall quads.
+* **Unreal Asset**: `SM_Bush_Gandharaj_White` | **Materials**: `MI_Foliage_Banyan_Leaf`, `MI_Flower_Gardenia_White`
+
+---
+
+#### 16. Kamini / Orange Jessamine (*Murraya paniculata*)
+* **Bengali Name**: কামিনী (Kamini)
+* **Family**: Rutaceae | **Origin**: Native to South Asia
+* **Dimensions**: $1.0 - 1.5\text{ m}$ height, manicured or wild flowering hedge
+* **Visual Characteristics**: Small glossy dark green leaflets; clusters of small white 5-petaled sweet-scented flowers.
+* **Campus Placement**: Parterre hedge boundaries, walkway edging.
+* **Unreal Asset**: `SM_Bush_Kamini_Hedge` | **Materials**: `MI_Curzon_Hedge`, `MI_Flower_Gardenia_White`
+
+---
+
+#### 17. Tall Monsoon Savanna Grass / Kashful (*Saccharum spontaneum*)
+* **Bengali Name**: কাশফুল (Kashful) / বুনো ঘাস
+* **Family**: Poaceae | **Origin**: Native wild grass of Bengal floodplains
+* **Dimensions**: $1.2 - 1.6\text{ m}$ height, arching clump
+* **Visual Characteristics**: Slender linear leaves with silver-white feathery silky plumes that sway dynamically in the monsoon wind.
+* **Campus Placement**: The Mall open grassland edges, pond banks, roadside open verges.
+* **Unreal Asset**: `SM_Grass_Tall_Savanna` | **Materials**: `MI_Foliage_KashfulWhite`, `MI_Stem_ReedGreen`
+
+---
+
+#### 18. Sword Fern / Boston Fern (*Nephrolepis exaltata*)
+* **Bengali Name**: ঢেঁকিয়া শাক / ফার্ন (Fern)
+* **Family**: Nephrolepidaceae | **Origin**: Native tropical understory
+* **Dimensions**: $0.6 - 0.9\text{ m}$ height, arching fronds
+* **Visual Characteristics**: Rich emerald green pinnate fronds forming lush clusters under heavy tree canopies.
+* **Campus Placement**: Under ancient Banyan buttress roots, shaded Curzon wall pockets.
+* **Unreal Asset**: `SM_Fern_Undergrowth_Cluster` | **Materials**: `MI_Foliage_Fern_Emerald`
+
+---
+
+#### 19. Oriental Magpie-Robin / Doel (*Copsychus saularis*)
+* **Bengali Name**: দোয়েল (Doel) — National Bird of Bangladesh
+* **Family**: Muscicapidae | **Status**: Abundant campus breeding resident
+* **Dimensions**: $19\text{ cm}$ body length
+* **Visual Characteristics**: Striking pied plumage; glossy blue-black upperparts, head, and throat contrasting with snow-white belly and outer tail feathers; distinctive upright tail flicking behavior.
+* **Campus Placement**: Perched on low tree branches, Curzon veranda railings, and garden boundary walls.
+* **Unreal Asset**: `SM_Wildlife_Bird_Doel` | **Materials**: `MI_Fauna_Doel_Black`, `MI_Fauna_Doel_White`
+
+---
+
+#### 20. Urban Butterfly Cluster (Grass Yellow & Lime Butterfly)
+* **Bengali Name**: প্রজাপতি (Projapoti)
+* **Species**: *Eurema blanda* (Three-spot Grass Yellow) & *Papilio demoleus* (Lime Swallowtail)
+* **Status**: Highly active pollinator in DU urban green spaces (Chowdhury et al., 2021)
+* **Visual Characteristics**: Small vibrant lemon-yellow and black-mottled butterflies fluttering above flowering shrubs.
+* **Campus Placement**: Floating above Rangan, Gandharaj, and Krishnachura flowerbeds.
+* **Unreal Asset**: `SM_Wildlife_Butterfly_Cluster` | **Materials**: `MI_Fauna_Butterfly_Yellow`
+
+---
+
+#### 21. Pond Dragonfly Pair (*Orthetrum sabina* / *Crocothemis servilia*)
+* **Bengali Name**: ফড়িং (Phoring) / ড্রাগনফ্লাই
+* **Status**: Resident aquatic predator at Curzon and Shahidullah ponds
+* **Visual Characteristics**: Slender elongated abdomen, iridescent green/teal body, transparent dual wings skimming water surface.
+* **Campus Placement**: Hovering 20–40 cm above water lilies and reed beds.
+* **Unreal Asset**: `SM_Wildlife_Dragonfly_Pair` | **Materials**: `MI_Fauna_Dragonfly_Teal`
