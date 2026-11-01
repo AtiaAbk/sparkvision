@@ -38,9 +38,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	UCameraComponent* FollowCamera;
 
-	/** Input actions */
+	/** Enhanced Input assets */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* DefaultMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputMappingContext* MouseLookMappingContext;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* MoveAction;
@@ -50,6 +53,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* JumpAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* MouseLookAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputAction* InteractAction;
@@ -68,15 +74,57 @@ protected:
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
-	void Interact();
-	void Strike();
-	void StartSprint();
-	void StopSprint();
-	void StartParry();
-	void StopParry();
-	void Dash();
+	void MouseLook(const FInputActionValue& Value);
 
 public:
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void Interact();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void Strike();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void StartSprint();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void StopSprint();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void StartParry();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void StopParry();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
+	void Dash();
+
+	/** Direct Keyboard/Mouse Fallback Handlers */
+	void MoveForwardDirect(float Val);
+	void MoveBackwardDirect(float Val);
+	void MoveRightDirect(float Val);
+	void MoveLeftDirect(float Val);
+	void LookYawDirect(float Val);
+	void LookPitchDirect(float Val);
+
+	/** Campus Landmark Fast Travel */
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
+	void TeleportToCurzon();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
+	void TeleportToDoyel();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
+	void TeleportToShaheedMinar();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
+	void TeleportToTSC();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
+	void TeleportToLibrary();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
+	void TeleportToKalaBhaban();
+
 	/** Health & Vitals (Where Winds Meet standard) */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Combat")
 	float MaxHealth = 100.0f;
@@ -139,6 +187,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "SparkVision|Interaction")
 	FText GetCurrentPromptText() const { return CurrentPromptText; }
 
+	FString GetCurrentLandmarkName() const;
+
 private:
 	void ScanForInteractables();
 	void UpdateCameraFraming(float DeltaTime);
@@ -150,7 +200,7 @@ private:
 	FText CurrentPromptText;
 
 	float ParryWindowTimer = 0.0f;
-	const float ParryWindowDuration = 0.20f; // 200ms deflection window (Where Winds Meet style)
+	const float ParryWindowDuration = 0.20f;
 
 	float AttackResetTimer = 0.0f;
 

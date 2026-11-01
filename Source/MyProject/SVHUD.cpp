@@ -49,6 +49,17 @@ void ASVHUD::DrawHUD()
 
 	DrawInteractionPrompt(ScreenWidth, ScreenHeight);
 
+	// Controls Helper Banner (Where Winds Meet aesthetic)
+	UFont* SmallFont = GEngine->GetSmallFont();
+	const FString ControlsText = TEXT("[W,A,S,D] Move   |   [Shift] Sprint   |   [Space] Jump   |   [E] Inspect   |   [1-6] Fast Travel");
+	const float LegendWidth = 620.0f;
+	const float LegendX = (ScreenWidth - LegendWidth) * 0.5f;
+	const float LegendY = ScreenHeight - 34.0f;
+
+	DrawRect(FLinearColor(0.02f, 0.02f, 0.03f, 0.70f), LegendX - 10.0f, LegendY - 4.0f, LegendWidth + 20.0f, 24.0f);
+	DrawRect(FLinearColor(0.82f, 0.68f, 0.38f, 0.75f), LegendX - 10.0f, LegendY - 4.0f, LegendWidth + 20.0f, 1.0f);
+	DrawText(ControlsText, FLinearColor(0.92f, 0.88f, 0.78f, 0.95f), LegendX + 15.0f, LegendY, SmallFont, 0.88f);
+
 	if (bShowingArchiveCard)
 	{
 		DrawArchiveModal(ScreenWidth, ScreenHeight);
@@ -65,7 +76,7 @@ void ASVHUD::DisplayArchiveRecord(const FText& Title, const FText& Description)
 	ActiveArchiveTitle = Title;
 	ActiveArchiveDescription = Description;
 	bShowingArchiveCard = true;
-	CardDisplayDuration = 6.0f;
+	CardDisplayDuration = 8.0f;
 	SetLetterboxActive(true);
 }
 
@@ -77,14 +88,13 @@ void ASVHUD::DismissArchiveRecord()
 
 void ASVHUD::DrawCompassRibbon(float ScreenWidth, float ScreenHeight, float CameraYaw)
 {
-	// Where Winds Meet Minimalist Top Compass
 	const float RibbonWidth = FMath::Min(ScreenWidth * 0.5f, 650.0f);
 	const float RibbonHeight = 24.0f;
 	const float RibbonX = (ScreenWidth - RibbonWidth) * 0.5f;
 	const float RibbonY = 28.0f;
 
 	// Dark semi-translucent ink backing
-	DrawRect(FLinearColor(0.02f, 0.02f, 0.03f, 0.65f), RibbonX, RibbonY, RibbonWidth, RibbonHeight);
+	DrawRect(FLinearColor(0.02f, 0.02f, 0.03f, 0.75f), RibbonX, RibbonY, RibbonWidth, RibbonHeight);
 	
 	// Golden top accent border
 	DrawRect(FLinearColor(0.85f, 0.72f, 0.45f, 0.85f), RibbonX, RibbonY, RibbonWidth, 1.5f);
@@ -119,7 +129,10 @@ void ASVHUD::DrawCompassRibbon(float ScreenWidth, float ScreenHeight, float Came
 	}
 
 	// Active Landmark Objective Marker on Compass
-	DrawText(TEXT("◆ Curzon Heritage - Level 1"), FLinearColor(0.92f, 0.78f, 0.35f, 0.90f), RibbonX + 12.0f, RibbonY + RibbonHeight + 6.0f, Font, 0.9f);
+	ASVCharacter* PlayerChar = Cast<ASVCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+	FString LandmarkName = PlayerChar ? PlayerChar->GetCurrentLandmarkName() : TEXT("University of Dhaka Campus | ঢাকা বিশ্ববিদ্যালয়");
+
+	DrawText(FString::Printf(TEXT("◆ %s"), *LandmarkName), FLinearColor(0.95f, 0.82f, 0.40f, 0.95f), RibbonX + 12.0f, RibbonY + RibbonHeight + 6.0f, Font, 0.95f);
 }
 
 void ASVHUD::DrawVitalsGauge(float ScreenWidth, float ScreenHeight)
@@ -128,26 +141,26 @@ void ASVHUD::DrawVitalsGauge(float ScreenWidth, float ScreenHeight)
 	if (!PlayerChar) return;
 
 	const float GaugeX = 50.0f;
-	const float GaugeY = ScreenHeight - 90.0f;
+	const float GaugeY = ScreenHeight - 95.0f;
 	const float BarWidth = 260.0f;
 
 	// Dark slate ink plate
 	DrawRect(FLinearColor(0.03f, 0.03f, 0.04f, 0.75f), GaugeX - 10.0f, GaugeY - 26.0f, BarWidth + 24.0f, 68.0f);
 	// Outer decorative trim
-	DrawRect(FLinearColor(0.55f, 0.48f, 0.35f, 0.70f), GaugeX - 10.0f, GaugeY - 26.0f, 3.0f, 68.0f);
+	DrawRect(FLinearColor(0.85f, 0.72f, 0.45f, 0.85f), GaugeX - 10.0f, GaugeY - 26.0f, 3.0f, 68.0f);
 
 	UFont* Font = GEngine->GetSmallFont();
-	DrawText(TEXT("WANDERER-SCHOLAR | ঢাকা বিশ্ববিদ্যালয়"), FLinearColor(0.88f, 0.80f, 0.65f, 0.95f), GaugeX, GaugeY - 20.0f, Font, 0.85f);
+	DrawText(TEXT("WANDERER-SCHOLAR | ঢাকা বিশ্ববিদ্যালয়"), FLinearColor(0.92f, 0.85f, 0.70f, 0.95f), GaugeX, GaugeY - 20.0f, Font, 0.85f);
 
 	// Health Bar (Crimson/Vermilion - Wuxia style)
 	float HealthPct = PlayerChar->GetHealthPercent();
-	DrawRect(FLinearColor(0.20f, 0.05f, 0.05f, 0.85f), GaugeX, GaugeY + 4.0f, BarWidth, 10.0f); // Background
-	DrawRect(FLinearColor(0.85f, 0.18f, 0.15f, 0.95f), GaugeX, GaugeY + 4.0f, BarWidth * HealthPct, 10.0f); // Fill
+	DrawRect(FLinearColor(0.20f, 0.05f, 0.05f, 0.85f), GaugeX, GaugeY + 4.0f, BarWidth, 10.0f);
+	DrawRect(FLinearColor(0.85f, 0.18f, 0.15f, 0.95f), GaugeX, GaugeY + 4.0f, BarWidth * HealthPct, 10.0f);
 
 	// Internal Energy / Qi / Stamina Bar (Jade Celadon Green - Where Winds Meet style)
 	float QiPct = PlayerChar->GetQiPercent();
-	DrawRect(FLinearColor(0.05f, 0.15f, 0.10f, 0.85f), GaugeX, GaugeY + 20.0f, BarWidth * 0.85f, 6.0f); // Background
-	DrawRect(FLinearColor(0.22f, 0.78f, 0.55f, 0.95f), GaugeX, GaugeY + 20.0f, (BarWidth * 0.85f) * QiPct, 6.0f); // Fill
+	DrawRect(FLinearColor(0.05f, 0.15f, 0.10f, 0.85f), GaugeX, GaugeY + 20.0f, BarWidth * 0.85f, 6.0f);
+	DrawRect(FLinearColor(0.22f, 0.78f, 0.55f, 0.95f), GaugeX, GaugeY + 20.0f, (BarWidth * 0.85f) * QiPct, 6.0f);
 
 	// State Indicators (Parry / Sprint)
 	if (PlayerChar->bIsParrying)
@@ -172,55 +185,53 @@ void ASVHUD::DrawInteractionPrompt(float ScreenWidth, float ScreenHeight)
 	UFont* Font = GEngine->GetMediumFont();
 
 	float TextWidth = PromptStr.Len() * 10.0f;
-	float BoxWidth = TextWidth + 50.0f;
-	float BoxHeight = 42.0f;
+	float BoxWidth = TextWidth + 60.0f;
+	float BoxHeight = 44.0f;
 	float BoxX = (ScreenWidth - BoxWidth) * 0.5f;
-	float BoxY = ScreenHeight * 0.68f;
+	float BoxY = ScreenHeight * 0.65f;
 
 	// Ink-wash dark badge with gold border
-	DrawRect(FLinearColor(0.03f, 0.03f, 0.05f, 0.85f), BoxX, BoxY, BoxWidth, BoxHeight);
+	DrawRect(FLinearColor(0.03f, 0.03f, 0.05f, 0.90f), BoxX, BoxY, BoxWidth, BoxHeight);
 	DrawRect(FLinearColor(0.85f, 0.72f, 0.38f, 0.95f), BoxX, BoxY, BoxWidth, 2.0f);
 	DrawRect(FLinearColor(0.85f, 0.72f, 0.38f, 0.95f), BoxX, BoxY + BoxHeight - 2.0f, BoxWidth, 2.0f);
 
 	// Centered Prompt Text
-	DrawText(PromptStr, FLinearColor(1.0f, 0.95f, 0.85f, 1.0f), BoxX + 25.0f, BoxY + 10.0f, Font, 1.0f);
+	DrawText(PromptStr, FLinearColor(1.0f, 0.95f, 0.85f, 1.0f), BoxX + 30.0f, BoxY + 11.0f, Font, 1.0f);
 }
 
 void ASVHUD::DrawLetterboxBars(float ScreenWidth, float ScreenHeight)
 {
 	float BarHeight = ScreenHeight * 0.12f * LetterboxProgress;
-	// Top Bar
 	DrawRect(FLinearColor::Black, 0.0f, 0.0f, ScreenWidth, BarHeight);
-	// Bottom Bar
 	DrawRect(FLinearColor::Black, 0.0f, ScreenHeight - BarHeight, ScreenWidth, BarHeight);
 }
 
 void ASVHUD::DrawArchiveModal(float ScreenWidth, float ScreenHeight)
 {
-	const float ModalWidth = FMath::Min(ScreenWidth * 0.70f, 800.0f);
+	const float ModalWidth = FMath::Min(ScreenWidth * 0.75f, 850.0f);
 	const float ModalHeight = 240.0f;
 	const float ModalX = (ScreenWidth - ModalWidth) * 0.5f;
 	const float ModalY = (ScreenHeight - ModalHeight) * 0.5f;
 
 	// Parchment Slate Card
-	DrawRect(FLinearColor(0.05f, 0.05f, 0.07f, 0.92f), ModalX, ModalY, ModalWidth, ModalHeight);
+	DrawRect(FLinearColor(0.04f, 0.04f, 0.06f, 0.95f), ModalX, ModalY, ModalWidth, ModalHeight);
 	// Outer Double Gold Border (Where Winds Meet style)
-	DrawRect(FLinearColor(0.82f, 0.68f, 0.38f, 0.95f), ModalX, ModalY, ModalWidth, 3.0f);
-	DrawRect(FLinearColor(0.82f, 0.68f, 0.38f, 0.95f), ModalX, ModalY + ModalHeight - 3.0f, ModalWidth, 3.0f);
-	DrawRect(FLinearColor(0.82f, 0.68f, 0.38f, 0.95f), ModalX, ModalY, 3.0f, ModalHeight);
-	DrawRect(FLinearColor(0.82f, 0.68f, 0.38f, 0.95f), ModalX + ModalWidth - 3.0f, ModalY, 3.0f, ModalHeight);
+	DrawRect(FLinearColor(0.85f, 0.72f, 0.40f, 0.95f), ModalX, ModalY, ModalWidth, 3.0f);
+	DrawRect(FLinearColor(0.85f, 0.72f, 0.40f, 0.95f), ModalX, ModalY + ModalHeight - 3.0f, ModalWidth, 3.0f);
+	DrawRect(FLinearColor(0.85f, 0.72f, 0.40f, 0.95f), ModalX, ModalY, 3.0f, ModalHeight);
+	DrawRect(FLinearColor(0.85f, 0.72f, 0.40f, 0.95f), ModalX + ModalWidth - 3.0f, ModalY, 3.0f, ModalHeight);
 
 	UFont* BigFont = GEngine->GetLargeFont();
 	UFont* MedFont = GEngine->GetMediumFont();
 	UFont* SmallFont = GEngine->GetSmallFont();
 
 	// Title
-	DrawText(ActiveArchiveTitle.ToString(), FLinearColor(0.96f, 0.88f, 0.62f, 1.0f), ModalX + 35.0f, ModalY + 25.0f, BigFont, 1.0f);
-	DrawRect(FLinearColor(0.60f, 0.50f, 0.30f, 0.70f), ModalX + 35.0f, ModalY + 65.0f, ModalWidth - 70.0f, 1.5f);
+	DrawText(ActiveArchiveTitle.ToString(), FLinearColor(0.98f, 0.90f, 0.65f, 1.0f), ModalX + 35.0f, ModalY + 22.0f, BigFont, 1.0f);
+	DrawRect(FLinearColor(0.65f, 0.55f, 0.35f, 0.75f), ModalX + 35.0f, ModalY + 62.0f, ModalWidth - 70.0f, 1.5f);
 
 	// Description Body
-	DrawText(ActiveArchiveDescription.ToString(), FLinearColor(0.85f, 0.85f, 0.88f, 0.95f), ModalX + 35.0f, ModalY + 80.0f, MedFont, 0.95f);
+	DrawText(ActiveArchiveDescription.ToString(), FLinearColor(0.88f, 0.88f, 0.92f, 0.95f), ModalX + 35.0f, ModalY + 76.0f, MedFont, 0.95f);
 
 	// Action button
-	DrawText(TEXT("[SPACE / E] Acknowledge & Continue Exploration"), FLinearColor(0.75f, 0.75f, 0.78f, 0.85f), ModalX + 35.0f, ModalY + ModalHeight - 35.0f, SmallFont, 0.9f);
+	DrawText(TEXT("[SPACE / E] Acknowledge & Continue Campus Exploration"), FLinearColor(0.78f, 0.78f, 0.82f, 0.90f), ModalX + 35.0f, ModalY + ModalHeight - 35.0f, SmallFont, 0.9f);
 }
