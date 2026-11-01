@@ -261,3 +261,48 @@ flowchart LR
    * Texture Streaming Pool: Clamped at $1000\text{ MB}$; zero texture dropouts or mipmap thrashing.
 3. **Artifact Elimination**:
    * All 10 screenshots produced via automated preflight script with zero editor gizmos, zero wireframe collision shapes, and zero selection outlines.
+
+---
+
+## Phase 2 Expanded Living Flora, Fauna & Micro-Ecology Suite
+
+### 14 Custom Botanical & Wildlife Assets
+
+| Asset Name | Category | Scientific / Ecological Identity | Native Campus Location |
+|---|---|---|---|
+| `SM_Tree_Debdaru_Columnar` | Canopy Tier 2 | *Polyalthia longifolia* (Mast Tree) | Curzon Parterre Promenade, Shaheed Minar Flanks |
+| `SM_Tree_Mahogany_Grand` | Emergent Tier 1 | *Swietenia macrophylla* (West Indian Mahogany) | Fuller Road Avenue, Hakim Chattar Grove |
+| `SM_Tree_Kadam_Bloom` | Flowering Tier 2 | *Neolamarckia cadamba* (Burflower-tree) | Hakim Chattar, TSC Plaza East |
+| `SM_Cluster_Bamboo_Grove` | Understory Tier 3 | *Bambusa tulda* (Bengal Bamboo) | Curzon South Boundary, Science Precinct Buffer |
+| `SM_Bush_Rangan_Scarlet` | Shrub Tier 3 | *Ixora coccinea* (Flame of the Woods) | Curzon Front Parterre, TSC Student Lawn |
+| `SM_Bush_Gandharaj_White` | Shrub Tier 3 | *Gardenia jasminoides* (Cape Jasmine) | Curzon Entrance Lawn, Kala Bhaban Forecourt |
+| `SM_Bush_Kamini_Hedge` | Formal Hedge Tier 3 | *Murraya paniculata* (Orange Jasmine) | Curzon Parterre Borders, Shaheed Sanctuary Pathway |
+| `SM_Grass_Tuft_Lawn` | Ground Tier 4 | *Cynodon dactylon* (Bermuda Grass / Durbaghash) | Curzon Courtyard, TSC Lawn |
+| `SM_Grass_Tall_Savanna` | Grassland Tier 4 | *Saccharum spontaneum* (Wild Sugarcane / Kashful) | The Mall Open Savanna, Arts Faculty Meadow |
+| `SM_Fern_Undergrowth_Cluster` | Undergrowth Tier 4 | *Dryopteris filix-mas* (Wood Fern) | Curzon Shaded Alleys, Botanical Pond Moist Banks |
+| `SM_Ground_LeafLitter_Patch` | Groundcover Tier 4 | Organic Tropical Leaf Litter & Moist Soil | Curzon Pond Edge, Banyan Tree Bases |
+| `SM_Wildlife_Bird_Doel` | Ambient Fauna | *Copsychus saularis* (Oriental Magpie-Robin / Doel) | Balustrades, Monument Perches, Tree Branches |
+| `SM_Wildlife_Butterfly_Cluster` | Ambient Fauna | *Catopsilia pomona* (Common Emigrant Butterfly) | Curzon Flower Beds, TSC Garden Borders |
+| `SM_Wildlife_Dragonfly_Pair` | Aquatic Fauna | *Brachythemis contaminata* (Ditch Jewel Dragonfly) | Curzon Botanical Pond Water Surface |
+
+### Geometric Clearance & Placement Verification
+
+* **Total Audited Environment Actors**: 184 actors
+* **Building Collision Violations**: 0 (PASS — minimum 12m setback from historic structures verified)
+* **Ground Anchoring**: 0 floating/buried defects (All flora grounded at Z=20 UU; fauna perched between Z=80 and Z=240 UU)
+* **Sightline Integrity**: Curzon Hall central approach corridor (Y: -600 to +600 UU) 100% unobstructed
+* **Bangla Academy Siting**: `Campus_HeroTree_7` calibrated to $(24000, -34500, 20)$ with $18.38\text{ m}$ clearance
+
+### In-Engine Verification Viewpoints (Photographic Suite)
+
+1. `C01_Curzon_Front_Elevation_Clean.png`: Symmetrical colonial facade framed by authentic fan palms and flowering Gandharaj shrubs.
+2. `C02_Curzon_Portal_Closeup.png`: High-resolution view of the 7-lobed cusped archway, terracotta relief, and Kamini hedges.
+3. `C03_Curzon_Physics_Wing.png`: West colonial science pavilion flanked by blooming Radhachura and Krishnachura canopies.
+4. `C04_Curzon_Pond_Ecology.png`: Botanical pond with brick Ghat steps, Jarul blossoms, water lilies, and leaning coconut palms.
+5. `ENV_01_Doyel_Chattar_Avenue.png`: Cultural roundabout approach with terracotta potters and blooming tree canopies.
+6. `ENV_02_Fuller_Road_Avenue.png`: Signature double-avenue tree tunnel forming a continuous living canopy overhead.
+7. `ENV_03_Shaheed_Minar_Sanctuary.png`: Sacred monument flanked by ceremonial Debdaru trees and grand Mahogany.
+8. `ENV_04_Hakim_Chattar_Grove.png`: Student cultural center nestled beneath flowering Kadam and ancient Raintrees.
+9. `ENV_05_Aparajeyo_Bangla_KalaBhaban.png`: Liberation War monument framed by manicured parterres and the Arts Faculty facade.
+10. `ENV_06_The_Mall_Banyan_Lawns.png`: Expansive green field anchored by century-old sacred Banyan (*Ficus benghalensis*) trees.
+
