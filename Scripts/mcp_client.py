@@ -96,6 +96,29 @@ def post_mcp(method, params, id_val=1):
                 continue
             raise RuntimeError(f"HTTP {e.code}: {err_body}")
 
+def invoke_tool(tool_name, toolset_name=None, arguments=None):
+    if arguments is None:
+        arguments = {}
+    params = {
+        "name": "call_tool",
+        "arguments": {
+            "tool_name": tool_name,
+            "arguments": arguments
+        }
+    }
+    if toolset_name:
+        params["arguments"]["toolset_name"] = toolset_name
+
+    res = post_mcp("tools/call", params)
+    if res.get("isError"):
+        msg = res.get("content", [{}])[0].get("text", "Unknown tool error")
+        raise RuntimeError(f"TOOL_ERROR: {msg}")
+    content = res.get("content", [])
+    if content:
+        text = content[0].get("text", "")
+        return json.loads(text) if text else {}
+    return {}
+
 def call_tool(tool_name, toolset_name=None, arguments=None):
     if arguments is None:
         arguments = {}
