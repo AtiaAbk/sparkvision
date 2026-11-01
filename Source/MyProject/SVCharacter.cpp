@@ -146,8 +146,22 @@ void ASVCharacter::Tick(float DeltaTime)
 
 	UpdateCameraFraming(DeltaTime);
 	UpdateVitals(DeltaTime);
-	ScanForInteractables();
-	CheckMissionProgression();
+
+	// CPU Optimization: Throttle interactable trace to 10 Hz (every 0.10s)
+	TimeSinceLastInteractScan += DeltaTime;
+	if (TimeSinceLastInteractScan >= 0.10f)
+	{
+		ScanForInteractables();
+		TimeSinceLastInteractScan = 0.0f;
+	}
+
+	// CPU Optimization: Throttle mission progression check to 4 Hz (every 0.25s)
+	TimeSinceLastMissionCheck += DeltaTime;
+	if (TimeSinceLastMissionCheck >= 0.25f)
+	{
+		CheckMissionProgression();
+		TimeSinceLastMissionCheck = 0.0f;
+	}
 }
 
 void ASVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -444,6 +458,14 @@ FString ASVCharacter::GetCurrentLandmarkName() const
 {
 	const FVector MyLoc = GetActorLocation();
 
+	// CPU Optimization: If player hasn't moved more than 200 units since last query, return cached landmark
+	if (!CachedLandmarkName.IsEmpty() && FVector::DistSquared2D(MyLoc, CachedLandmarkQueryLocation) < 40000.0f)
+	{
+		return CachedLandmarkName;
+	}
+
+	CachedLandmarkQueryLocation = MyLoc;
+
 	struct FLandmarkZone { FString Name; FVector Loc; float Radius; };
 	static const TArray<FLandmarkZone> Zones = {
 		{ TEXT("Curzon Hall Heritage Precinct | কার্জন হল প্রাঙ্গণ"), FVector(-2850.0f, 0.0f, 50.0f), 12000.0f },
@@ -458,10 +480,12 @@ FString ASVCharacter::GetCurrentLandmarkName() const
 	{
 		if (FVector::Dist2D(MyLoc, Z.Loc) <= Z.Radius)
 		{
-			return Z.Name;
+			CachedLandmarkName = Z.Name;
+			return CachedLandmarkName;
 		}
 	}
-	return TEXT("University of Dhaka Campus | ঢাকা বিশ্ববিদ্যালয়");
+	CachedLandmarkName = TEXT("University of Dhaka Campus | ঢাকা বিশ্ববিদ্যালয়");
+	return CachedLandmarkName;
 }
 
 void ASVCharacter::UpdateCameraFraming(float DeltaTime)

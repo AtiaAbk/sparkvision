@@ -228,4 +228,10 @@ private:
 	float TargetArmDistance = 380.0f;
 	float TargetFOV = 75.0f;
 	FVector TargetSocketOffset = FVector(0.0f, 45.0f, 25.0f);
+
+	// CPU Optimization: Frequency Throttling for Traces & Queries
+	float TimeSinceLastInteractScan = 0.0f;
+	float TimeSinceLastMissionCheck = 0.0f;
+	mutable FString CachedLandmarkName;
+	mutable FVector CachedLandmarkQueryLocation = FVector::ZeroVector;
 };
