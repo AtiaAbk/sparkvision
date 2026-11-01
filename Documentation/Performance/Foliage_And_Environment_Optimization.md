@@ -8,9 +8,9 @@
 A core visual pillar of the University of Dhaka campus is its lush tropical vegetation—including tall Royal Palms flanking Curzon Hall, the riparian ecology around the Curzon pond, shade-giving Banyan and Rain trees along The Mall and Fuller Road, and flowering shrubs at Hakim Chattar and TSC.
 
 The optimization strategy **did not remove or thin out vegetation**. Instead, it focused on:
-1. **Hierarchical Instancing**: Utilizing Nanite static mesh representation where supported and instanced static mesh components.
-2. **Culling Distance Calibration**: Setting aggressive small-foliage culling thresholds (`r.WireframeCullThreshold=5.0`) while keeping large landmark canopy trees visible at infinite horizon.
-3. **Shadow Optimization**: Using Virtual Shadow Maps with page caching so static foliage does not force per-frame shadow map redrawing.
+1. **Distance-Based Culling**: Setting small-foliage culling thresholds (`foliage.MinimumScreenSize=0.005`, `grass.CullDistanceScale=0.85`) while keeping large landmark canopy trees visible at infinite horizon.
+2. **LOD Distance Scaling**: Applying `foliage.LODDistanceScale=1.15` to transition distant foliage to lighter LOD representations smoothly.
+3. **Shadow Invalidation Protection**: Disabling per-frame VSM shadow invalidation on wind deformation (`r.Shadow.Virtual.Cache.InvalidateOnWorldPositionOffset=0`).
 
 ---
 
@@ -35,4 +35,4 @@ The optimization strategy **did not remove or thin out vegetation**. Instead, it
 
 ## 4. Verification
 
-Render captures (`POST_OPT_CURZON_HERO.png` and `POST_OPT_CURZON_POND.png`) prove that tree density, palm heights, pond foliage, and ground greenery remain visually identical to previous environmental milestones (`e86f6f0`).
+Render captures (`Visual_After/P01_Curzon_Hero.png` and `Visual_After/P02_Living_Campus_Greenery.png`) prove that tree density, palm heights, pond foliage, and ground greenery remain visually identical to previous environmental milestones.

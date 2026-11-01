@@ -10,7 +10,8 @@ Lighting and shadows create the atmospheric, cinematic feel of SparkVision's Whe
 By optimizing the lighting pipeline for Apple Silicon:
 - **Software Lumen** replaced Hardware Ray Tracing, utilizing Signed Distance Fields (SDF) and Screen-Space Tracing.
 - **Virtual Shadow Maps (VSMs)** were retained for razor-sharp contact shadows, but memory was constrained using page caching and physical page limits.
-- **Directional Light Cascades**: Enabled CSM caching so that non-moving campus architecture does not trigger shadow map redraws.
+- **WPO Shadow Cache Invalidation Protection**: Disabled per-frame invalidation on wind-animated foliage (`r.Shadow.Virtual.Cache.InvalidateOnWorldPositionOffset=0`).
+- **Lumen Surface Cache Throttling**: Spread radiosity updates across frames (`r.LumenScene.Radiosity.UpdateFactor=0.25`) to eliminate GPU frame time spikes.
 
 ---
 
@@ -32,22 +33,38 @@ r.GenerateMeshDistanceFields=True
 r.DistanceFields.DefaultVoxelDensity=0.200000
 ```
 
-### B. Virtual Shadow Map (VSM) Memory Tuning
+### B. Virtual Shadow Map (VSM) Memory Tuning & Foliage WPO Protection
 
-VSMs allocate pages on demand as geometry moves or changes. In large open-world maps, this can lead to memory fragmentation. By clamping the physical page pool to 2,048 pages and setting a resolution LOD bias of 1 for the directional sun light, VSM memory footprint was halved without softening critical contact shadows:
+VSMs allocate pages on demand as geometry moves or changes. In large open-world maps with wind-animated foliage, WPO previously invalidated shadow pages every frame. Setting `InvalidateOnWorldPositionOffset=0` and clamping the physical page pool to 2,048 pages stabilized GPU frame times:
 
 ```ini
 [SystemSettings]
 r.Shadow.Virtual.ResolutionLodBiasDirectional=1
 r.Shadow.Virtual.MaxPhysicalPages=2048
 r.Shadow.Virtual.Clipmap.MinPageAddressBits=4
-r.Shadow.CSMCaching=1
+r.Shadow.Virtual.Cache.InvalidateOnWorldPositionOffset=0
+r.Shadow.Virtual.Cache.WPOThreshold=2.0
+r.Shadow.Virtual.Cache.DeformableMeshes=0
+r.Shadow.RadiusThreshold=0.04
+r.Shadow.Virtual.NormalBias=0.5
+```
+
+### C. Smooth Lumen Frame Pacing
+
+```ini
+[SystemSettings]
+r.LumenScene.Radiosity.UpdateFactor=0.25
+r.LumenScene.SurfaceCache.UpdateFactor=0.25
+r.Lumen.ScreenProbeGather.DownsampleFactor=16
+r.Lumen.ScreenProbeGather.TracingOctahedronResolution=8
+r.Lumen.Reflections.DownsampleFactor=2
+r.Lumen.Reflections.SmoothBias=0.10
 ```
 
 ---
 
 ## 3. Results & Visual Verification
 
-- In `POST_OPT_CURZON_HERO.png`, the palm frond shadows cast sharply onto the reddish facade of the Curzon entrance arch.
+- In `Visual_After/P01_Curzon_Hero.png`, the palm frond shadows cast sharply onto the reddish facade of the Curzon entrance arch with zero shadow flutter.
 - Underneath the portico and recessed doorways, ambient occlusion provides natural soft shading without noise or temporal ghosting.
-- In `POST_OPT_GAMEPLAY_TRAVERSAL.png`, the student NPC and Archive Terminal cast clear contact shadows onto the limestone steps.
+- In `Visual_After/P04_ThirdPerson_Gameplay.png`, the player pawn and stone portico steps cast clear contact shadows onto the limestone landing.

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "P01",
+    "name": "Curzon Hall Hero Elevation",
+    "description": "Front colonial facade, Indo-Saracenic arches, entrance promenade",
+    "elapsed_s": 0.992,
+    "file": "P01_Curzon_Hero.png",
+    "size_bytes": 3072786
+  },
+  {
+    "id": "P02",
+    "name": "Living Campus Greenery & Pond",
+    "description": "Curzon pond ecology, riparian trees, water lilies, reeds",
+    "elapsed_s": 1.029,
+    "file": "P02_Living_Campus_Greenery.png",
+    "size_bytes": 3206368
+  },
+  {
+    "id": "P03",
+    "name": "Full Campus Panoramic Vista",
+    "description": "The Mall open field, Arts Faculty, distant skyline",
+    "elapsed_s": 0.998,
+    "file": "P03_Full_Campus_Vista.png",
+    "size_bytes": 2677821
+  },
+  {
+    "id": "P04",
+    "name": "Third-Person Gameplay Traversal",
+    "description": "Active player pawn locomotion at Curzon South Portico landing",
+    "elapsed_s": 1.011,
+    "file": "P04_ThirdPerson_Gameplay.png",
+    "size_bytes": 2852445
+  },
+  {
+    "id": "P05",
+    "name": "Interactive Gameplay Systems",
+    "description": "TSC Raju Memorial, Student NPC Fahim, Archive Terminal 03, active HUD",
+    "elapsed_s": 1.317,
+    "file": "P05_Interactive_Gameplay.png",
+    "size_bytes": 2203795
+  }
+]

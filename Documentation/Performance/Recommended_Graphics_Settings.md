@@ -1,49 +1,66 @@
 # SparkVision — Recommended Graphics Settings
-## Optimized Hardware Profiles for Apple Silicon and PC Targets
+## Multi-Tier Hardware Presets for Apple Silicon M4 and Workstations
 
 ---
 
-## 1. Apple Silicon M4 / 16 GB Tier (MacBook Air / Pro) — Primary Target
+## 1. Overview of Built-In Scalability Presets
 
-This profile is configured by default in `Config/DefaultEngine.ini`:
+SparkVision includes three finely tuned scalability profiles in `Config/DefaultScalability.ini`:
 
-| Setting Category | Recommended Setting | Rationale |
-| :--- | :--- | :--- |
-| **Global Illumination** | Lumen (Software Ray Tracing / Mesh SDF) | Fast signed distance field ray marching; avoids heavy BLAS rebuilds on Metal |
-| **Reflections** | Lumen (Screen Traces + Surface Cache) | High visual accuracy for water, glass, and wet marble with zero RT stalls |
-| **Anti-Aliasing** | Temporal Super Resolution (TSR, `r.AntiAliasingMethod=4`) | Superior subpixel detail and temporal stability on architectural geometry |
-| **Resolution Scale** | 80% – 85% (`r.ScreenPercentage=85`) | Native-like clarity with TSR upsampling, saving 30% fillrate |
-| **Shadows** | Virtual Shadow Maps (VSM) with CSM Caching | Razor-sharp contact shadows, clamped to 2,048 pages for memory stability |
-| **Texture Streaming Pool** | 1,000 MB (`r.Streaming.PoolSize=1000`) | Prevents unified memory blowout on 16 GB system memory |
-| **Substrate** | Disabled (`r.Substrate=False`) | Uses standard 16 bytes/pixel deferred GBuffer for optimal memory bandwidth |
+| Preset Tier | Profile Key | Target Framerate | Hardware Recommendation | Key Visual Characteristics |
+| :--- | :--- | :--- | :--- | :--- |
+| **Optimized** | `@1` (Balanced) | **60 FPS** | MacBook Air M4 (Battery / Cool Mode) | Software Lumen, 1,536 VSM pages, 60% foliage density, 250 MB RenderTarget pool |
+| **High Quality** | `@2` (Default) | **45 – 60 FPS** | MacBook Air M4 (AC Power Connected) | Full Software Lumen, 2,048 VSM pages, 75% foliage density, 300 MB RenderTarget pool |
+| **Cinematic** | `@3` (Fidelity) | **30 FPS / Screenshots** | M4 Pro / Max or Desktop Workstations | High-resolution Lumen, 3,072 VSM pages, 100% foliage density, 400 MB RenderTarget pool |
 
 ---
 
-## 2. Low-Power / Battery Saver Profile (M1 / M2 8GB)
+## 2. Default Configuration (`Config/DefaultEngine.ini`)
 
-For older Apple Silicon laptops or battery-saver play:
+By default, the project runs on **High Quality (`@2`)** with:
 
 ```ini
 [SystemSettings]
-r.ScreenPercentage=70
-r.Shadow.Virtual.ResolutionLodBiasDirectional=2
-r.Shadow.Virtual.MaxPhysicalPages=1024
-r.Streaming.PoolSize=600
-r.Lumen.DiffuseFilter.Quality=0
-r.Lumen.Reflections.SmoothBias=1
+; 1. Texture Streaming & Memory Pool Clamping
+r.TextureStreaming=1
+r.Streaming.PoolSize=1000
+r.Streaming.LimitPoolSizeToVRAM=1
+
+; 2. Lumen Software Ray Tracing
+r.Lumen.HardwareRayTracing=0
+r.Lumen.TraceMeshSDFs=1
+
+; 3. Virtual Shadow Map Memory Optimization
+r.Shadow.Virtual.ResolutionLodBiasDirectional=1
+r.Shadow.Virtual.MaxPhysicalPages=2048
+r.Shadow.Virtual.Clipmap.MinPageAddressBits=4
+r.Shadow.Virtual.Cache.InvalidateOnWorldPositionOffset=0
+r.Shadow.Virtual.Cache.WPOThreshold=2.0
+
+; 4. Dynamic Super Resolution & Temporal Antialiasing
+r.TemporalAA.Upsampling=1
+r.ScreenPercentage=80
+r.TSR.History.ScreenPercentage=100
+
+; 5. Lumen Frame Pacing & Surface Cache Throttling
+r.LumenScene.Radiosity.UpdateFactor=0.25
+r.LumenScene.SurfaceCache.UpdateFactor=0.25
+
+; 6. Foliage & Undergrowth Distance Culling
+foliage.MinimumScreenSize=0.005
+foliage.LODDistanceScale=1.15
+grass.CullDistanceScale=0.85
 ```
 
 ---
 
-## 3. High-End Desktop Tier (Apple M4 Max / Discrete PC GPU)
+## 3. Switching Presets In-Game
 
-For high-memory workstations:
+To switch presets at runtime via the in-game developer console or UI:
 
-```ini
-[SystemSettings]
-r.ScreenPercentage=100
-r.Shadow.Virtual.MaxPhysicalPages=4096
-r.Streaming.PoolSize=3000
-r.Lumen.HardwareRayTracing=1
-r.Lumen.Reflections.HardwareRayTracing.Translucent.Refraction.EnableForProject=1
-```
+- **Optimized (60 FPS Target)**:
+  `sg.ViewDistanceQuality 1` | `sg.ShadowQuality 1` | `sg.PostProcessQuality 1` | `sg.TextureQuality 1` | `sg.EffectsQuality 1` | `sg.FoliageQuality 1` | `sg.ShadingQuality 1`
+- **High Quality (Default)**:
+  `sg.ViewDistanceQuality 2` | `sg.ShadowQuality 2` | `sg.PostProcessQuality 2` | `sg.TextureQuality 2` | `sg.EffectsQuality 2` | `sg.FoliageQuality 2` | `sg.ShadingQuality 2`
+- **Cinematic (Screenshot Mode)**:
+  `sg.ViewDistanceQuality 3` | `sg.ShadowQuality 3` | `sg.PostProcessQuality 3` | `sg.TextureQuality 3` | `sg.EffectsQuality 3` | `sg.FoliageQuality 3` | `sg.ShadingQuality 3`
