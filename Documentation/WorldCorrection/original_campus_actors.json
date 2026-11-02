@@ -1,0 +1,5744 @@
+{
+  "Campus_Boundary": [
+    {
+      "label": "Boundary_Wall_East_HighCourt",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1774935866",
+      "location": {
+        "x": 12000,
+        "y": 9000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 19,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Boundary_Wall_South_Nimtoli",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1773600865",
+      "location": {
+        "x": -6489.305339377266,
+        "y": 9.343527889361084,
+        "z": 2.72797867227853
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 9,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Boundary_Wall_West_Nilkhet",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1777594868",
+      "location": {
+        "x": 72000,
+        "y": -118000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 17.5,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Boundary_Wall_North_Shahbagh",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1776268867",
+      "location": {
+        "x": 88000,
+        "y": -72000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 15,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Campus_Ground": [
+    {
+      "label": "Main_Campus_Ground_Terrain",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1766933860",
+      "location": {
+        "x": 35000,
+        "y": -50000,
+        "z": -10
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1600,
+        "y": 1400,
+        "z": 0.2
+      }
+    },
+    {
+      "label": "Curzon_Iconic_Botanical_Pond",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1769599862",
+      "location": {
+        "x": 4800,
+        "y": 0,
+        "z": 12
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 52,
+        "y": 36,
+        "z": 0.15
+      }
+    },
+    {
+      "label": "Curzon_Botanical_Plaza_Ground",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1768266861",
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 220,
+        "y": 180,
+        "z": 0.15
+      }
+    }
+  ],
+  "Distant_Skyline": [
+    {
+      "label": "Skyline_North_Shahbagh",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1493538494",
+      "location": {
+        "x": 92000,
+        "y": -55000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.5,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Skyline_West_Nilkhet",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1496204496",
+      "location": {
+        "x": 70000,
+        "y": -118000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.5,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Skyline_South_OldDhaka",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1497537497",
+      "location": {
+        "x": -16000,
+        "y": -30000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.5,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Skyline_East_HighCourt",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1494869495",
+      "location": {
+        "x": 25000,
+        "y": 15000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.5,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Arts_Faculty": [
+    {
+      "label": "TheMall_Banyan1_Litter",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1790423608",
+      "location": {
+        "x": 64000,
+        "y": -84000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "KalaBhaban_Walkway_Hedge_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1792424611",
+      "location": {
+        "x": 72500,
+        "y": -97500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TheMall_Kadam_Bloom_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1784423599",
+      "location": {
+        "x": 67000,
+        "y": -91000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "KalaBhaban_Lawn_Rangan_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1793760613",
+      "location": {
+        "x": 73500,
+        "y": -98500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -14.999999998545263,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Aparajeyo_Framing_Krishnachura_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1097723422",
+      "location": {
+        "x": 71500,
+        "y": -98500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "TheMall_WildGrass_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1785757601",
+      "location": {
+        "x": 65500,
+        "y": -85500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "KalaBhaban_Lawn_Gandharaj_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1878434644",
+      "location": {
+        "x": 71500,
+        "y": -98000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Aparajeyo_Framing_Krishnachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1097051421",
+      "location": {
+        "x": 71500,
+        "y": -93000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "TheMall_Banyan2_Fern",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1789760607",
+      "location": {
+        "x": 64000,
+        "y": -89000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "TheMall_WildGrass_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1787091603",
+      "location": {
+        "x": 66000,
+        "y": -90500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -14.999999998545263,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "KalaBhaban_Garden_Radhachura_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1138396435",
+      "location": {
+        "x": 70000,
+        "y": -100500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -49.9999999956944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "KalaBhaban_Forecourt_Debdaru_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1794425614",
+      "location": {
+        "x": 70500,
+        "y": -92000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "KalaBhaban_Forecourt_Debdaru_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1795092615",
+      "location": {
+        "x": 70500,
+        "y": -99500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "KalaBhaban_Lawn_Rangan_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1793090612",
+      "location": {
+        "x": 73500,
+        "y": -93000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TheMall_Kadam_Bloom_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1783757598",
+      "location": {
+        "x": 67000,
+        "y": -82000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 39.999999996387174,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "TheMall_Grand_Banyan_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1098387423",
+      "location": {
+        "x": 64000,
+        "y": -84000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.15,
+        "y": 1.15,
+        "z": 1.15
+      }
+    },
+    {
+      "label": "TheMall_Banyan2_Litter",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1791086609",
+      "location": {
+        "x": 64000,
+        "y": -89000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "KalaBhaban_Lawn_Gandharaj_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1877763643",
+      "location": {
+        "x": 71500,
+        "y": -93500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "KalaBhaban_Garden_Radhachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1137723434",
+      "location": {
+        "x": 70000,
+        "y": -91000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 49.99999999569441,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TheMall_Perimeter_Raintree_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1100390426",
+      "location": {
+        "x": 60000,
+        "y": -91000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "TheMall_West_Bamboo_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1783090597",
+      "location": {
+        "x": 61000,
+        "y": -90000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.15,
+        "y": 1.15,
+        "z": 1.15
+      }
+    },
+    {
+      "label": "TheMall_Grand_Banyan_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1099051424",
+      "location": {
+        "x": 64000,
+        "y": -89000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.15,
+        "y": 1.15,
+        "z": 1.15
+      }
+    },
+    {
+      "label": "TheMall_WildGrass_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1786422602",
+      "location": {
+        "x": 63000,
+        "y": -88500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 59.99999999513245,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "TheMall_WildGrass_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1785092600",
+      "location": {
+        "x": 63000,
+        "y": -82500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 9.999999999023998,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "KalaBhaban_Walkway_Hedge_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1791760610",
+      "location": {
+        "x": 72500,
+        "y": -94000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TheMall_Perimeter_Raintree_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1099726425",
+      "location": {
+        "x": 60000,
+        "y": -82000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "TheMall_LawnTuft_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1787758604",
+      "location": {
+        "x": 64000,
+        "y": -86000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TheMall_LawnTuft_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1788426605",
+      "location": {
+        "x": 66000,
+        "y": -87000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TheMall_Banyan1_Fern",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1789090606",
+      "location": {
+        "x": 64000,
+        "y": -84000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "TheMall_West_Bamboo_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1782426596",
+      "location": {
+        "x": 61000,
+        "y": -83000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.15,
+        "y": 1.15,
+        "z": 1.15
+      }
+    }
+  ],
+  "Environment/Curzon_Authentic_Landscape": [
+    {
+      "label": "Curzon_Authentic_Hedge_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1845493651",
+      "location": {
+        "x": -3450,
+        "y": 1200,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1,
+        "z": 0.85
+      }
+    },
+    {
+      "label": "Curzon_Authentic_Palm_Left",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1842150646",
+      "location": {
+        "x": -3400,
+        "y": -850,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 24.99999999762465,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.15
+      }
+    },
+    {
+      "label": "Curzon_Authentic_Palm_Right",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1842833647",
+      "location": {
+        "x": -3400,
+        "y": 850,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.15
+      }
+    },
+    {
+      "label": "Curzon_Authentic_Hedge_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1843492648",
+      "location": {
+        "x": -3450,
+        "y": -1200,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1,
+        "z": 0.85
+      }
+    },
+    {
+      "label": "Curzon_Authentic_Hedge_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1844824650",
+      "location": {
+        "x": -3450,
+        "y": 750,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1,
+        "z": 0.85
+      }
+    },
+    {
+      "label": "Curzon_Authentic_Hedge_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1844158649",
+      "location": {
+        "x": -3450,
+        "y": -750,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1,
+        "z": 0.85
+      }
+    }
+  ],
+  "Environment/Curzon_Landscape": [
+    {
+      "label": "Curzon_Litter_Patch_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1756427557",
+      "location": {
+        "x": 2200,
+        "y": 1200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Garden_Rangan_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1863100621",
+      "location": {
+        "x": -5600,
+        "y": 2200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Curzon_Wing_Krishnachura_East",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1867097627",
+      "location": {
+        "x": -5800,
+        "y": 5800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -64.99999999490602,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Parterre_Hedge_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1864434623",
+      "location": {
+        "x": -5200,
+        "y": 1800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Garden_Gandharaj_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1861087618",
+      "location": {
+        "x": -5400,
+        "y": -1200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Garden_Gandharaj_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1861767619",
+      "location": {
+        "x": -5400,
+        "y": 1200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Wing_Krishnachura_West",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1866431626",
+      "location": {
+        "x": -5800,
+        "y": -5800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 64.99999999490603,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Wing_Radhachura_West",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1865094624",
+      "location": {
+        "x": -5500,
+        "y": -4200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Parterre_Hedge_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1863765622",
+      "location": {
+        "x": -5200,
+        "y": -1800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Garden_Rangan_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1862433620",
+      "location": {
+        "x": -5600,
+        "y": -2200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Curzon_Avenue_Debdaru_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1867768628",
+      "location": {
+        "x": -5800,
+        "y": -3000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Curzon_Avenue_Debdaru_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1868434629",
+      "location": {
+        "x": -5800,
+        "y": 3000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Curzon_Wing_Radhachura_East",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1865766625",
+      "location": {
+        "x": -5500,
+        "y": 4200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Curzon_Pond": [
+    {
+      "label": "Curzon_Pond_Savanna_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1753759553",
+      "location": {
+        "x": 4200,
+        "y": -800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -24.999999997624627,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Pond_Fern_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1755089555",
+      "location": {
+        "x": 1500,
+        "y": -1000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Pond_Fern_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1755754556",
+      "location": {
+        "x": 3600,
+        "y": 1200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Pond_Savanna_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1753100552",
+      "location": {
+        "x": 1400,
+        "y": -600,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Pond_Savanna_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1754422554",
+      "location": {
+        "x": 4000,
+        "y": 800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    }
+  ],
+  "Environment/Curzon_Pond/Aquatic_Flora": [
+    {
+      "label": "CurzonPond_WaterLily_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1804104181",
+      "location": {
+        "x": 3400,
+        "y": -600,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_8",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1808783188",
+      "location": {
+        "x": 4200,
+        "y": 700,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1804768182",
+      "location": {
+        "x": 5100,
+        "y": -500,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.3,
+        "y": 1.3,
+        "z": 1.3
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1805439183",
+      "location": {
+        "x": 5800,
+        "y": 400,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 134.99999999602565,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1806097184",
+      "location": {
+        "x": 3800,
+        "y": 300,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 180,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.9,
+        "y": 0.9,
+        "z": 0.9
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_7",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1808105187",
+      "location": {
+        "x": 4700,
+        "y": -800,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -134.99999999602565,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.15,
+        "y": 1.15,
+        "z": 1.15
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1807440186",
+      "location": {
+        "x": 6200,
+        "y": -300,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_WaterLily_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1806771185",
+      "location": {
+        "x": 6600,
+        "y": 500,
+        "z": 14
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.25,
+        "y": 1.25,
+        "z": 1.25
+      }
+    }
+  ],
+  "Environment/Curzon_Pond/Pond_Architecture": [
+    {
+      "label": "Curzon_Pond_MainGhat",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1795427168",
+      "location": {
+        "x": 2350,
+        "y": 0,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Curzon_Pond/Riparian_Trees": [
+    {
+      "label": "CurzonPond_Jarul_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1799432174",
+      "location": {
+        "x": 3600,
+        "y": 2100,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Palm_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1800098175",
+      "location": {
+        "x": 4800,
+        "y": 2100,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Palm_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1800768176",
+      "location": {
+        "x": 6000,
+        "y": 2100,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Jarul_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1796753170",
+      "location": {
+        "x": 7400,
+        "y": 1200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Palm_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1801435177",
+      "location": {
+        "x": 7400,
+        "y": -500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Jarul_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1797424171",
+      "location": {
+        "x": 7400,
+        "y": 500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Jarul_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1798775173",
+      "location": {
+        "x": 5400,
+        "y": 2000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -70,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Palm_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1802766179",
+      "location": {
+        "x": 6600,
+        "y": 2000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 39.999999996387174,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Palm_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1802097178",
+      "location": {
+        "x": 2500,
+        "y": -1000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Jarul_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1798096172",
+      "location": {
+        "x": 7500,
+        "y": 0,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Jarul_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1796085169",
+      "location": {
+        "x": 2500,
+        "y": 1500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Palm_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1803435180",
+      "location": {
+        "x": 7100,
+        "y": 1500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -119.99999999513244,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Curzon_Pond/Wetland_Reeds": [
+    {
+      "label": "CurzonPond_Reeds_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1812772194",
+      "location": {
+        "x": 2800,
+        "y": -1650,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1809436189",
+      "location": {
+        "x": 3600,
+        "y": -1700,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1812105193",
+      "location": {
+        "x": 4800,
+        "y": -1700,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 59.99999999513245,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_7",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1813442195",
+      "location": {
+        "x": 6000,
+        "y": -1650,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_8",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1814103196",
+      "location": {
+        "x": 2800,
+        "y": 1650,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 119.99999999513244,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1810103190",
+      "location": {
+        "x": 3600,
+        "y": 1700,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 149.99999999718975,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1810772191",
+      "location": {
+        "x": 4800,
+        "y": 1700,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 180,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "CurzonPond_Reeds_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A951003_1811438192",
+      "location": {
+        "x": 6000,
+        "y": 1650,
+        "z": 18
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -149.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Doyel_Chattar": [
+    {
+      "label": "Doyel_Plaza_Krishnachura_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1087053406",
+      "location": {
+        "x": 10200,
+        "y": -17500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.999999995132434,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "Avenue_Debdaru_West_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1765758571",
+      "location": {
+        "x": 4800,
+        "y": -18500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Doyel_Avenue_Raintree_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1083067400",
+      "location": {
+        "x": 5400,
+        "y": -15600,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Avenue_Raintree_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1082398399",
+      "location": {
+        "x": 5200,
+        "y": -14200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 24.99999999762465,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Doyel_Avenue_Raintree_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1083727401",
+      "location": {
+        "x": 9800,
+        "y": -14200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 64.99999999490603,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Doyel_Roundabout_Rangan_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1761090564",
+      "location": {
+        "x": 8100,
+        "y": -16500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Avenue_Debdaru_West_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1764422569",
+      "location": {
+        "x": 4600,
+        "y": -13500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Doyel_Avenue_Raintree_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1085054403",
+      "location": {
+        "x": 6200,
+        "y": -19500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Avenue_Debdaru_East_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1765090570",
+      "location": {
+        "x": 10400,
+        "y": -13500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Doyel_Roundabout_Gandharaj_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1762421566",
+      "location": {
+        "x": 7500,
+        "y": -17100,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Avenue_Raintree_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1084387402",
+      "location": {
+        "x": 10000,
+        "y": -15600,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Avenue_Mahogany_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1767756574",
+      "location": {
+        "x": 10200,
+        "y": -22000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Doyel_Roundabout_Gandharaj_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1761756565",
+      "location": {
+        "x": 7500,
+        "y": -15900,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Plaza_Krishnachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1086387405",
+      "location": {
+        "x": 4800,
+        "y": -17500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "Avenue_Verge_Savanna_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1768424575",
+      "location": {
+        "x": 4500,
+        "y": -16000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Roundabout_Rangan_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1760423563",
+      "location": {
+        "x": 6900,
+        "y": -16500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Avenue_Debdaru_East_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1766420572",
+      "location": {
+        "x": 10200,
+        "y": -18500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Doyel_Avenue_Raintree_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1085721404",
+      "location": {
+        "x": 9000,
+        "y": -19500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Avenue_Verge_Savanna_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1769089576",
+      "location": {
+        "x": 10500,
+        "y": -16000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Plaza_Radhachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1087720407",
+      "location": {
+        "x": 7500,
+        "y": -20500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 9.999999999023998,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Avenue_Mahogany_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1767088573",
+      "location": {
+        "x": 4800,
+        "y": -22000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    }
+  ],
+  "Environment/Fuller_Road": [
+    {
+      "label": "Fuller_Savanna_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1777756589",
+      "location": {
+        "x": 30000,
+        "y": -61700,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1089721410",
+      "location": {
+        "x": 15000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 39.999999996387174,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Fuller_Mahogany_North_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1771759580",
+      "location": {
+        "x": 18000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 9.999999999023998,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1091722413",
+      "location": {
+        "x": 5000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -24.999999997624627,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Fuller_Debdaru_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1775087585",
+      "location": {
+        "x": 22000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Fuller_Litter_Patch_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1776423587",
+      "location": {
+        "x": 27000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Fuller_Debdaru_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1773089582",
+      "location": {
+        "x": 12000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1090388411",
+      "location": {
+        "x": 27000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1089055409",
+      "location": {
+        "x": 10000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -14.999999998545263,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Fuller_Debdaru_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1774423584",
+      "location": {
+        "x": 12000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1091056412",
+      "location": {
+        "x": 32000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_7",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1092388414",
+      "location": {
+        "x": 10000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1088387408",
+      "location": {
+        "x": 5000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 9.999999999023998,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_9",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1093723416",
+      "location": {
+        "x": 32000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Fuller_Mahogany_South_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1772420581",
+      "location": {
+        "x": 18000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -14.999999998545263,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Fuller_Savanna_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1777089588",
+      "location": {
+        "x": 15000,
+        "y": -56800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "FullerRoad_Avenue_Raintree_8",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1093054415",
+      "location": {
+        "x": 27000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -9.999999999023998,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Fuller_Litter_Patch_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1775757586",
+      "location": {
+        "x": 10000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Fuller_Debdaru_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1773756583",
+      "location": {
+        "x": 22000,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    }
+  ],
+  "Environment/Shaheed_Minar": [
+    {
+      "label": "Shaheed_Lawn_Gandharaj_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1871764634",
+      "location": {
+        "x": -3500,
+        "y": -52500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shaheed_Flank_Debdaru_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1869100630",
+      "location": {
+        "x": -3400,
+        "y": -54000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Shaheed_Sanctuary_Banyan_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1133068427",
+      "location": {
+        "x": -3200,
+        "y": -51000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.85,
+        "y": 0.85,
+        "z": 0.85
+      }
+    },
+    {
+      "label": "Shaheed_Memorial_Krishnachura_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1135060430",
+      "location": {
+        "x": 2800,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -74.99999999457094,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "Shaheed_Banyan_Fern_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1770424578",
+      "location": {
+        "x": 1600,
+        "y": -52000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -14.999999998545263,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shaheed_Sanctuary_Banyan_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1133729428",
+      "location": {
+        "x": 2800,
+        "y": -51000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.85,
+        "y": 0.85,
+        "z": 0.85
+      }
+    },
+    {
+      "label": "Shaheed_Lawn_Gandharaj_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1872429635",
+      "location": {
+        "x": 2900,
+        "y": -52500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shaheed_Walkway_Hedge_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1871097633",
+      "location": {
+        "x": 2600,
+        "y": -51000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shaheed_Walkway_Hedge_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1870433632",
+      "location": {
+        "x": -3200,
+        "y": -51000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shaheed_Memorial_Krishnachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1134395429",
+      "location": {
+        "x": -3200,
+        "y": -57000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 74.99999999457096,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "Shaheed_Flank_Debdaru_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1869768631",
+      "location": {
+        "x": 2800,
+        "y": -54000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Shaheed_Banyan_Fern_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1769755577",
+      "location": {
+        "x": -2200,
+        "y": -52000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Shahidullah_Hall/Lake_Ecology": [
+    {
+      "label": "Shahidullah_Lake_Reeds_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1491224362",
+      "location": {
+        "x": 12800,
+        "y": 21000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Jarul_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1488568358",
+      "location": {
+        "x": 13000,
+        "y": 22000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Palm_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1487226356",
+      "location": {
+        "x": 16000,
+        "y": 21000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 110,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Jarul_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1489234359",
+      "location": {
+        "x": 16800,
+        "y": 22000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Lilies_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1490570361",
+      "location": {
+        "x": 15800,
+        "y": 23500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.3,
+        "y": 1.3,
+        "z": 1.3
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Palm_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1486570355",
+      "location": {
+        "x": 14000,
+        "y": 20500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 74.99999999457096,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Palm_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1487896357",
+      "location": {
+        "x": 17500,
+        "y": 22500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 144.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Reeds_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1491902363",
+      "location": {
+        "x": 17200,
+        "y": 21500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -24.999999997624627,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Lilies_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1489901360",
+      "location": {
+        "x": 14500,
+        "y": 23000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.5,
+        "y": 1.5,
+        "z": 1.5
+      }
+    },
+    {
+      "label": "Shahidullah_Lake_Palm_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1485899354",
+      "location": {
+        "x": 12500,
+        "y": 21500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Shahidullah_Hall/Quad_Banyan": [
+    {
+      "label": "Shahidullah_Quad_Banyan",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A911003_1485225353",
+      "location": {
+        "x": 15000,
+        "y": 25000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
+      }
+    }
+  ],
+  "Environment/TSC_Raju": [
+    {
+      "label": "TSC_Courtyard_Palm_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1095056418",
+      "location": {
+        "x": 56000,
+        "y": -58000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "Library_Lawn_Radhachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1137063433",
+      "location": {
+        "x": 69000,
+        "y": -68500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -14.999999998545263,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TSC_Courtyard_Palm_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1095724419",
+      "location": {
+        "x": 56000,
+        "y": -60500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "HakimChattar_Neem_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1135730431",
+      "location": {
+        "x": 68500,
+        "y": -72500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Fern_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1780423593",
+      "location": {
+        "x": 74500,
+        "y": -73800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Library_Gandharaj_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1877106642",
+      "location": {
+        "x": 69000,
+        "y": -69500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TSC_Lawn_Rangan_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1874457638",
+      "location": {
+        "x": 55500,
+        "y": -56000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 24.99999999762465,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Library_Debdaru_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1876428641",
+      "location": {
+        "x": 68500,
+        "y": -69000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "HakimChattar_Neem_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1094387417",
+      "location": {
+        "x": 69000,
+        "y": -71500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 59.99999999513245,
+        "roll": 0
+      },
+      "scale": {
+        "x": 0.95,
+        "y": 0.95,
+        "z": 0.95
+      }
+    },
+    {
+      "label": "HakimChattar_Fern_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1779759592",
+      "location": {
+        "x": 71000,
+        "y": -73800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TSC_Plaza_Hedge_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1873766637",
+      "location": {
+        "x": 62500,
+        "y": -64000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Neem_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1136395432",
+      "location": {
+        "x": 68500,
+        "y": -74500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -39.99999999638715,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.05,
+        "z": 1.05
+      }
+    },
+    {
+      "label": "HakimChattar_Kadam_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1875096639",
+      "location": {
+        "x": 68500,
+        "y": -74500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TSC_Corner_Bamboo_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1778421590",
+      "location": {
+        "x": 55000,
+        "y": -62000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 19.999999999999996,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TSC_Lawn_Krishnachura_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AC51003_1096388420",
+      "location": {
+        "x": 66000,
+        "y": -61500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Mahogany_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1875762640",
+      "location": {
+        "x": 67500,
+        "y": -71500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -24.999999997624627,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    },
+    {
+      "label": "TSC_Plaza_Hedge_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1873099636",
+      "location": {
+        "x": 55500,
+        "y": -64000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Litter_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1781089594",
+      "location": {
+        "x": 71000,
+        "y": -73800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Environment/Wildlife": [
+    {
+      "label": "Curzon_Garden_Butterflies_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1758421560",
+      "location": {
+        "x": -5600,
+        "y": -1200,
+        "z": 80
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 14.999999998545286,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Monument_Doel",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1763089567",
+      "location": {
+        "x": 7500,
+        "y": -16300,
+        "z": 180
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 44.999999996025664,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Pond_Dragonflies_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1759754562",
+      "location": {
+        "x": 3200,
+        "y": 300,
+        "z": 65
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Shaheed_Banyan_Doel",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1771090579",
+      "location": {
+        "x": -2200,
+        "y": -52000,
+        "z": 220
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 59.99999999513245,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Pond_Dragonflies_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1759090561",
+      "location": {
+        "x": 2600,
+        "y": -200,
+        "z": 65
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 24.99999999762465,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Balustrade_Doel_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1757091558",
+      "location": {
+        "x": -5400,
+        "y": 0,
+        "z": 150
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "KalaBhaban_Butterflies",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1796424617",
+      "location": {
+        "x": 73500,
+        "y": -93000,
+        "z": 70
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "TSC_Flower_Butterflies",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1779090591",
+      "location": {
+        "x": 57500,
+        "y": -58000,
+        "z": 70
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Garden_Butterflies",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1763753568",
+      "location": {
+        "x": 7500,
+        "y": -16800,
+        "z": 70
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Garden_Doel_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1757757559",
+      "location": {
+        "x": -5400,
+        "y": 1200,
+        "z": 140
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -44.99999999602567,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Aparajeyo_Framing_Doel",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1795758616",
+      "location": {
+        "x": 71500,
+        "y": -93000,
+        "z": 220
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -29.99999999718972,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Doel",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918AD11003_1781758595",
+      "location": {
+        "x": 71000,
+        "y": -73800,
+        "z": 200
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 80,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Gameplay_Test": [
+    {
+      "label": "ArchiveTerminal_archive_04",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SVArchiveTerminal_UAID_685EDD40918A631003_1972154159",
+      "location": {
+        "x": 73200,
+        "y": -71500,
+        "z": 30
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ArchiveTerminal_archive_02",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SVArchiveTerminal_UAID_685EDD40918A631003_1972151157",
+      "location": {
+        "x": 73200,
+        "y": -95500,
+        "z": 30
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ArchiveTerminal_archive_01",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SVArchiveTerminal_UAID_685EDD40918A631003_1972149156",
+      "location": {
+        "x": -2800,
+        "y": -250,
+        "z": 30
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ArchiveTerminal_archive_03",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SVArchiveTerminal_UAID_685EDD40918A631003_1972152158",
+      "location": {
+        "x": 58800,
+        "y": -63500,
+        "z": 30
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ArchiveTerminal_archive_05",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SVArchiveTerminal_UAID_685EDD40918A631003_1972155160",
+      "location": {
+        "x": 60400,
+        "y": -60200,
+        "z": 30
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Green_Spaces": [
+    {
+      "label": "Green_TSCOpenGatheringLawn",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1825031912",
+      "location": {
+        "x": 61500,
+        "y": -63000,
+        "z": 12
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 40,
+        "y": 35,
+        "z": 0.1
+      }
+    },
+    {
+      "label": "Green_MallChattarOpenLawns",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1824883911",
+      "location": {
+        "x": 69000,
+        "y": -88000,
+        "z": 12
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 90,
+        "y": 110,
+        "z": 0.1
+      }
+    },
+    {
+      "label": "Green_SuhrawardyUdyanScenicBorder",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1824799910",
+      "location": {
+        "x": 45000,
+        "y": -22000,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.10000000000002,
+        "roll": 0
+      },
+      "scale": {
+        "x": 350,
+        "y": 180,
+        "z": 0.1
+      }
+    }
+  ],
+  "Green_Spaces/Hero_Trees": [
+    {
+      "label": "Campus_HeroTree_7",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2061908243",
+      "location": {
+        "x": 24000,
+        "y": -34500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.4,
+        "y": 1.4,
+        "z": 1.4
+      }
+    },
+    {
+      "label": "Campus_HeroTree_9",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2063244245",
+      "location": {
+        "x": -1800,
+        "y": -56000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.3,
+        "y": 1.3,
+        "z": 1.3
+      }
+    },
+    {
+      "label": "Campus_HeroTree_8",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2062569244",
+      "location": {
+        "x": 38000,
+        "y": -48000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.4,
+        "y": 1.4,
+        "z": 1.4
+      }
+    },
+    {
+      "label": "Campus_HeroTree_5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2060580241",
+      "location": {
+        "x": 6200,
+        "y": -15000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.3,
+        "y": 1.3,
+        "z": 1.3
+      }
+    },
+    {
+      "label": "Campus_HeroTree_6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2061235242",
+      "location": {
+        "x": 8800,
+        "y": -17500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.1,
+        "y": 1.1,
+        "z": 1.1
+      }
+    }
+  ],
+  "Hero_Buildings": [
+    {
+      "label": "TSC_Cafeteria_CourtyardRing",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1809604892",
+      "location": {
+        "x": 61500,
+        "y": -58000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 30,
+        "y": 30,
+        "z": 10
+      }
+    },
+    {
+      "label": "RajuMemorialSculpture_CustomArtMesh",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1861974916",
+      "location": {
+        "x": 58964,
+        "y": -63725,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Arts_Faculty": [
+    {
+      "label": "ArtsFaculty_KalaBhaban_AcademicBlock",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1820271900",
+      "location": {
+        "x": 78214,
+        "y": -95794,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Hero_AparajeyoBangla_Sculpture",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2056571235",
+      "location": {
+        "x": 73486,
+        "y": -95794,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
+      }
+    }
+  ],
+  "Hero_Buildings/Central_Library": [
+    {
+      "label": "Hero_CentralLibrary_Building",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2054569232",
+      "location": {
+        "x": 73459,
+        "y": -71699,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Bench_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2055915234",
+      "location": {
+        "x": 72500,
+        "y": -72200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "HakimChattar_Bench_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2055252233",
+      "location": {
+        "x": 72500,
+        "y": -71200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Central_Mosque": [
+    {
+      "label": "Hero_DU_CentralMosque",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1484224487",
+      "location": {
+        "x": 82582,
+        "y": -72180,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Curzon_Detail": [
+    {
+      "label": "Curzon_Hero_VerandaUpper_E4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1834822635",
+      "location": {
+        "x": -2500,
+        "y": 3700,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_E1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1828822626",
+      "location": {
+        "x": -2500,
+        "y": 1300,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_E5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1836156637",
+      "location": {
+        "x": -2500,
+        "y": 4500,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Tower_West",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1840150643",
+      "location": {
+        "x": -2500,
+        "y": -6000,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 22.4999999978491,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Sign_Physics",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1841492645",
+      "location": {
+        "x": -2480,
+        "y": 2100,
+        "z": 620
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_W2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1819476612",
+      "location": {
+        "x": -2585,
+        "y": -2100,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_W4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1823488618",
+      "location": {
+        "x": -2585,
+        "y": -3700,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_E1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1828153625",
+      "location": {
+        "x": -2500,
+        "y": 1300,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_W4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1822150616",
+      "location": {
+        "x": -2500,
+        "y": -3700,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_W5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1824151619",
+      "location": {
+        "x": -2500,
+        "y": -4500,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_W5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1825488621",
+      "location": {
+        "x": -2585,
+        "y": -4500,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_W1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1816815608",
+      "location": {
+        "x": -2500,
+        "y": -1300,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_E6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1838154640",
+      "location": {
+        "x": -2500,
+        "y": 5300,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_StreetLamp_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1846825653",
+      "location": {
+        "x": -3800,
+        "y": -1800,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_W6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1827487624",
+      "location": {
+        "x": -2585,
+        "y": -5300,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_W1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1816150607",
+      "location": {
+        "x": -2500,
+        "y": -1300,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_E6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1839492642",
+      "location": {
+        "x": -2585,
+        "y": 5300,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_W5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1824821620",
+      "location": {
+        "x": -2500,
+        "y": -4500,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_W2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1818148610",
+      "location": {
+        "x": -2500,
+        "y": -2100,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_StreetLamp_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1848158655",
+      "location": {
+        "x": -3800,
+        "y": 1800,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_E3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1833490633",
+      "location": {
+        "x": -2585,
+        "y": 2900,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_E2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1830817629",
+      "location": {
+        "x": -2500,
+        "y": 2100,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_E2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1831485630",
+      "location": {
+        "x": -2585,
+        "y": 2100,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_W4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1822819617",
+      "location": {
+        "x": -2500,
+        "y": -3700,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_W3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1820817614",
+      "location": {
+        "x": -2500,
+        "y": -2900,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_E3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1832160631",
+      "location": {
+        "x": -2500,
+        "y": 2900,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_E6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1838822641",
+      "location": {
+        "x": -2500,
+        "y": 5300,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_W6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1826821623",
+      "location": {
+        "x": -2500,
+        "y": -5300,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_StreetLamp_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1847493654",
+      "location": {
+        "x": -3400,
+        "y": 1800,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_W1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1817487609",
+      "location": {
+        "x": -2585,
+        "y": -1300,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_W3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1820150613",
+      "location": {
+        "x": -2500,
+        "y": -2900,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_E3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1832824632",
+      "location": {
+        "x": -2500,
+        "y": 2900,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_W3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1821484615",
+      "location": {
+        "x": -2585,
+        "y": -2900,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_W6",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1826154622",
+      "location": {
+        "x": -2500,
+        "y": -5300,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_E1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1829489627",
+      "location": {
+        "x": -2585,
+        "y": 1300,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_E4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1834150634",
+      "location": {
+        "x": -2500,
+        "y": 3700,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_EntrancePortal",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1815488606",
+      "location": {
+        "x": -2500,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_StreetLamp_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1846157652",
+      "location": {
+        "x": -3400,
+        "y": -1800,
+        "z": 15
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaLower_E2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1830154628",
+      "location": {
+        "x": -2500,
+        "y": 2100,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_W2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1818817611",
+      "location": {
+        "x": -2500,
+        "y": -2100,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Tower_East",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1840826644",
+      "location": {
+        "x": -2500,
+        "y": 6000,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -22.499999997849102,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_E4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1835489636",
+      "location": {
+        "x": -2585,
+        "y": 3700,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_Parapet_E5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1837488639",
+      "location": {
+        "x": -2585,
+        "y": 4500,
+        "z": 1260
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Curzon_Hero_VerandaUpper_E5",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A9D1003_1836824638",
+      "location": {
+        "x": -2500,
+        "y": 4500,
+        "z": 640
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Curzon_Hall": [
+    {
+      "label": "Supporting_CurzonChemistryPhysicsLabs",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1824031906",
+      "location": {
+        "x": 6500,
+        "y": 4400,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Supporting_Curzon_PhysicsAnnex",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1489536491",
+      "location": {
+        "x": 6500,
+        "y": -4400,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Doyel_Chattar": [
+    {
+      "label": "Doyel_Lamp_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2049241224",
+      "location": {
+        "x": 7507,
+        "y": -17287,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Lamp_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2047245221",
+      "location": {
+        "x": 6700,
+        "y": -16487,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Supporting_BanglaAcademyComplex",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1823862905",
+      "location": {
+        "x": 18000,
+        "y": -28000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.10000000000002,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Hero_DoyelChattar_Monument",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2046596220",
+      "location": {
+        "x": 7507,
+        "y": -16487,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1.2,
+        "y": 1.2,
+        "z": 1.2
+      }
+    },
+    {
+      "label": "Doyel_Lamp_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2048581223",
+      "location": {
+        "x": 7507,
+        "y": -15687,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Doyel_Lamp_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2047909222",
+      "location": {
+        "x": 8300,
+        "y": -16487,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Nazrul_Mausoleum": [
+    {
+      "label": "Hero_NazrulIslam_Mausoleum",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2057240236",
+      "location": {
+        "x": 87224,
+        "y": -71761,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Shaheed_Minar": [
+    {
+      "label": "ShaheedMinar_Lamp_4",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2052571229",
+      "location": {
+        "x": 800,
+        "y": -52800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ShaheedMinar_Lamp_3",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2051909228",
+      "location": {
+        "x": 800,
+        "y": -55200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ShaheedMinar_Lamp_1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2050583226",
+      "location": {
+        "x": -1500,
+        "y": -55200,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Hero_ShaheedMinar_Monument",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2049910225",
+      "location": {
+        "x": -282,
+        "y": -54042,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ShaheedMinar_Lamp_2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2051248227",
+      "location": {
+        "x": -1500,
+        "y": -52800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/Student_Halls": [
+    {
+      "label": "Hero_DrShahidullah_Hall",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1486872489",
+      "location": {
+        "x": 5000,
+        "y": -5000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Supporting_JagannathHallComplex",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1824198907",
+      "location": {
+        "x": 20000,
+        "y": -55000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Hero_Rokeya_Hall",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1488204490",
+      "location": {
+        "x": 42000,
+        "y": -66000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Supporting_SurjaSenHallBlock",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1824367908",
+      "location": {
+        "x": 66000,
+        "y": -93000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Hero_SalimullahMuslim_Hall",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1485540488",
+      "location": {
+        "x": 15000,
+        "y": -68000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Supporting_HajiMuhammadMohsinHall",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1824535909",
+      "location": {
+        "x": 64000,
+        "y": -102000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Hero_Buildings/TSC_Raju": [
+    {
+      "label": "Hero_TSC_AuditoriumComplex",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A6E1003_2053912231",
+      "location": {
+        "x": 61200,
+        "y": -59500,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 154.99999999762466,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Lighting": [
+    {
+      "label": "SM_SkySphere",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_F4A475FF15A3736A02_1961928692",
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 400,
+        "y": 400,
+        "z": 400
+      }
+    }
+  ],
+  "Lighting_Environment": [
+    {
+      "label": "DirectionalLight",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.DirectionalLight_UAID_F4A475FF15A3736A02_1961932697",
+      "location": {
+        "x": -150000,
+        "y": -150000,
+        "z": 50000
+      },
+      "rotation": {
+        "pitch": -49.999999993301685,
+        "yaw": -29.999999995628002,
+        "roll": 2.4740323499479163e-15
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "SkyLight",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SkyLight_UAID_F4A475FF15A3736A02_1961943709",
+      "location": {
+        "x": -150000,
+        "y": -150000,
+        "z": 50000
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "ExponentialHeightFog",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.ExponentialHeightFog_UAID_F4A475FF15A3736A02_1961936700",
+      "location": {
+        "x": -5600,
+        "y": -50,
+        "z": -6850
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "PostProcessVolume",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.PostProcessVolume_UAID_F4A475FF15A3736A02_1961895679",
+      "location": {
+        "x": -150000,
+        "y": -150000,
+        "z": 50000
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "SkyAtmosphere",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.SkyAtmosphere_UAID_F4A475FF15A3736A02_1961927691",
+      "location": {
+        "x": -150000,
+        "y": -150000,
+        "z": 50000
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "VolumetricCloud",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.VolumetricCloud_UAID_F4A475FF15A3736A02_1961900685",
+      "location": {
+        "x": -150000,
+        "y": -150000,
+        "z": 50000
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Pedestrian_Paths": [
+    {
+      "label": "PedestrianPath_HakimChattar_Hub",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1793603880",
+      "location": {
+        "x": 72112,
+        "y": -74500,
+        "z": 8
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 30,
+        "y": 25,
+        "z": 0.15
+      }
+    },
+    {
+      "label": "PedestrianPath_Curzon_SouthPromenade",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1792270879",
+      "location": {
+        "x": -2200,
+        "y": 0,
+        "z": 8
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 45,
+        "y": 10,
+        "z": 0.15
+      }
+    },
+    {
+      "label": "PedestrianPlaza_ShaheedMinar_MarbleAltar",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1796266882",
+      "location": {
+        "x": -1273,
+        "y": -53973,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 60,
+        "y": 60,
+        "z": 0.4
+      }
+    },
+    {
+      "label": "PedestrianPath_AparajeyoBangla_Plaza",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1794937881",
+      "location": {
+        "x": 73486,
+        "y": -95794,
+        "z": 8
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 35,
+        "y": 35,
+        "z": 0.15
+      }
+    }
+  ],
+  "Playable_Route": [
+    {
+      "label": "PlayerStart_CurzonPromenade",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.PlayerStart_UAID_F4A475FF15A3736A02_1961960731",
+      "location": {
+        "x": -3500,
+        "y": 0,
+        "z": 200
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Primary_Roads": [
+    {
+      "label": "PrimaryRoad_MallRoad_To_ArtsFaculty",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1789602877",
+      "location": {
+        "x": 71907,
+        "y": -85000,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 240,
+        "y": 14,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_Curzon_To_DoyelChattar",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1778947869",
+      "location": {
+        "x": 2753,
+        "y": -8243,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.999999995132434,
+        "roll": 0
+      },
+      "scale": {
+        "x": 190,
+        "y": 14,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_UniversityAve_Segment1",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1782936872",
+      "location": {
+        "x": 42000,
+        "y": -35000,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.10000000000002,
+        "roll": 0
+      },
+      "scale": {
+        "x": 380,
+        "y": 14,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_NazrulAve_Library_To_Shahbagh",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1788261876",
+      "location": {
+        "x": 78500,
+        "y": -72600,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 140,
+        "y": 14,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_TSCMor_RajuPlaza",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1785602874",
+      "location": {
+        "x": 58964,
+        "y": -63725,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 40,
+        "y": 40,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_UniversityAve_Segment2",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1784268873",
+      "location": {
+        "x": 51000,
+        "y": -50000,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.10000000000002,
+        "roll": 0
+      },
+      "scale": {
+        "x": 280,
+        "y": 14,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_NazrulAve_TSC_To_Library",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1786936875",
+      "location": {
+        "x": 65538,
+        "y": -68342,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -34.99999999677618,
+        "roll": 0
+      },
+      "scale": {
+        "x": 160,
+        "y": 14,
+        "z": 0.12
+      }
+    },
+    {
+      "label": "PrimaryRoad_FullerRoad_To_ShaheedMinar",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1790937878",
+      "location": {
+        "x": 28845,
+        "y": -58849,
+        "z": 6
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 9.200000000000001,
+        "roll": 0
+      },
+      "scale": {
+        "x": 610,
+        "y": 14,
+        "z": 0.12
+      }
+    }
+  ],
+  "Restricted_Areas": [
+    {
+      "label": "Restricted_JagannathHall_PerimeterFence",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1825310914",
+      "location": {
+        "x": 20000,
+        "y": -50000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Restricted_ArtsFaculty_DeanArchive_Barrier",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1825477915",
+      "location": {
+        "x": 76500,
+        "y": -97030,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    },
+    {
+      "label": "Restricted_Curzon_ResearchLab_Gate",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A671003_1825171913",
+      "location": {
+        "x": 4000,
+        "y": 3800,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 89.99999999437944,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Supporting_Buildings/Academic": [
+    {
+      "label": "Supporting_IBA_Building",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1492213493",
+      "location": {
+        "x": 53000,
+        "y": -52000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": -59.10000000000002,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ],
+  "Supporting_Buildings/Administrative": [
+    {
+      "label": "Supporting_Admin_RegistrarBuilding",
+      "refPath": "/Game/SparkVision/Maps/Campus/LV_Campus_Blockout.LV_Campus_Blockout:PersistentLevel.StaticMeshActor_UAID_685EDD40918A871003_1490870492",
+      "location": {
+        "x": 66000,
+        "y": -78000,
+        "z": 20
+      },
+      "rotation": {
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      }
+    }
+  ]
+}
