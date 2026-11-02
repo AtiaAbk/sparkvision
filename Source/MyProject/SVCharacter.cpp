@@ -147,6 +147,26 @@ void ASVCharacter::Tick(float DeltaTime)
 	UpdateCameraFraming(DeltaTime);
 	UpdateVitals(DeltaTime);
 
+	// Direct keyboard movement fallback for responsive WASD/arrow controls without invalid AxisKey ensures
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		float ForwardInput = 0.0f;
+		float RightInput = 0.0f;
+		if (PC->IsInputKeyDown(EKeys::W) || PC->IsInputKeyDown(EKeys::Up)) ForwardInput += 1.0f;
+		if (PC->IsInputKeyDown(EKeys::S) || PC->IsInputKeyDown(EKeys::Down)) ForwardInput -= 1.0f;
+		if (PC->IsInputKeyDown(EKeys::D) || PC->IsInputKeyDown(EKeys::Right)) RightInput += 1.0f;
+		if (PC->IsInputKeyDown(EKeys::A) || PC->IsInputKeyDown(EKeys::Left)) RightInput -= 1.0f;
+
+		if (ForwardInput != 0.0f)
+		{
+			MoveForwardDirect(ForwardInput);
+		}
+		if (RightInput != 0.0f)
+		{
+			MoveRightDirect(RightInput);
+		}
+	}
+
 	// CPU Optimization: Throttle interactable trace to 10 Hz (every 0.10s)
 	TimeSinceLastInteractScan += DeltaTime;
 	if (TimeSinceLastInteractScan >= 0.10f)
@@ -198,17 +218,7 @@ void ASVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 		}
 	}
 
-	// Direct Key & Axis Bindings (Dual-Layer Fallback for bulletproof controls)
-	PlayerInputComponent->BindAxisKey(EKeys::W, this, &ASVCharacter::MoveForwardDirect);
-	PlayerInputComponent->BindAxisKey(EKeys::S, this, &ASVCharacter::MoveBackwardDirect);
-	PlayerInputComponent->BindAxisKey(EKeys::D, this, &ASVCharacter::MoveRightDirect);
-	PlayerInputComponent->BindAxisKey(EKeys::A, this, &ASVCharacter::MoveLeftDirect);
-
-	PlayerInputComponent->BindAxisKey(EKeys::Up, this, &ASVCharacter::MoveForwardDirect);
-	PlayerInputComponent->BindAxisKey(EKeys::Down, this, &ASVCharacter::MoveBackwardDirect);
-	PlayerInputComponent->BindAxisKey(EKeys::Right, this, &ASVCharacter::MoveRightDirect);
-	PlayerInputComponent->BindAxisKey(EKeys::Left, this, &ASVCharacter::MoveLeftDirect);
-
+	// Direct Mouse Look Axis Bindings (MouseX and MouseY are valid 1D axes)
 	PlayerInputComponent->BindAxisKey(EKeys::MouseX, this, &ASVCharacter::LookYawDirect);
 	PlayerInputComponent->BindAxisKey(EKeys::MouseY, this, &ASVCharacter::LookPitchDirect);
 
