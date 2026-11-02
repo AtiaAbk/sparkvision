@@ -33,6 +33,7 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void Landed(const FHitResult& Hit) override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	USpringArmComponent* CameraBoom;
@@ -82,6 +83,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Controls")
 	void Dash();
 
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
+	void PerformLightStrike();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
+	void StartParry();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
+	void StopParry();
+
 	/** Direct Keyboard/Mouse Fallback Handlers */
 	void MoveForwardDirect(float Val);
 	void MoveBackwardDirect(float Val);
@@ -100,6 +110,7 @@ public:
 	void OnKey6() { OnNumberKeyPressed(6); }
 	void OnKeyEsc();
 	void OnKeySpace();
+	void OnKeySpaceReleased();
 
 	/** Campus Landmark Fast Travel */
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
@@ -137,6 +148,9 @@ public:
 	bool bIsSprinting = false;
 
 	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Controls")
+	bool bIsAirGliding = false;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Controls")
 	bool bIsParrying = false;
 
 	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Controls")
@@ -148,6 +162,12 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Vitals")
 	FOnQiChangedSignature OnQiChanged;
 
+	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Combat")
+	FOnParrySuccessSignature OnParrySuccess;
+
+	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Combat")
+	FOnCombatVictorySignature OnCombatVictory;
+
 	UPROPERTY(BlueprintAssignable, Category = "SparkVision|Interaction")
 	FOnNearbyInteractableChanged OnNearbyInteractableChanged;
 
@@ -155,11 +175,7 @@ public:
 	FOnMissionUpdatedSignature OnMissionUpdated;
 
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Combat")
-	void TakeDamageAmount(float Damage)
-	{
-		CurrentHealth = FMath::Clamp(CurrentHealth - Damage, 0.0f, MaxHealth);
-		OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
-	}
+	void TakeDamageAmount(float Damage, AActor* DamageCauser = nullptr);
 
 	UFUNCTION(BlueprintPure, Category = "SparkVision|Vitals")
 	float GetHealthPercent() const { return (MaxHealth > 0.f) ? (CurrentHealth / MaxHealth) : 0.f; }
@@ -228,6 +244,12 @@ private:
 	float TargetArmDistance = 380.0f;
 	float TargetFOV = 75.0f;
 	FVector TargetSocketOffset = FVector(0.0f, 45.0f, 25.0f);
+
+	// Where Winds Meet Wuxia Mechanics State
+	int32 AirLeapCount = 0;
+	float ParryWindowTimer = 0.0f;
+	const float MaxParryWindow = 0.45f;
+	bool bParryKeyDown = false;
 
 	// CPU Optimization: Frequency Throttling for Traces & Queries
 	float TimeSinceLastInteractScan = 0.0f;

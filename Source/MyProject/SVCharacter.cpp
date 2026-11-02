@@ -19,6 +19,7 @@
 #include "SVHUD.h"
 #include "SVMissionControlSubsystem.h"
 #include "SVSaveGame.h"
+#include "SVHostileOpponent.h"
 
 ASVCharacter::ASVCharacter()
 {
@@ -33,13 +34,14 @@ ASVCharacter::ASVCharacter()
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
-	GetCharacterMovement()->JumpZVelocity = 650.f;
-	GetCharacterMovement()->AirControl = 0.35f;
+	GetCharacterMovement()->JumpZVelocity = 680.f;
+	GetCharacterMovement()->AirControl = 0.65f;
 	GetCharacterMovement()->MaxWalkSpeed = 550.f; // Standard walking/jogging speed
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2048.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
 	GetCharacterMovement()->GravityScale = 1.5f;
+	JumpMaxCount = 2;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -147,6 +149,44 @@ void ASVCharacter::Tick(float DeltaTime)
 	UpdateCameraFraming(DeltaTime);
 	UpdateVitals(DeltaTime);
 
+	// Handle Timed Parry Window and transition to Guard Block
+	if (bIsParrying)
+	{
+		ParryWindowTimer -= DeltaTime;
+		if (ParryWindowTimer <= 0.0f)
+		{
+			bIsParrying = false;
+			if (bParryKeyDown)
+			{
+				bIsBlocking = true;
+			}
+		}
+	}
+
+	// Handle Qinggong Air Gliding
+	if (bIsAirGliding && GetCharacterMovement()->IsFalling())
+	{
+		FVector CurrentVel = GetCharacterMovement()->Velocity;
+		if (CurrentVel.Z < -160.0f)
+		{
+			CurrentVel.Z = FMath::FInterpTo(CurrentVel.Z, -160.0f, DeltaTime, 5.0f);
+			GetCharacterMovement()->Velocity = CurrentVel;
+		}
+
+		CurrentQi = FMath::Clamp(CurrentQi - (8.0f * DeltaTime), 0.0f, MaxQi);
+		if (CurrentQi <= 0.0f)
+		{
+			bIsAirGliding = false;
+			GetCharacterMovement()->GravityScale = 1.5f;
+		}
+		OnQiChanged.Broadcast(CurrentQi, MaxQi);
+	}
+	else if (!GetCharacterMovement()->IsFalling() && bIsAirGliding)
+	{
+		bIsAirGliding = false;
+		GetCharacterMovement()->GravityScale = 1.5f;
+	}
+
 	// Direct keyboard movement fallback for responsive WASD/arrow controls without invalid AxisKey ensures
 	if (APlayerController* PC = Cast<APlayerController>(GetController()))
 	{
@@ -222,12 +262,29 @@ void ASVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAxisKey(EKeys::MouseX, this, &ASVCharacter::LookYawDirect);
 	PlayerInputComponent->BindAxisKey(EKeys::MouseY, this, &ASVCharacter::LookPitchDirect);
 
+	// Spacebar for Qinggong Leap and Gliding
 	PlayerInputComponent->BindKey(EKeys::SpaceBar, IE_Pressed, this, &ASVCharacter::OnKeySpace);
-	PlayerInputComponent->BindKey(EKeys::SpaceBar, IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindKey(EKeys::SpaceBar, IE_Released, this, &ASVCharacter::OnKeySpaceReleased);
 
+	// Qinggong Sprint
 	PlayerInputComponent->BindKey(EKeys::LeftShift, IE_Pressed, this, &ASVCharacter::StartSprint);
 	PlayerInputComponent->BindKey(EKeys::LeftShift, IE_Released, this, &ASVCharacter::StopSprint);
 
+	// Qinggong Wind Dash
+	PlayerInputComponent->BindKey(EKeys::Q, IE_Pressed, this, &ASVCharacter::Dash);
+	PlayerInputComponent->BindKey(EKeys::LeftAlt, IE_Pressed, this, &ASVCharacter::Dash);
+
+	// Martial Melee Strike (Light Attack)
+	PlayerInputComponent->BindKey(EKeys::LeftMouseButton, IE_Pressed, this, &ASVCharacter::PerformLightStrike);
+	PlayerInputComponent->BindKey(EKeys::F, IE_Pressed, this, &ASVCharacter::PerformLightStrike);
+
+	// Parry & Deflect / Guard Block
+	PlayerInputComponent->BindKey(EKeys::RightMouseButton, IE_Pressed, this, &ASVCharacter::StartParry);
+	PlayerInputComponent->BindKey(EKeys::RightMouseButton, IE_Released, this, &ASVCharacter::StopParry);
+	PlayerInputComponent->BindKey(EKeys::R, IE_Pressed, this, &ASVCharacter::StartParry);
+	PlayerInputComponent->BindKey(EKeys::R, IE_Released, this, &ASVCharacter::StopParry);
+
+	// Interact & Menus
 	PlayerInputComponent->BindKey(EKeys::E, IE_Pressed, this, &ASVCharacter::Interact);
 	PlayerInputComponent->BindKey(EKeys::Escape, IE_Pressed, this, &ASVCharacter::OnKeyEsc);
 	PlayerInputComponent->BindKey(EKeys::P, IE_Pressed, this, &ASVCharacter::OnKeyEsc);
@@ -350,7 +407,59 @@ void ASVCharacter::OnKeySpace()
 	}
 
 	bHasJumped = true;
-	Jump();
+
+	if (GetCharacterMovement()->IsMovingOnGround())
+	{
+		AirLeapCount = 0;
+		bIsAirGliding = false;
+		GetCharacterMovement()->GravityScale = 1.5f;
+		Jump();
+	}
+	else
+	{
+		// Mid-Air Qinggong Air Leap (wuxia double jump) & Gliding
+		if (AirLeapCount < 1 && CurrentQi >= 15.0f)
+		{
+			AirLeapCount++;
+			CurrentQi -= 15.0f;
+			OnQiChanged.Broadcast(CurrentQi, MaxQi);
+
+			FVector ForwardDir = GetActorForwardVector();
+			if (GetCharacterMovement()->Velocity.SizeSquared2D() > 100.0f)
+			{
+				ForwardDir = GetCharacterMovement()->Velocity.GetSafeNormal2D();
+			}
+
+			// Boost upward and ride the wind forward
+			LaunchCharacter(ForwardDir * 550.0f + FVector(0.0f, 0.0f, 620.0f), true, true);
+			bIsAirGliding = true;
+			GetCharacterMovement()->GravityScale = 0.35f;
+			UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Qinggong Air Leap executed! AirGliding active. Qi: %f"), CurrentQi);
+		}
+		else if (AirLeapCount >= 1 && CurrentQi >= 5.0f)
+		{
+			bIsAirGliding = true;
+			GetCharacterMovement()->GravityScale = 0.35f;
+		}
+	}
+}
+
+void ASVCharacter::OnKeySpaceReleased()
+{
+	StopJumping();
+	if (bIsAirGliding)
+	{
+		bIsAirGliding = false;
+		GetCharacterMovement()->GravityScale = 1.5f;
+	}
+}
+
+void ASVCharacter::Landed(const FHitResult& Hit)
+{
+	AirLeapCount = 0;
+	bIsAirGliding = false;
+	GetCharacterMovement()->GravityScale = 1.5f;
+	Super::Landed(Hit);
 }
 
 void ASVCharacter::OnKeyEsc()
@@ -408,9 +517,9 @@ void ASVCharacter::StopSprint()
 
 void ASVCharacter::Dash()
 {
-	if (CurrentQi >= 25.0f)
+	if (CurrentQi >= 20.0f)
 	{
-		CurrentQi -= 25.0f;
+		CurrentQi -= 20.0f;
 		OnQiChanged.Broadcast(CurrentQi, MaxQi);
 
 		FVector DashDirection = GetActorForwardVector();
@@ -418,8 +527,129 @@ void ASVCharacter::Dash()
 		{
 			DashDirection = GetCharacterMovement()->Velocity.GetSafeNormal2D();
 		}
-		LaunchCharacter(DashDirection * 1400.0f + FVector(0.0f, 0.0f, 250.0f), true, true);
+		// Qinggong Flash Step / Wind Dash
+		LaunchCharacter(DashDirection * 1550.0f + FVector(0.0f, 0.0f, 220.0f), true, true);
+		TargetArmDistance = 420.0f;
+		UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Qinggong Wind Dash executed! Qi: %f"), CurrentQi);
 	}
+}
+
+void ASVCharacter::PerformLightStrike()
+{
+	if (CurrentQi < 10.0f)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Insufficient Qi for strike (%f < 10)"), CurrentQi);
+		return;
+	}
+
+	CurrentQi -= 10.0f;
+	OnQiChanged.Broadcast(CurrentQi, MaxQi);
+
+	TargetArmDistance = 330.0f; // Snappy impact feel
+
+	FVector TraceStart = GetActorLocation() + FVector(0.0f, 0.0f, 25.0f);
+	FVector Forward = GetActorForwardVector();
+	FVector TraceEnd = TraceStart + (Forward * 260.0f);
+
+	FCollisionShape SphereShape = FCollisionShape::MakeSphere(75.0f);
+	FCollisionQueryParams Params(SCENE_QUERY_STAT(PerformLightStrike), false, this);
+
+	TArray<FHitResult> HitResults;
+	bool bHit = GetWorld()->SweepMultiByChannel(
+		HitResults,
+		TraceStart,
+		TraceEnd,
+		FQuat::Identity,
+		ECC_Pawn,
+		SphereShape,
+		Params
+	);
+
+	int32 OpponentsHit = 0;
+	if (bHit)
+	{
+		for (const FHitResult& Hit : HitResults)
+		{
+			if (ASVHostileOpponent* Opponent = Cast<ASVHostileOpponent>(Hit.GetActor()))
+			{
+				if (!Opponent->bIsDefeated)
+				{
+					const float DamageDealt = 25.0f;
+					Opponent->ReceiveStrike(DamageDealt);
+					Opponent->LaunchCharacter(Forward * 480.0f + FVector(0.0f, 0.0f, 160.0f), true, true);
+					OpponentsHit++;
+					UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Martial strike struck opponent! Damage: %f"), DamageDealt);
+				}
+			}
+		}
+	}
+
+	if (OpponentsHit == 0)
+	{
+		UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Martial strike executed in open air. Qi: %f"), CurrentQi);
+	}
+}
+
+void ASVCharacter::StartParry()
+{
+	bParryKeyDown = true;
+	bIsParrying = true;
+	bIsBlocking = false;
+	ParryWindowTimer = MaxParryWindow;
+	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Entered Parry Deflect Stance (0.45s timing window)."));
+}
+
+void ASVCharacter::StopParry()
+{
+	bParryKeyDown = false;
+	bIsParrying = false;
+	bIsBlocking = false;
+	ParryWindowTimer = 0.0f;
+}
+
+void ASVCharacter::TakeDamageAmount(float Damage, AActor* DamageCauser)
+{
+	if (bIsParrying)
+	{
+		// PERFECT DEFLECT / PARRY! Negates all damage and restores Qi!
+		CurrentQi = FMath::Clamp(CurrentQi + 25.0f, 0.0f, MaxQi);
+		OnQiChanged.Broadcast(CurrentQi, MaxQi);
+		OnParrySuccess.Broadcast();
+
+		if (ASVHostileOpponent* Opponent = Cast<ASVHostileOpponent>(DamageCauser))
+		{
+			FVector KnockbackDir = (Opponent->GetActorLocation() - GetActorLocation()).GetSafeNormal();
+			if (KnockbackDir.IsNearlyZero()) KnockbackDir = GetActorForwardVector();
+			Opponent->LaunchCharacter(KnockbackDir * 600.0f + FVector(0.0f, 0.0f, 180.0f), true, true);
+		}
+
+		UE_LOG(LogTemp, Warning, TEXT("[ASVCharacter] >>> PERFECT DEFLECT / PARRY! 100%% Damage Negated, +25 Qi awarded! <<<"));
+		return;
+	}
+
+	if (bIsBlocking)
+	{
+		// Guard Block: 75% damage mitigation, drains 12 Qi
+		float BlockedDamage = Damage * 0.25f;
+		CurrentQi = FMath::Clamp(CurrentQi - 12.0f, 0.0f, MaxQi);
+		OnQiChanged.Broadcast(CurrentQi, MaxQi);
+
+		if (CurrentQi <= 0.0f)
+		{
+			bIsBlocking = false;
+			UE_LOG(LogTemp, Warning, TEXT("[ASVCharacter] Guard Broken! Qi depleted!"));
+		}
+
+		CurrentHealth = FMath::Clamp(CurrentHealth - BlockedDamage, 0.0f, MaxHealth);
+		OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
+		UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Blocked attack! Health: %f / %f"), CurrentHealth, MaxHealth);
+		return;
+	}
+
+	// Normal unblocked hit
+	CurrentHealth = FMath::Clamp(CurrentHealth - Damage, 0.0f, MaxHealth);
+	OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
+	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Took direct hit! Health: %f / %f"), CurrentHealth, MaxHealth);
 }
 
 void ASVCharacter::TeleportToCurzon()

@@ -338,6 +338,28 @@ void ASVHUD::DrawVitalsGauge(float ScreenWidth, float ScreenHeight)
 	{
 		DrawText(TEXT("QINGGONG SPRINT"), FLinearColor(0.3f, 0.9f, 0.7f, 0.9f), GaugeX + BarWidth + 20.0f, GaugeY + 16.0f, Font, 0.85f);
 	}
+	else if (PlayerChar->bIsAirGliding)
+	{
+		DrawText(TEXT("QINGGONG AIR GLIDE"), FLinearColor(0.2f, 0.85f, 0.95f, 0.95f), GaugeX + BarWidth + 20.0f, GaugeY + 16.0f, Font, 0.85f);
+	}
+	else if (PlayerChar->bIsParrying)
+	{
+		DrawText(TEXT("PARRY DEFLECT STANCE"), FLinearColor(1.0f, 0.85f, 0.2f, 1.0f), GaugeX + BarWidth + 20.0f, GaugeY + 16.0f, Font, 0.85f);
+	}
+	else if (PlayerChar->bIsBlocking)
+	{
+		DrawText(TEXT("GUARD BLOCK"), FLinearColor(0.35f, 0.65f, 1.0f, 0.95f), GaugeX + BarWidth + 20.0f, GaugeY + 16.0f, Font, 0.85f);
+	}
+
+	// Wuxia Controls Guide banner at bottom center
+	const float ControlsBarWidth = 680.0f;
+	const float ControlsBarHeight = 22.0f;
+	const float ControlsBarX = (ScreenWidth - ControlsBarWidth) * 0.5f;
+	const float ControlsBarY = ScreenHeight - 32.0f;
+	DrawRect(FLinearColor(0.02f, 0.02f, 0.03f, 0.75f), ControlsBarX, ControlsBarY, ControlsBarWidth, ControlsBarHeight);
+	DrawRect(FLinearColor(0.85f, 0.72f, 0.40f, 0.45f), ControlsBarX, ControlsBarY, ControlsBarWidth, 1.0f);
+	DrawText(TEXT("[LMB / F] Martial Strike  •  [RMB / R] Deflect / Parry  •  [Space] Qinggong Leap / Glide  •  [Q / Alt] Dash  •  [Shift] Sprint"),
+		FLinearColor(0.90f, 0.88f, 0.78f, 0.90f), ControlsBarX + 12.0f, ControlsBarY + 4.0f, Font, 0.78f);
 }
 
 void ASVHUD::DrawObjectiveTracker(float ScreenWidth, float ScreenHeight)
