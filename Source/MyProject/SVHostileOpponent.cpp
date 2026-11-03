@@ -32,6 +32,10 @@ ASVHostileOpponent::ASVHostileOpponent()
 	{
 		GetMesh()->SetAnimInstanceClass(AnimBpClass.Class);
 	}
+
+	// Apple Silicon & Low-Memory Optimization: Throttle animation ticks when off-screen
+	GetMesh()->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::OnlyTickPoseWhenRendered;
+	GetMesh()->bEnableUpdateRateOptimizations = true;
 }
 
 void ASVHostileOpponent::BeginPlay()
@@ -97,6 +101,7 @@ void ASVHostileOpponent::ReceiveStrike(float DamageAmount)
 	if (Health <= 0.0f)
 	{
 		bIsDefeated = true;
+		PrimaryActorTick.SetTickFunctionEnable(false);
 		GetCharacterMovement()->DisableMovement();
 		SetActorEnableCollision(false);
 		OnOpponentDefeated.Broadcast(this);

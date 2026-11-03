@@ -30,6 +30,10 @@ ASVStudentNPC::ASVStudentNPC()
 		GetMesh()->SetAnimInstanceClass(AnimBpClass.Class);
 	}
 
+	// Apple Silicon & Low-Memory Optimization: Throttle animation ticks when off-screen
+	GetMesh()->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::OnlyTickPoseWhenRendered;
+	GetMesh()->bEnableUpdateRateOptimizations = true;
+
 	// Default sample dialogue (can be customized per actor in level)
 	FSVDialogueEntry Entry1;
 	Entry1.BengaliText = FText::FromString(TEXT("কার্জন হলের প্রাঙ্গণে স্বাগতম। ২০২৪ সালের জুলাইয়ের এই দিনগুলোতে আমাদের শান্তিপূর্ণ আন্দোলন শুরু হয়েছে।"));
