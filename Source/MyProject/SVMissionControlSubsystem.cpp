@@ -214,3 +214,73 @@ void USVMissionControlSubsystem::OnEventReportResponseReceived(FHttpRequestPtr R
 		UE_LOG(LogTemp, Error, TEXT("[SVMissionControlSubsystem] Failed to deliver event to Mission Control"));
 	}
 }
+
+void USVMissionControlSubsystem::ReportCrime(const FString& VictimId)
+{
+	FHttpModule* Http = &FHttpModule::Get();
+	if (!Http) return;
+
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = Http->CreateRequest();
+	Request->SetURL(FString::Printf(TEXT("%s/api/v1/events/crime"), *BaseUrl));
+	Request->SetVerb(TEXT("POST"));
+	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+
+	TSharedPtr<FJsonObject> JsonObj = MakeShareable(new FJsonObject());
+	JsonObj->SetStringField(TEXT("sessionId"), CurrentSessionId);
+	JsonObj->SetStringField(TEXT("victimId"), VictimId);
+	JsonObj->SetStringField(TEXT("crimeType"), TEXT("ASSAULT_ON_STUDENT"));
+
+	FString Body;
+	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&Body);
+	FJsonSerializer::Serialize(JsonObj.ToSharedRef(), Writer);
+
+	Request->SetContentAsString(Body);
+	Request->ProcessRequest();
+	UE_LOG(LogTemp, Warning, TEXT("[SVMissionControlSubsystem] Reported Crime to Java Mission Control: %s"), *VictimId);
+}
+
+void USVMissionControlSubsystem::ReportCombatRetry()
+{
+	FHttpModule* Http = &FHttpModule::Get();
+	if (!Http) return;
+
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = Http->CreateRequest();
+	Request->SetURL(FString::Printf(TEXT("%s/api/v1/events/combat/retry"), *BaseUrl));
+	Request->SetVerb(TEXT("POST"));
+	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+
+	TSharedPtr<FJsonObject> JsonObj = MakeShareable(new FJsonObject());
+	JsonObj->SetStringField(TEXT("sessionId"), CurrentSessionId);
+	JsonObj->SetStringField(TEXT("defeatReason"), TEXT("KNOCKED_DOWN_BY_LATHI_SQUAD"));
+
+	FString Body;
+	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&Body);
+	FJsonSerializer::Serialize(JsonObj.ToSharedRef(), Writer);
+
+	Request->SetContentAsString(Body);
+	Request->ProcessRequest();
+	UE_LOG(LogTemp, Log, TEXT("[SVMissionControlSubsystem] Reported Combat Retry to Java Mission Control"));
+}
+
+void USVMissionControlSubsystem::ReportWaypointVisited(const FString& WaypointId)
+{
+	FHttpModule* Http = &FHttpModule::Get();
+	if (!Http) return;
+
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = Http->CreateRequest();
+	Request->SetURL(FString::Printf(TEXT("%s/api/v1/mission/waypoints"), *BaseUrl));
+	Request->SetVerb(TEXT("POST"));
+	Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+
+	TSharedPtr<FJsonObject> JsonObj = MakeShareable(new FJsonObject());
+	JsonObj->SetStringField(TEXT("sessionId"), CurrentSessionId);
+	JsonObj->SetStringField(TEXT("waypointId"), WaypointId);
+
+	FString Body;
+	TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&Body);
+	FJsonSerializer::Serialize(JsonObj.ToSharedRef(), Writer);
+
+	Request->SetContentAsString(Body);
+	Request->ProcessRequest();
+	UE_LOG(LogTemp, Log, TEXT("[SVMissionControlSubsystem] Reported Waypoint Visited: %s"), *WaypointId);
+}

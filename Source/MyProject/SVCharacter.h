@@ -14,6 +14,30 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 
+USTRUCT(BlueprintType)
+struct FSVWaypoint
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Waypoint")
+	FString Id;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Waypoint")
+	FText NameBengali;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Waypoint")
+	FText NameEnglish;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Waypoint")
+	FVector Location = FVector::ZeroVector;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Waypoint")
+	float Radius = 2500.0f;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Waypoint")
+	bool bVisited = false;
+};
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNearbyInteractableChanged, const FText&, PromptText);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChangedSignature, float, CurrentHealth, float, MaxHealth);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnQiChangedSignature, float, CurrentQi, float, MaxQi);
@@ -130,6 +154,41 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
 	void TeleportToKalaBhaban();
+
+	/** Character Selection & Customization */
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Character")
+	bool bIsFemaleProtagonist = false;
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Character")
+	void SelectProtagonist(bool bFemale);
+
+	/** 5 Landmark Waypoints & Climax Mission */
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	TArray<FSVWaypoint> CampusWaypoints;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	int32 ActiveWaypointIndex = 0;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	bool bAllWaypointsVisited = false;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	bool bClimaxEncounterActive = false;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	int32 ClimaxRetryCount = 0;
+
+	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")
+	bool bIsArrested = false;
+
+	UFUNCTION(BlueprintPure, Category = "SparkVision|Mission")
+	FSVWaypoint GetActiveWaypoint() const;
+
+	void CheckLandmarkWaypoints();
+	void TriggerPoliceArrest(const FString& InVictimName);
+	void TriggerClimaxDefeat();
+	void RetryClimaxCombat();
+	void SpawnClimaxCadreSquad();
 
 	/** Vitals (Health & Qi stamina) */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Vitals")
@@ -250,6 +309,8 @@ private:
 	float ParryWindowTimer = 0.0f;
 	const float MaxParryWindow = 0.45f;
 	bool bParryKeyDown = false;
+	float CurrentBankRoll = 0.0f;
+	float PreviousActorYaw = 0.0f;
 
 	// CPU Optimization: Frequency Throttling for Traces & Queries
 	float TimeSinceLastInteractScan = 0.0f;

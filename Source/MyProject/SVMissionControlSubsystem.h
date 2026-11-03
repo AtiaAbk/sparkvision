@@ -66,6 +66,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|MissionControl")
 	void ReportLevel1Victory();
 
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|MissionControl")
+	void ReportCrime(const FString& VictimId);
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|MissionControl")
+	void ReportCombatRetry();
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|MissionControl")
+	void ReportWaypointVisited(const FString& WaypointId);
+
 private:
 	void OnHealthResponseReceived(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccessfully);
 	void OnStartSessionResponseReceived(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccessfully);

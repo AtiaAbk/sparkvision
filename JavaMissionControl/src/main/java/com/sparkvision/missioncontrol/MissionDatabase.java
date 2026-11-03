@@ -49,10 +49,51 @@ public class MissionDatabase {
             );
         """;
 
+        String createSessionSettings = """
+            CREATE TABLE IF NOT EXISTS session_settings (
+                session_id TEXT PRIMARY KEY,
+                selected_character TEXT DEFAULT 'MALE',
+                selected_world TEXT DEFAULT 'DU_CAMPUS',
+                graphics_preset TEXT DEFAULT 'ULTRA'
+            );
+        """;
+
+        String createWaypoints = """
+            CREATE TABLE IF NOT EXISTS visited_waypoints (
+                waypoint_id TEXT,
+                session_id TEXT,
+                visited_at INTEGER,
+                PRIMARY KEY(waypoint_id, session_id)
+            );
+        """;
+
+        String createClimax = """
+            CREATE TABLE IF NOT EXISTS climax_state (
+                session_id TEXT PRIMARY KEY,
+                attempt_count INTEGER DEFAULT 0,
+                defeated INTEGER DEFAULT 0,
+                last_updated INTEGER
+            );
+        """;
+
+        String createCrime = """
+            CREATE TABLE IF NOT EXISTS crime_log (
+                crime_id TEXT PRIMARY KEY,
+                session_id TEXT,
+                victim_id TEXT,
+                crime_type TEXT,
+                recorded_at INTEGER
+            );
+        """;
+
         try (Connection conn = connect(); Statement stmt = conn.createStatement()) {
             stmt.execute(createSessions);
             stmt.execute(createEvents);
             stmt.execute(createArchives);
+            stmt.execute(createSessionSettings);
+            stmt.execute(createWaypoints);
+            stmt.execute(createClimax);
+            stmt.execute(createCrime);
         } catch (SQLException e) {
             System.err.println("[MissionDatabase] Schema initialization error: " + e.getMessage());
         }
@@ -67,6 +108,110 @@ public class MissionDatabase {
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("[MissionDatabase] Error recording session: " + e.getMessage());
+        }
+    }
+
+    public synchronized void setCharacter(String sessionId, String characterId) {
+        String sql = "INSERT INTO session_settings(session_id, selected_character) VALUES (?, ?) ON CONFLICT(session_id) DO UPDATE SET selected_character = excluded.selected_character;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sessionId);
+            pstmt.setString(2, characterId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error setting character: " + e.getMessage());
+        }
+    }
+
+    public synchronized String getCharacter(String sessionId) {
+        String sql = "SELECT selected_character FROM session_settings WHERE session_id = ?;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sessionId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("selected_character");
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error getting character: " + e.getMessage());
+        }
+        return "MALE";
+    }
+
+    public synchronized boolean recordWaypointVisited(String waypointId, String sessionId) {
+        String sId = (sessionId != null && !sessionId.isBlank()) ? sessionId : "default_session";
+        String sql = "INSERT OR IGNORE INTO visited_waypoints(waypoint_id, session_id, visited_at) VALUES (?, ?, ?);";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, waypointId);
+            pstmt.setString(2, sId);
+            pstmt.setLong(3, System.currentTimeMillis());
+            return pstmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error recording waypoint: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public synchronized Set<String> getVisitedWaypoints(String sessionId) {
+        Set<String> set = new HashSet<>();
+        String sId = (sessionId != null && !sessionId.isBlank()) ? sessionId : "default_session";
+        String sql = "SELECT waypoint_id FROM visited_waypoints WHERE session_id = ?;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    set.add(rs.getString("waypoint_id"));
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error reading waypoints: " + e.getMessage());
+        }
+        return set;
+    }
+
+    public synchronized int recordClimaxDefeat(String sessionId) {
+        String sId = (sessionId != null && !sessionId.isBlank()) ? sessionId : "default_session";
+        int currentAttempt = getClimaxAttempt(sId);
+        int nextAttempt = Math.min(currentAttempt + 1, 3);
+        String sql = "INSERT INTO climax_state(session_id, attempt_count, defeated, last_updated) VALUES (?, ?, 1, ?) ON CONFLICT(session_id) DO UPDATE SET attempt_count = excluded.attempt_count, last_updated = excluded.last_updated;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sId);
+            pstmt.setInt(2, nextAttempt);
+            pstmt.setLong(3, System.currentTimeMillis());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error recording climax defeat: " + e.getMessage());
+        }
+        return nextAttempt;
+    }
+
+    public synchronized int getClimaxAttempt(String sessionId) {
+        String sId = (sessionId != null && !sessionId.isBlank()) ? sessionId : "default_session";
+        String sql = "SELECT attempt_count FROM climax_state WHERE session_id = ?;";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("attempt_count");
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error reading climax attempt: " + e.getMessage());
+        }
+        return 0;
+    }
+
+    public synchronized void recordCrime(String sessionId, String victimId, String crimeType) {
+        String crimeId = "crime_" + System.currentTimeMillis();
+        String sql = "INSERT INTO crime_log(crime_id, session_id, victim_id, crime_type, recorded_at) VALUES (?, ?, ?, ?, ?);";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, crimeId);
+            pstmt.setString(2, sessionId);
+            pstmt.setString(3, victimId);
+            pstmt.setString(4, crimeType);
+            pstmt.setLong(5, System.currentTimeMillis());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error recording crime: " + e.getMessage());
         }
     }
 
@@ -98,66 +243,44 @@ public class MissionDatabase {
     }
 
     public synchronized boolean recordArchiveDiscovered(String archiveId, String sessionId) {
-        String checkSql = "SELECT 1 FROM discovered_archives WHERE archive_id = ?;";
-        try (Connection conn = connect(); PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
-            checkStmt.setString(1, archiveId);
-            try (ResultSet rs = checkStmt.executeQuery()) {
-                if (rs.next()) {
-                    return false; // Already discovered
-                }
-            }
+        String sql = "INSERT OR IGNORE INTO discovered_archives(archive_id, session_id, discovered_at) VALUES (?, ?, ?);";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, archiveId);
+            pstmt.setString(2, sessionId);
+            pstmt.setLong(3, System.currentTimeMillis());
+            return pstmt.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("[MissionDatabase] Error checking archive: " + e.getMessage());
-            return false;
-        }
-
-        String insertSql = "INSERT INTO discovered_archives(archive_id, session_id, discovered_at) VALUES (?, ?, ?);";
-        try (Connection conn = connect(); PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
-            insertStmt.setString(1, archiveId);
-            insertStmt.setString(2, sessionId);
-            insertStmt.setLong(3, System.currentTimeMillis());
-            insertStmt.executeUpdate();
-            return true;
-        } catch (SQLException e) {
-            System.err.println("[MissionDatabase] Error saving archive: " + e.getMessage());
+            System.err.println("[MissionDatabase] Error recording archive: " + e.getMessage());
             return false;
         }
     }
 
     public synchronized Set<String> getDiscoveredArchives() {
-        Set<String> set = new HashSet<>();
-        String sql = "SELECT archive_id FROM discovered_archives;";
-        try (Connection conn = connect(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                set.add(rs.getString("archive_id"));
-            }
-        } catch (SQLException e) {
-            System.err.println("[MissionDatabase] Error getting archives: " + e.getMessage());
-        }
-        return set;
+        return getDiscoveredArchives(null);
     }
 
     public synchronized Set<String> getDiscoveredArchives(String sessionId) {
-        if (sessionId == null || sessionId.isBlank()) {
-            return getDiscoveredArchives();
-        }
         Set<String> set = new HashSet<>();
-        String sql = "SELECT archive_id FROM discovered_archives WHERE session_id = ?;";
+        String sql = (sessionId != null && !sessionId.isBlank())
+                ? "SELECT archive_id FROM discovered_archives WHERE session_id = ?;"
+                : "SELECT archive_id FROM discovered_archives;";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, sessionId);
+            if (sessionId != null && !sessionId.isBlank()) {
+                pstmt.setString(1, sessionId);
+            }
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
                     set.add(rs.getString("archive_id"));
                 }
             }
         } catch (SQLException e) {
-            System.err.println("[MissionDatabase] Error getting session archives: " + e.getMessage());
+            System.err.println("[MissionDatabase] Error reading archives: " + e.getMessage());
         }
         return set;
     }
 
     public synchronized void completeLevel(String sessionId, String chapterId) {
-        String sql = "UPDATE sessions SET completed = 1 WHERE session_id = ? OR chapter_id = ?;";
+        String sql = "UPDATE sessions SET completed = 1 WHERE session_id = ? AND chapter_id = ?;";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, sessionId);
             pstmt.setString(2, chapterId);
@@ -168,28 +291,23 @@ public class MissionDatabase {
     }
 
     public synchronized boolean isChapterCompleted(String chapterId) {
-        String sql = "SELECT 1 FROM sessions WHERE chapter_id = ? AND completed = 1;";
-        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, chapterId);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                return rs.next();
-            }
-        } catch (SQLException e) {
-            return false;
-        }
+        return isChapterCompleted(chapterId, null);
     }
 
     public synchronized boolean isChapterCompleted(String chapterId, String sessionId) {
-        if (sessionId == null || sessionId.isBlank()) {
-            return isChapterCompleted(chapterId);
-        }
-        String sql = "SELECT 1 FROM sessions WHERE session_id = ? AND completed = 1;";
+        String sql = (sessionId != null && !sessionId.isBlank())
+                ? "SELECT 1 FROM sessions WHERE chapter_id = ? AND completed = 1 AND session_id = ?;"
+                : "SELECT 1 FROM sessions WHERE chapter_id = ? AND completed = 1;";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, sessionId);
+            pstmt.setString(1, chapterId);
+            if (sessionId != null && !sessionId.isBlank()) {
+                pstmt.setString(2, sessionId);
+            }
             try (ResultSet rs = pstmt.executeQuery()) {
                 return rs.next();
             }
         } catch (SQLException e) {
+            System.err.println("[MissionDatabase] Error checking completion: " + e.getMessage());
             return false;
         }
     }

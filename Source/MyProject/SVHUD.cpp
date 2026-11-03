@@ -32,10 +32,35 @@ void ASVHUD::DrawHUD()
 		DrawLetterboxBars(ScreenWidth, ScreenHeight);
 	}
 
-	// If a full-screen menu is open, render that menu and return
-	if (CurrentMenuState == ESVMenuState::MainMenu)
+	// Dynamic Full-Screen Menu States
+	if (CurrentMenuState == ESVMenuState::LoadingScreen)
+	{
+		DrawLoadingScreen(ScreenWidth, ScreenHeight);
+		return;
+	}
+	else if (CurrentMenuState == ESVMenuState::MainMenu)
 	{
 		DrawMainMenu(ScreenWidth, ScreenHeight);
+		return;
+	}
+	else if (CurrentMenuState == ESVMenuState::CharacterSelect)
+	{
+		DrawCharacterSelectMenu(ScreenWidth, ScreenHeight);
+		return;
+	}
+	else if (CurrentMenuState == ESVMenuState::WorldSelect)
+	{
+		DrawWorldSelectMenu(ScreenWidth, ScreenHeight);
+		return;
+	}
+	else if (CurrentMenuState == ESVMenuState::PoliceArrest)
+	{
+		DrawPoliceArrestModal(ScreenWidth, ScreenHeight);
+		return;
+	}
+	else if (CurrentMenuState == ESVMenuState::CombatDefeat)
+	{
+		DrawCombatDefeatModal(ScreenWidth, ScreenHeight);
 		return;
 	}
 	else if (CurrentMenuState == ESVMenuState::PauseMenu)
@@ -77,6 +102,7 @@ void ASVHUD::DrawHUD()
 	}
 
 	DrawObjectiveTracker(ScreenWidth, ScreenHeight);
+	DrawWaypointMarker(ScreenWidth, ScreenHeight);
 	DrawInteractionPrompt(ScreenWidth, ScreenHeight);
 
 	// Controls Helper Banner (Where Winds Meet aesthetic)

@@ -110,6 +110,16 @@ void ASVCharacter::BeginPlay()
 
 	SpawnLocation = GetActorLocation();
 
+	// Initialize 5 Landmark Navigation Waypoints (Where Winds Meet Style)
+	CampusWaypoints.Empty();
+	CampusWaypoints.Add({ TEXT("curzon_portico"), FText::FromString(TEXT("১. কার্জন হল সম্মুখ তোরণ")), FText::FromString(TEXT("1. Curzon Hall Heritage Portico")), FVector(-3350.0f, 0.0f, 80.0f), 2500.0f, false });
+	CampusWaypoints.Add({ TEXT("shaheed_minar"), FText::FromString(TEXT("২. কেন্দ্রীয় শহীদ মিনার বেদি")), FText::FromString(TEXT("2. Central Shaheed Minar Monument Plaza")), FVector(-2200.0f, -54000.0f, 100.0f), 2500.0f, false });
+	CampusWaypoints.Add({ TEXT("tsc_raju"), FText::FromString(TEXT("৩. টিএসসি ও রাজু ভাস্কর্য প্রাঙ্গণ")), FText::FromString(TEXT("3. Teacher-Student Centre (TSC) & Raju Memorial")), FVector(57000.0f, -62500.0f, 150.0f), 2500.0f, false });
+	CampusWaypoints.Add({ TEXT("kala_bhaban"), FText::FromString(TEXT("৪. কলা ভবন ও অপরাজেয় বাংলা")), FText::FromString(TEXT("4. Faculty of Arts (Kala Bhaban) & Aparajeyo Bangla")), FVector(70500.0f, -95000.0f, 150.0f), 2500.0f, false });
+	CampusWaypoints.Add({ TEXT("doyel_chattar"), FText::FromString(TEXT("৫. দোয়েল চত্বর জাতীয় পাখি ফোয়ারা")), FText::FromString(TEXT("5. Doyel Chattar National Bird Monument")), FVector(30500.0f, -22000.0f, 100.0f), 2500.0f, false });
+	ActiveWaypointIndex = 0;
+	PreviousActorYaw = GetActorRotation().Yaw;
+
 	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
 	{
 		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
@@ -146,8 +156,26 @@ void ASVCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (bIsArrested)
+	{
+		return;
+	}
+
 	UpdateCameraFraming(DeltaTime);
 	UpdateVitals(DeltaTime);
+
+	// Dynamic AAA Turn Banking (Where Winds Meet style lean)
+	float CurrentYaw = GetActorRotation().Yaw;
+	float YawDelta = FMath::FindDeltaAngleDegrees(PreviousActorYaw, CurrentYaw);
+	float YawRate = (DeltaTime > 0.0001f) ? (YawDelta / DeltaTime) : 0.0f;
+	float Speed = GetVelocity().Size2D();
+	float TargetRoll = (Speed > 80.0f) ? FMath::Clamp(YawRate * -0.06f, -14.0f, 14.0f) : 0.0f;
+	CurrentBankRoll = FMath::FInterpTo(CurrentBankRoll, TargetRoll, DeltaTime, 8.0f);
+	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, CurrentBankRoll));
+	PreviousActorYaw = CurrentYaw;
+
+	// Check landmark waypoints progression (Where Winds Meet navigation)
+	CheckLandmarkWaypoints();
 
 	// Handle Timed Parry Window and transition to Guard Block
 	if (bIsParrying)
@@ -570,6 +598,13 @@ void ASVCharacter::PerformLightStrike()
 	{
 		for (const FHitResult& Hit : HitResults)
 		{
+			// Civilian / Student Protection: Striking an ordinary student triggers immediate POLICE ARREST!
+			if (ASVStudentNPC* StruckStudent = Cast<ASVStudentNPC>(Hit.GetActor()))
+			{
+				TriggerPoliceArrest(StruckStudent->NPCName.ToString());
+				return;
+			}
+
 			if (ASVHostileOpponent* Opponent = Cast<ASVHostileOpponent>(Hit.GetActor()))
 			{
 				if (!Opponent->bIsDefeated)
@@ -650,6 +685,19 @@ void ASVCharacter::TakeDamageAmount(float Damage, AActor* DamageCauser)
 	CurrentHealth = FMath::Clamp(CurrentHealth - Damage, 0.0f, MaxHealth);
 	OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
 	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Took direct hit! Health: %f / %f"), CurrentHealth, MaxHealth);
+
+	if (CurrentHealth <= 0.0f)
+	{
+		if (bClimaxEncounterActive)
+		{
+			TriggerClimaxDefeat();
+		}
+		else
+		{
+			CurrentHealth = MaxHealth;
+			SetActorLocation(SpawnLocation);
+		}
+	}
 }
 
 void ASVCharacter::TeleportToCurzon()
@@ -1038,4 +1086,163 @@ bool ASVCharacter::LoadGameProgress(const FString& SlotName)
 		*SlotName, *ActiveMissionId, DiscoveredArchiveIds.Num());
 
 	return true;
+}
+
+void ASVCharacter::SelectProtagonist(bool bFemale)
+{
+	bIsFemaleProtagonist = bFemale;
+	FString MeshPath = bFemale 
+		? TEXT("/Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple")
+		: TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple.SKM_Manny_Simple");
+
+	USkeletalMesh* NewMesh = Cast<USkeletalMesh>(StaticLoadObject(USkeletalMesh::StaticClass(), nullptr, *MeshPath));
+	if (NewMesh)
+	{
+		GetMesh()->SetSkeletalMesh(NewMesh);
+		GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
+		GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	}
+
+	UMaterialInterface* MaroonMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_MaroonTorso.MI_Student_MaroonTorso")));
+	UMaterialInterface* DenimMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
+	if (MaroonMat) GetMesh()->SetMaterial(0, MaroonMat);
+	if (DenimMat) GetMesh()->SetMaterial(1, DenimMat);
+
+	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Protagonist swapped to: %s"), bFemale ? TEXT("Female (Rina - Biochemistry)") : TEXT("Male (Shovon - Physics)"));
+}
+
+FSVWaypoint ASVCharacter::GetActiveWaypoint() const
+{
+	if (ActiveWaypointIndex >= 0 && ActiveWaypointIndex < CampusWaypoints.Num())
+	{
+		return CampusWaypoints[ActiveWaypointIndex];
+	}
+
+	FSVWaypoint ClimaxWP;
+	ClimaxWP.Id = TEXT("climax_courtyard");
+	ClimaxWP.NameBengali = FText::FromString(TEXT("চূড়ান্ত মুখোমুখি: কার্জন উত্তর চত্বর (ক্যাডার বাহিনী)"));
+	ClimaxWP.NameEnglish = FText::FromString(TEXT("Climactic Confrontation: Curzon North Courtyard"));
+	ClimaxWP.Location = FVector(-1850.0f, 1600.0f, 80.0f);
+	ClimaxWP.Radius = 3000.0f;
+	ClimaxWP.bVisited = false;
+	return ClimaxWP;
+}
+
+void ASVCharacter::CheckLandmarkWaypoints()
+{
+	if (bAllWaypointsVisited || ActiveWaypointIndex >= CampusWaypoints.Num()) return;
+
+	FSVWaypoint& CurrentWP = CampusWaypoints[ActiveWaypointIndex];
+	float Dist = FVector::Dist2D(GetActorLocation(), CurrentWP.Location);
+	if (Dist <= CurrentWP.Radius)
+	{
+		CurrentWP.bVisited = true;
+		UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Landmark reached: %s (%d/5)"), *CurrentWP.Id, ActiveWaypointIndex + 1);
+
+		if (APlayerController* PC = Cast<APlayerController>(GetController()))
+		{
+			if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+			{
+				FText Notice = FText::Format(FText::FromString(TEXT("গন্তব্যে পৌঁছেছেন! ({0}/৫)")), FText::AsNumber(ActiveWaypointIndex + 1));
+				HUD->DisplayArchiveRecord(CurrentWP.NameBengali, CurrentWP.NameEnglish);
+			}
+		}
+
+		if (UGameInstance* GI = GetGameInstance())
+		{
+			if (USVMissionControlSubsystem* MCSubsystem = GI->GetSubsystem<USVMissionControlSubsystem>())
+			{
+				MCSubsystem->ReportWaypointVisited(CurrentWP.Id);
+			}
+		}
+
+		ActiveWaypointIndex++;
+		if (ActiveWaypointIndex >= CampusWaypoints.Num())
+		{
+			bAllWaypointsVisited = true;
+			UE_LOG(LogTemp, Warning, TEXT("[ASVCharacter] All 5 Campus Landmarks Visited! Triggering Climactic Cadre Confrontation!"));
+			SpawnClimaxCadreSquad();
+		}
+	}
+}
+
+void ASVCharacter::TriggerPoliceArrest(const FString& InVictimName)
+{
+	bIsArrested = true;
+	GetCharacterMovement()->StopMovementImmediately();
+	GetCharacterMovement()->DisableMovement();
+
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		DisableInput(PC);
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			HUD->DisplayPoliceArrest(InVictimName);
+		}
+	}
+
+	if (UGameInstance* GI = GetGameInstance())
+	{
+		if (USVMissionControlSubsystem* MCSubsystem = GI->GetSubsystem<USVMissionControlSubsystem>())
+		{
+			MCSubsystem->ReportCrime(InVictimName);
+		}
+	}
+
+	UE_LOG(LogTemp, Error, TEXT("[ASVCharacter] POLICE ARREST TRIGGERED! Assault on civilian/student: %s"), *InVictimName);
+}
+
+void ASVCharacter::TriggerClimaxDefeat()
+{
+	ClimaxRetryCount++;
+	GetCharacterMovement()->StopMovementImmediately();
+
+	bool bRetryAllowed = (ClimaxRetryCount < 3);
+
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			HUD->DisplayCombatDefeat(ClimaxRetryCount, 3, bRetryAllowed);
+		}
+	}
+
+	if (UGameInstance* GI = GetGameInstance())
+	{
+		if (USVMissionControlSubsystem* MCSubsystem = GI->GetSubsystem<USVMissionControlSubsystem>())
+		{
+			MCSubsystem->ReportCombatRetry();
+		}
+	}
+
+	UE_LOG(LogTemp, Warning, TEXT("[ASVCharacter] Climax Defeat registered! Attempt: %d/3"), ClimaxRetryCount);
+}
+
+void ASVCharacter::RetryClimaxCombat()
+{
+	CurrentHealth = MaxHealth;
+	CurrentQi = MaxQi;
+	OnHealthChanged.Broadcast(CurrentHealth, MaxHealth);
+	OnQiChanged.Broadcast(CurrentQi, MaxQi);
+
+	SetActorLocation(FVector(-1850.0f, 1400.0f, 180.0f));
+	SetActorRotation(FRotator(0.0f, 80.0f, 0.0f));
+	GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		EnableInput(PC);
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			HUD->SetMenuState(ESVMenuState::None);
+		}
+	}
+
+	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Retrying Climax Combat! Health restored."));
+}
+
+void ASVCharacter::SpawnClimaxCadreSquad()
+{
+	bClimaxEncounterActive = true;
+	UE_LOG(LogTemp, Warning, TEXT("[ASVCharacter] Climax Cadre Squad Alert: BCL cadres with bamboo sticks and leader with Nouka Cap arrived at North Courtyard!"));
 }
