@@ -165,6 +165,12 @@ def export_fbx(obj, filename):
     obj.select_set(True)
     bpy.context.view_layer.objects.active = obj
     
+    # UV Unwrap with Cube Project for authentic metric architectural UV mapping (2.5m = 1 tile)
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.mesh.select_all(action='SELECT')
+    bpy.ops.uv.cube_project(cube_size=2.5)
+    bpy.ops.object.mode_set(mode='OBJECT')
+
     # Fix orientation for Unreal Engine: -Y Forward, Z Up
     bpy.ops.export_scene.fbx(
         filepath=out_path,
@@ -418,10 +424,30 @@ def build_curzon_entrance_portal(mats):
         bmesh.ops.translate(bm, vec=(turret_x, depth/2.0 - 0.2, 17.7), verts=tfin["verts"])
         assign_mat(bm, tfin["verts"], 6) # Brass
 
-    # 3. Grand Ground Floor Iwan Archway & Recessed Entrance Vestibule
+    # 2b. Solid Rear Enclosure Wall, Intermediate Floor Slab, and Spandrels
     iwan_span = 6.4
     iwan_spring_z = 4.2
     iwan_crown_z = 7.6
+
+    # Continuous solid rear wall across entire 18m portal span, Z = 0 to 19.4m
+    rear_wall = bmesh.ops.create_cube(bm, size=1.0)
+    bmesh.ops.scale(bm, vec=(width, 0.6, pylon_h), verts=rear_wall["verts"])
+    bmesh.ops.translate(bm, vec=(0.0, -depth/2.0 + 0.3, pylon_h/2.0), verts=rear_wall["verts"])
+    assign_mat(bm, rear_wall["verts"], 0) # Brick
+
+    # Solid intermediate floor slab between levels 1 and 2 at Z = 7.8m
+    mid_floor = bmesh.ops.create_cube(bm, size=1.0)
+    bmesh.ops.scale(bm, vec=(width, depth, 0.5), verts=mid_floor["verts"])
+    bmesh.ops.translate(bm, vec=(0.0, 0.0, 7.8), verts=mid_floor["verts"])
+    assign_mat(bm, mid_floor["verts"], 0)
+
+    # Infill spandrel wall between Iwan arch crown and second floor window sill
+    infill_sp = bmesh.ops.create_cube(bm, size=1.0)
+    bmesh.ops.scale(bm, vec=(iwan_span + 0.8, 1.2, 1.4), verts=infill_sp["verts"])
+    bmesh.ops.translate(bm, vec=(0.0, depth/2.0 - 0.6, 7.8), verts=infill_sp["verts"])
+    assign_mat(bm, infill_sp["verts"], 0)
+
+    # 3. Grand Ground Floor Iwan Archway & Recessed Entrance Vestibule
     
     # Recessed vestibule floor (tiles) & rear wall
     vest_fl = bmesh.ops.create_cube(bm, size=1.0)

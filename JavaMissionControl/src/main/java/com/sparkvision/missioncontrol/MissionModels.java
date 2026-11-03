@@ -126,6 +126,7 @@ public class MissionModels {
     public static class CrimeAlertRequest {
         public String sessionId;
         public String victimId;
+        public String victimName;
         public String crimeType = "ASSAULT_ON_STUDENT";
         public String description;
     }

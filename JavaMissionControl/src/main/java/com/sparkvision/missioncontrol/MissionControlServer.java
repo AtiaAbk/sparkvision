@@ -25,6 +25,7 @@ public class MissionControlServer {
         this.port = port;
         this.db = new MissionDatabase(dbPath);
         this.mapper = new ObjectMapper();
+        this.mapper.configure(com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
     public static void main(String[] args) throws IOException {

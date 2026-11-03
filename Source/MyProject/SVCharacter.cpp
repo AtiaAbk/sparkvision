@@ -20,6 +20,7 @@
 #include "SVMissionControlSubsystem.h"
 #include "SVSaveGame.h"
 #include "SVHostileOpponent.h"
+#include "SVStudentNPC.h"
 
 ASVCharacter::ASVCharacter()
 {
@@ -33,7 +34,7 @@ ASVCharacter::ASVCharacter()
 	bUseControllerRotationRoll = false;
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
-	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
+	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f);
 	GetCharacterMovement()->JumpZVelocity = 680.f;
 	GetCharacterMovement()->AirControl = 0.65f;
 	GetCharacterMovement()->MaxWalkSpeed = 550.f; // Standard walking/jogging speed
@@ -161,17 +162,29 @@ void ASVCharacter::Tick(float DeltaTime)
 		return;
 	}
 
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			if (HUD->IsMenuOpen())
+			{
+				return;
+			}
+		}
+	}
+
 	UpdateCameraFraming(DeltaTime);
 	UpdateVitals(DeltaTime);
 
-	// Dynamic AAA Turn Banking (Where Winds Meet style lean)
+	// Dynamic AAA Turn Banking (Where Winds Meet style natural lean into curves)
 	float CurrentYaw = GetActorRotation().Yaw;
 	float YawDelta = FMath::FindDeltaAngleDegrees(PreviousActorYaw, CurrentYaw);
 	float YawRate = (DeltaTime > 0.0001f) ? (YawDelta / DeltaTime) : 0.0f;
 	float Speed = GetVelocity().Size2D();
-	float TargetRoll = (Speed > 80.0f) ? FMath::Clamp(YawRate * -0.06f, -14.0f, 14.0f) : 0.0f;
-	CurrentBankRoll = FMath::FInterpTo(CurrentBankRoll, TargetRoll, DeltaTime, 8.0f);
-	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, CurrentBankRoll));
+	// Mesh local Y axis corresponds to Actor X (forward), so pitch around local Y tilts character left/right
+	float TargetLean = (Speed > 80.0f) ? FMath::Clamp(YawRate * 0.08f, -14.0f, 14.0f) : 0.0f;
+	CurrentBankRoll = FMath::FInterpTo(CurrentBankRoll, TargetLean, DeltaTime, 10.0f);
+	GetMesh()->SetRelativeRotation(FRotator(CurrentBankRoll, -90.0f, 0.0f));
 	PreviousActorYaw = CurrentYaw;
 
 	// Check landmark waypoints progression (Where Winds Meet navigation)
@@ -423,11 +436,36 @@ void ASVCharacter::LookPitchDirect(float Val)
 
 void ASVCharacter::OnKeySpace()
 {
-	// Check if HUD is showing archive modal or dialogue or victory
+	// Check if HUD is showing loading screen, menu or modals
 	if (APlayerController* PC = Cast<APlayerController>(Controller))
 	{
 		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
 		{
+			if (HUD->GetMenuState() == ESVMenuState::LoadingScreen)
+			{
+				HUD->SetMenuState(ESVMenuState::MainMenu);
+				return;
+			}
+			if (HUD->GetMenuState() == ESVMenuState::MainMenu)
+			{
+				HUD->HandleMenuAction(1); // Start Game
+				return;
+			}
+			if (HUD->GetMenuState() == ESVMenuState::PoliceArrest)
+			{
+				HUD->HandleMenuAction(1); // Restart
+				return;
+			}
+			if (HUD->GetMenuState() == ESVMenuState::CombatDefeat)
+			{
+				HUD->HandleMenuAction(1); // Retry or return
+				return;
+			}
+			if (HUD->IsMenuOpen())
+			{
+				return;
+			}
+
 			HUD->DismissArchiveRecord();
 			HUD->DismissNPCDialogue();
 			HUD->DismissChapterVictory();
@@ -496,6 +534,19 @@ void ASVCharacter::OnKeyEsc()
 	{
 		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
 		{
+			ESVMenuState State = HUD->GetMenuState();
+			if (State == ESVMenuState::CharacterSelect || State == ESVMenuState::WorldSelect ||
+				State == ESVMenuState::SettingsMenu || State == ESVMenuState::ControlsMenu ||
+				State == ESVMenuState::CreditsMenu)
+			{
+				HUD->SetMenuState(ESVMenuState::MainMenu);
+				return;
+			}
+			if (State == ESVMenuState::PoliceArrest || State == ESVMenuState::CombatDefeat)
+			{
+				HUD->SetMenuState(ESVMenuState::MainMenu);
+				return;
+			}
 			HUD->TogglePauseMenu();
 		}
 	}
