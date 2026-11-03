@@ -36,7 +36,7 @@ def main():
     print("CONSTRUCTING MASTER WATER MATERIAL: M_CurzonPond_Water (SingleLayerWater)")
     print("=" * 70)
 
-    # 1. Clean existing expressions in M_CurzonPond_Water
+    # 1. Clean unused expressions in M_CurzonPond_Water
     invoke_tool("delete_unused_expressions", "editor_toolset.toolsets.material.MaterialTools", {
         "material": MAT_REF
     })
@@ -60,7 +60,7 @@ def main():
         })
     })
 
-    # 2. Add SingleLayerWater Material Output
+    # 2. Add EXACTLY ONE SingleLayerWater Material Output
     slw_out = add_node(MAT_REF, "/Script/Engine.MaterialExpressionSingleLayerWaterMaterialOutput", 600, 400)
     print("  Added SingleLayerWater Output:", slw_out)
 
@@ -152,24 +152,7 @@ def main():
     })
     print("  ✓ Connected Refraction IOR (1.333 freshwater)")
 
-    # 9. Opacity (Depth Fade for shoreline blending)
-    depth_fade = add_node(MAT_REF, "/Script/Engine.MaterialExpressionDepthFade", 300, 900, {
-        "FadeDistanceDefault": 30.0
-    })
-    fade_dist_param = add_node(MAT_REF, "/Script/Engine.MaterialExpressionScalarParameter", 100, 950, {
-        "ParameterName": "Shoreline_FadeDistance",
-        "DefaultValue": 35.0
-    })
-    invoke_tool("connect_expressions", "editor_toolset.toolsets.material.MaterialTools", {
-        "from_expression": fade_dist_param, "from_output_name": "",
-        "to_expression": depth_fade, "to_input_name": "FadeDistance"
-    })
-    invoke_tool("connect_to_output", "editor_toolset.toolsets.material.MaterialTools", {
-        "expression": depth_fade, "output_name": "", "material_property": "MP_Opacity"
-    })
-    print("  ✓ Connected DepthFade to MP_Opacity for soft shoreline edge transitions")
-
-    # 10. Water Ripples Normal (Dual panning normal map)
+    # 9. Water Ripples Normal (Dual panning normal map)
     # Layer 1: Panner 1
     panner1 = add_node(MAT_REF, "/Script/Engine.MaterialExpressionPanner", -300, -600, {
         "SpeedX": 0.012,
@@ -189,7 +172,7 @@ def main():
     })
     invoke_tool("connect_expressions", "editor_toolset.toolsets.material.MaterialTools", {
         "from_expression": panner1, "from_output_name": "",
-        "to_expression": norm_samp1, "to_input_name": "Coordinates"
+        "to_expression": norm_samp1, "to_input_name": ""
     })
 
     # Layer 2: Panner 2
@@ -211,17 +194,17 @@ def main():
     })
     invoke_tool("connect_expressions", "editor_toolset.toolsets.material.MaterialTools", {
         "from_expression": panner2, "from_output_name": "",
-        "to_expression": norm_samp2, "to_input_name": "Coordinates"
+        "to_expression": norm_samp2, "to_input_name": ""
     })
 
     # Blend normals via Add
     norm_add = add_node(MAT_REF, "/Script/Engine.MaterialExpressionAdd", 100, -500)
     invoke_tool("connect_expressions", "editor_toolset.toolsets.material.MaterialTools", {
-        "from_expression": norm_samp1, "from_output_name": "",
+        "from_expression": norm_samp1, "from_output_name": "RGB",
         "to_expression": norm_add, "to_input_name": "A"
     })
     invoke_tool("connect_expressions", "editor_toolset.toolsets.material.MaterialTools", {
-        "from_expression": norm_samp2, "from_output_name": "",
+        "from_expression": norm_samp2, "from_output_name": "RGB",
         "to_expression": norm_add, "to_input_name": "B"
     })
 
@@ -231,14 +214,14 @@ def main():
     })
     print("  ✓ Connected dual-panning ripples normal to MP_Normal")
 
-    # 11. Recompile Master Material
+    # 10. Recompile Master Material
     print("\nRecompiling M_CurzonPond_Water...")
     recomp_res = invoke_tool("recompile", "editor_toolset.toolsets.material.MaterialTools", {
         "material_or_function": MAT_REF
     })
     print("  ✓ Recompile result:", recomp_res)
 
-    # 12. Create or Update Material Instance MI_CurzonPond_Water
+    # 11. Create or Update Material Instance MI_CurzonPond_Water
     print(f"\nCreating Material Instance: {INST_NAME}...")
     try:
         invoke_tool("create", "editor_toolset.toolsets.material_instance.MaterialInstanceTools", {
@@ -253,7 +236,6 @@ def main():
     params_to_set = [
         ("Roughness", 0.08),
         ("Refraction_IOR", 1.333),
-        ("Shoreline_FadeDistance", 35.0),
         ("PhaseG", 0.15)
     ]
     for pname, val in params_to_set:
@@ -272,8 +254,16 @@ def main():
             "instance": INST_REF, "name": vname, "value": vval
         })
 
+    # Save assets
+    invoke_tool("save_assets", "editor_toolset.toolsets.asset.AssetTools", {
+        "asset_paths": [
+            MAT_PATH,
+            f"{INST_FOLDER}/{INST_NAME}"
+        ]
+    })
+
     print("=" * 70)
-    print("SUCCESS: Master Material and Material Instance successfully built!")
+    print("SUCCESS: Master Material and Material Instance successfully built and compiled!")
     print("=" * 70)
 
 if __name__ == "__main__":
