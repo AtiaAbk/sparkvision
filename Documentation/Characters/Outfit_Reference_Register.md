@@ -1,0 +1,20 @@
+# SparkVision — Outfit Reference Register
+## Verified Bangladeshi Campus Attire Catalog & Asset Mapping (July 2024 Context)
+
+| ID | Category | Character Archetype | Reference Description | Material Asset Path | Mesh Assignment | PBR Attributes |
+|---|---|---|---|---|---|---|
+| **OUTFIT-01** | Protagonist | Male Hero ("Shovon") | DU Maroon Cotton Polo + Indigo Denim + Sneakers | `/Game/SparkVision/Materials/MI_Student_MaroonTorso` + `MI_Student_DenimLegs` | `SKM_Manny_Simple` | Base `#7A141F`, Roughness 0.85, Metallic 0.0 |
+| **OUTFIT-02** | Protagonist | Female Hero ("Rina") | Pastel Floral Salwar Kameez + Cream Trouser + Dupatta | `/Game/SparkVision/Materials/MI_Student_SalwarKameez_Pastel` | `SKM_Quinn_Simple` | Base `#3A6D63` / `#D48C70`, Roughness 0.88, Metallic 0.0 |
+| **OUTFIT-03** | Male Student | Traditional Scholar | Pure White Handspun Cotton Panjabi + White Pajama | `/Game/SparkVision/Materials/MI_Student_Panjabi_White` | `SKM_Manny_Simple` | Base `#EBEAE5`, Roughness 0.85, Metallic 0.0 |
+| **OUTFIT-04** | Male Student | Science / Tech Undergraduate | Collegiate Navy Oxford Shirt + Khaki Chino Trousers | `/Game/Characters/Mannequins/Materials/Manny/MI_Student_NavyTorso` + `MI_Student_KhakiLegs` | `SKM_Manny_Simple` | Base `#1E2B45`, Roughness 0.82, Metallic 0.0 |
+| **OUTFIT-05** | Male Student | Arts / Campus Union Member | Charcoal Casual Tee + Dark Indigo Denim | `/Game/SparkVision/Materials/MI_Student_CharcoalTorso` + `MI_Student_DenimLegs` | `SKM_Manny_Simple` | Base `#33373B`, Roughness 0.90, Metallic 0.0 |
+| **OUTFIT-06** | Female Student | TSC Cultural Student | Mustard Yellow / Olive Contemporary Kurti + Denim | `/Game/SparkVision/Materials/MI_Student_Kurti_Mustard` | `SKM_Quinn_Simple` | Base `#8C6D1F`, Roughness 0.85, Metallic 0.0 |
+| **OUTFIT-07** | Female Student | Modest University Commuter | Soft Rose / Navy Hijab Ensemble + Pastel Tunic | `/Game/SparkVision/Materials/MI_Student_Hijab_Rose` | `SKM_Quinn_Simple` | Base `#7D5565`, Roughness 0.88, Metallic 0.0 |
+| **OUTFIT-08** | Teacher | Senior University Professor | Formal Safari Khaki Shirt + Dark Grey Pleated Trousers | `/Game/SparkVision/Materials/MI_Teacher_FormalSafari` + `MI_Teacher_DarkTrousers` | `SKM_Manny_Simple` | Base `#706B5E`, Roughness 0.75, Metallic 0.0 |
+| **OUTFIT-09** | Teacher | Female Faculty Member | Classic Handloom Saree / Formal Tunic with Orna | `/Game/SparkVision/Materials/MI_Teacher_SareeFormal` | `SKM_Quinn_Simple` | Base `#8A2E3B`, Roughness 0.80, Metallic 0.02 |
+| **OUTFIT-10** | Staff | Campus Laboratory / Admin Staff | Slate-Blue Utility Work Shirt + Khaki Utility Pants | `/Game/SparkVision/Materials/MI_Staff_LabBlue` + `MI_Student_KhakiLegs` | `SKM_Manny_Simple` | Base `#3A5675`, Roughness 0.85, Metallic 0.0 |
+| **OUTFIT-11** | Staff | Campus Grounds & Maintenance | Durable Olive Utility Twill Two-Piece Workwear | `/Game/SparkVision/Materials/MI_Staff_GroundsOlive` | `SKM_Manny_Simple` | Base `#48523E`, Roughness 0.90, Metallic 0.0 |
+| **OUTFIT-12** | Security | University Proctorial Guard | Khaki Safari Uniform + Dark Web Belt + Dark Beret | `/Game/SparkVision/Materials/MI_Security_ProctorialKhaki` | `SKM_Manny_Simple` | Base `#6B5C40`, Roughness 0.78, Metallic 0.0 |
+| **OUTFIT-13** | Hostile | Mission 6 Fictional Agitator A | Full-Face Matte Black Helmet + Crimson Windbreaker | `/Game/SparkVision/Materials/MI_Cadre_Helmet` + `MI_Student_DenimLegs` | `SKM_Manny_Simple` | Base `#18181A` / `#5C1218`, Roughness 0.35 / 0.85 |
+| **OUTFIT-14** | Hostile | Mission 6 Fictional Agitator B | Dark Grey Street Windbreaker + Concealed Face Cover | `/Game/SparkVision/Materials/MI_Cadre_Windbreaker_Grey` | `SKM_Manny_Simple` | Base `#2A2C30`, Roughness 0.50, Metallic 0.05 |
+| **OUTFIT-15** | Police | Bangladesh Police Officer (July 2024) | Dual-tone Grey-Blue Duty Shirt + Navy Blue Regulation Trousers | `/Game/SparkVision/Materials/MI_Police_Uniform_BD` | `SKM_Manny_Simple` | Base `#64758A` / `#162035`, Roughness 0.80, Metallic 0.0 |
