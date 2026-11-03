@@ -37,6 +37,11 @@ ASVHostileOpponent::ASVHostileOpponent()
 void ASVHostileOpponent::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UMaterialInterface* CadreHelmet = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Cadre_Helmet.MI_Cadre_Helmet")));
+	UMaterialInterface* DenimMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
+	if (CadreHelmet) GetMesh()->SetMaterial(0, CadreHelmet);
+	if (DenimMat) GetMesh()->SetMaterial(1, DenimMat);
 }
 
 void ASVHostileOpponent::Tick(float DeltaTime)

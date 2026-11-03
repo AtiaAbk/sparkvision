@@ -64,6 +64,13 @@ public:
 	void DisplayCombatDefeat(int32 Attempt, int32 MaxAttempts, bool bRetryAllowed);
 	void StartGameFromMenu();
 
+	UPROPERTY(BlueprintReadWrite, Category = "SparkVision|UI")
+	int32 SelectedMenuIndex = 0;
+
+	void MenuNavigateUp();
+	void MenuNavigateDown();
+	void MenuConfirmSelection();
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|UI")
 	bool bShowCompass = true;

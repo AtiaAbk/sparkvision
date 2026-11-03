@@ -150,6 +150,9 @@ void ASVCharacter::BeginPlay()
 		}
 	}
 
+	// Initialize Protagonist Appearance (Human Student Attire)
+	SelectProtagonist(bIsFemaleProtagonist);
+
 	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Spawned at %s. Active Mission: %s"), *SpawnLocation.ToString(), *ActiveMissionId);
 }
 
@@ -329,6 +332,11 @@ void ASVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindKey(EKeys::E, IE_Pressed, this, &ASVCharacter::Interact);
 	PlayerInputComponent->BindKey(EKeys::Escape, IE_Pressed, this, &ASVCharacter::OnKeyEsc);
 	PlayerInputComponent->BindKey(EKeys::P, IE_Pressed, this, &ASVCharacter::OnKeyEsc);
+	PlayerInputComponent->BindKey(EKeys::Enter, IE_Pressed, this, &ASVCharacter::OnKeyEnter);
+	PlayerInputComponent->BindKey(EKeys::Up, IE_Pressed, this, &ASVCharacter::OnMenuUp);
+	PlayerInputComponent->BindKey(EKeys::Down, IE_Pressed, this, &ASVCharacter::OnMenuDown);
+	PlayerInputComponent->BindKey(EKeys::Tab, IE_Pressed, this, &ASVCharacter::OnKeyTab);
+	PlayerInputComponent->BindKey(EKeys::M, IE_Pressed, this, &ASVCharacter::OnKeyTab);
 
 	// Number keys (1 - 6) for Menus or Landmark Fast Travel
 	PlayerInputComponent->BindKey(EKeys::One, IE_Pressed, this, &ASVCharacter::OnKey1);
@@ -380,6 +388,18 @@ void ASVCharacter::MouseLook(const FInputActionValue& Value)
 
 void ASVCharacter::MoveForwardDirect(float Val)
 {
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			if (HUD->IsMenuOpen())
+			{
+				if (Val > 0.5f) HUD->MenuNavigateUp();
+				else if (Val < -0.5f) HUD->MenuNavigateDown();
+				return;
+			}
+		}
+	}
 	if (Val != 0.0f && Controller != nullptr)
 	{
 		const FRotator YawRotation(0, Controller->GetControlRotation().Yaw, 0);
@@ -434,6 +454,65 @@ void ASVCharacter::LookPitchDirect(float Val)
 	}
 }
 
+void ASVCharacter::OnKeyEnter()
+{
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			if (HUD->IsMenuOpen())
+			{
+				HUD->MenuConfirmSelection();
+				return;
+			}
+			HUD->DismissArchiveRecord();
+			HUD->DismissNPCDialogue();
+			HUD->DismissChapterVictory();
+		}
+	}
+}
+
+void ASVCharacter::OnMenuUp()
+{
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			if (HUD->IsMenuOpen())
+			{
+				HUD->MenuNavigateUp();
+				return;
+			}
+		}
+	}
+}
+
+void ASVCharacter::OnMenuDown()
+{
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			if (HUD->IsMenuOpen())
+			{
+				HUD->MenuNavigateDown();
+				return;
+			}
+		}
+	}
+}
+
+void ASVCharacter::OnKeyTab()
+{
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
+		{
+			HUD->ToggleMainMenu();
+		}
+	}
+}
+
 void ASVCharacter::OnKeySpace()
 {
 	// Check if HUD is showing loading screen, menu or modals
@@ -441,28 +520,9 @@ void ASVCharacter::OnKeySpace()
 	{
 		if (ASVHUD* HUD = Cast<ASVHUD>(PC->GetHUD()))
 		{
-			if (HUD->GetMenuState() == ESVMenuState::LoadingScreen)
-			{
-				HUD->SetMenuState(ESVMenuState::MainMenu);
-				return;
-			}
-			if (HUD->GetMenuState() == ESVMenuState::MainMenu)
-			{
-				HUD->HandleMenuAction(1); // Start Game
-				return;
-			}
-			if (HUD->GetMenuState() == ESVMenuState::PoliceArrest)
-			{
-				HUD->HandleMenuAction(1); // Restart
-				return;
-			}
-			if (HUD->GetMenuState() == ESVMenuState::CombatDefeat)
-			{
-				HUD->HandleMenuAction(1); // Retry or return
-				return;
-			}
 			if (HUD->IsMenuOpen())
 			{
+				HUD->MenuConfirmSelection();
 				return;
 			}
 
@@ -1154,10 +1214,22 @@ void ASVCharacter::SelectProtagonist(bool bFemale)
 		GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 	}
 
-	UMaterialInterface* MaroonMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_MaroonTorso.MI_Student_MaroonTorso")));
-	UMaterialInterface* DenimMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
-	if (MaroonMat) GetMesh()->SetMaterial(0, MaroonMat);
-	if (DenimMat) GetMesh()->SetMaterial(1, DenimMat);
+	if (bFemale)
+	{
+		UMaterialInterface* SalwarMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_SalwarKameez_Pastel.MI_Student_SalwarKameez_Pastel")));
+		if (SalwarMat)
+		{
+			GetMesh()->SetMaterial(0, SalwarMat);
+			GetMesh()->SetMaterial(1, SalwarMat);
+		}
+	}
+	else
+	{
+		UMaterialInterface* MaroonMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_MaroonTorso.MI_Student_MaroonTorso")));
+		UMaterialInterface* DenimMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
+		if (DenimMat) GetMesh()->SetMaterial(0, DenimMat);
+		if (MaroonMat) GetMesh()->SetMaterial(1, MaroonMat);
+	}
 
 	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Protagonist swapped to: %s"), bFemale ? TEXT("Female (Rina - Biochemistry)") : TEXT("Male (Shovon - Physics)"));
 }

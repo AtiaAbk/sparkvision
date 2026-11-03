@@ -35,6 +35,12 @@ public:
 	FString NPCId = TEXT("NPC_Tanvir");
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
+	bool bIsFemale = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
+	int32 OutfitStyle = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")
 	FText NPCName = FText::FromString(TEXT("Tanvir (Student Organizer)"));
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|NPC")

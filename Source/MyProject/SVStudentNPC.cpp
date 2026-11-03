@@ -50,6 +50,60 @@ ASVStudentNPC::ASVStudentNPC()
 void ASVStudentNPC::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Configure authentic human student clothing & appearance
+	FString NameStr = NPCName.ToString();
+	bool bFemaleStudent = bIsFemale || NameStr.Contains(TEXT("Nusrat")) || NameStr.Contains(TEXT("Sadia")) ||
+		NameStr.Contains(TEXT("Nabila")) || NameStr.Contains(TEXT("Ananya")) || NameStr.Contains(TEXT("Laboni")) ||
+		NameStr.Contains(TEXT("Farhana")) || NameStr.Contains(TEXT("Rina"));
+
+	if (bFemaleStudent)
+	{
+		bIsFemale = true;
+		if (USkeletalMesh* QuinnMesh = Cast<USkeletalMesh>(StaticLoadObject(USkeletalMesh::StaticClass(), nullptr, TEXT("/Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple"))))
+		{
+			GetMesh()->SetSkeletalMesh(QuinnMesh);
+			GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
+			GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+		}
+		if (UMaterialInterface* SalwarMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_SalwarKameez_Pastel.MI_Student_SalwarKameez_Pastel"))))
+		{
+			GetMesh()->SetMaterial(0, SalwarMat);
+			GetMesh()->SetMaterial(1, SalwarMat);
+		}
+	}
+	else
+	{
+		if (USkeletalMesh* MannyMesh = Cast<USkeletalMesh>(StaticLoadObject(USkeletalMesh::StaticClass(), nullptr, TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple.SKM_Manny_Simple"))))
+		{
+			GetMesh()->SetSkeletalMesh(MannyMesh);
+			GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -90.0f));
+			GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+		}
+
+		UMaterialInterface* TorsoMat = nullptr;
+		UMaterialInterface* LegsMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
+
+		if (OutfitStyle == 0 || NameStr.Contains(TEXT("Tanvir")) || NameStr.Contains(TEXT("Sabbir")) || NameStr.Contains(TEXT("Arif")))
+		{
+			// Traditional Bengali White Panjabi
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_Panjabi_White.MI_Student_Panjabi_White")));
+		}
+		else if (OutfitStyle == 2 || NameStr.Contains(TEXT("Jamal")) || NameStr.Contains(TEXT("Prof")))
+		{
+			// Collegiate Navy Shirt / Blazer & Khaki Trousers
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/Characters/Mannequins/Materials/Manny/MI_Student_NavyTorso.MI_Student_NavyTorso")));
+			LegsMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/Characters/Mannequins/Materials/Manny/MI_Student_KhakiLegs.MI_Student_KhakiLegs")));
+		}
+		else
+		{
+			// Student Union Maroon Shirt & Blue Denim
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_MaroonTorso.MI_Student_MaroonTorso")));
+		}
+
+		if (LegsMat) GetMesh()->SetMaterial(0, LegsMat);
+		if (TorsoMat) GetMesh()->SetMaterial(1, TorsoMat);
+	}
 }
 
 FText ASVStudentNPC::GetInteractionPrompt_Implementation()

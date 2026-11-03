@@ -14,7 +14,8 @@ ASVHUD::ASVHUD()
 {
 	bShowCompass = true;
 	bShowVitals = true;
-	CurrentMenuState = ESVMenuState::LoadingScreen;
+	CurrentMenuState = ESVMenuState::None;
+	SelectedMenuIndex = 0;
 	LoadingPipeProgress = 0.0f;
 	LoadingScreenTimer = 0.0f;
 	bLoadingComplete = false;
@@ -179,6 +180,60 @@ void ASVHUD::ToggleMainMenu()
 	else
 	{
 		CurrentMenuState = ESVMenuState::MainMenu;
+		SelectedMenuIndex = 0;
+	}
+}
+
+void ASVHUD::MenuNavigateUp()
+{
+	SelectedMenuIndex = (SelectedMenuIndex - 1 + 5) % 5;
+}
+
+void ASVHUD::MenuNavigateDown()
+{
+	SelectedMenuIndex = (SelectedMenuIndex + 1) % 5;
+}
+
+void ASVHUD::MenuConfirmSelection()
+{
+	if (CurrentMenuState == ESVMenuState::LoadingScreen)
+	{
+		CurrentMenuState = ESVMenuState::None;
+		return;
+	}
+
+	if (CurrentMenuState == ESVMenuState::MainMenu)
+	{
+		HandleMenuAction(SelectedMenuIndex + 1);
+		return;
+	}
+
+	if (CurrentMenuState == ESVMenuState::PauseMenu)
+	{
+		HandleMenuAction(SelectedMenuIndex + 1);
+		return;
+	}
+
+	if (CurrentMenuState == ESVMenuState::PoliceArrest)
+	{
+		HandleMenuAction(1);
+		return;
+	}
+
+	if (CurrentMenuState == ESVMenuState::CombatDefeat)
+	{
+		HandleMenuAction(1);
+		return;
+	}
+
+	if (CurrentMenuState == ESVMenuState::CharacterSelect ||
+		CurrentMenuState == ESVMenuState::WorldSelect ||
+		CurrentMenuState == ESVMenuState::SettingsMenu ||
+		CurrentMenuState == ESVMenuState::ControlsMenu ||
+		CurrentMenuState == ESVMenuState::CreditsMenu)
+	{
+		CurrentMenuState = ESVMenuState::MainMenu;
+		return;
 	}
 }
 
@@ -734,16 +789,29 @@ void ASVHUD::DrawMainMenu(float ScreenWidth, float ScreenHeight)
 	};
 
 	float RowY = MenuY + 170.0f;
-	for (const auto& R : Rows)
+	for (int32 i = 0; i < Rows.Num(); ++i)
 	{
-		DrawRect(FLinearColor(0.04f, 0.04f, 0.07f, 0.82f), MenuX, RowY - 4.0f, MenuWidth, 48.0f);
-		DrawRect(FLinearColor(0.85f, 0.72f, 0.40f, 0.65f), MenuX, RowY - 4.0f, 3.0f, 48.0f);
-		DrawText(R.Title, FLinearColor(0.98f, 0.95f, 0.88f, 1.0f), MenuX + 25.0f, RowY + 4.0f, MedFont, 1.0f);
-		DrawText(R.Sub, FLinearColor(0.70f, 0.70f, 0.75f, 0.85f), MenuX + 25.0f, RowY + 27.0f, SmallFont, 0.85f);
+		const auto& R = Rows[i];
+		bool bSelected = (i == SelectedMenuIndex);
+		FLinearColor BgColor = bSelected ? FLinearColor(0.18f, 0.14f, 0.05f, 0.95f) : FLinearColor(0.04f, 0.04f, 0.07f, 0.82f);
+		FLinearColor BorderColor = bSelected ? FLinearColor(1.0f, 0.85f, 0.35f, 1.0f) : FLinearColor(0.85f, 0.72f, 0.40f, 0.65f);
+		FLinearColor TextColor = bSelected ? FLinearColor(1.0f, 0.95f, 0.60f, 1.0f) : FLinearColor(0.98f, 0.95f, 0.88f, 1.0f);
+
+		DrawRect(BgColor, MenuX, RowY - 4.0f, MenuWidth, 48.0f);
+		DrawRect(BorderColor, MenuX, RowY - 4.0f, bSelected ? 6.0f : 3.0f, 48.0f);
+		if (bSelected)
+		{
+			DrawRect(BorderColor, MenuX, RowY - 4.0f, MenuWidth, 1.5f);
+			DrawRect(BorderColor, MenuX, RowY + 44.0f, MenuWidth, 1.5f);
+			DrawText(TEXT("►"), BorderColor, MenuX + 8.0f, RowY + 10.0f, MedFont, 1.0f);
+		}
+
+		DrawText(R.Title, TextColor, MenuX + 28.0f, RowY + 4.0f, MedFont, 1.0f);
+		DrawText(R.Sub, FLinearColor(0.70f, 0.70f, 0.75f, 0.85f), MenuX + 28.0f, RowY + 27.0f, SmallFont, 0.85f);
 		RowY += 60.0f;
 	}
 
-	DrawText(TEXT("Press 1, 2, 3, 4, or 5 to select   |   [Space] Quick Start"), FLinearColor(0.75f, 0.75f, 0.80f, 0.85f), MenuX, RowY + 15.0f, SmallFont, 0.9f);
+	DrawText(TEXT("[W/S or ↑/↓] Navigate  •  [Enter / Space] Select  •  [1-5] Direct Select  •  [Esc] Play"), FLinearColor(0.95f, 0.88f, 0.50f, 0.95f), MenuX, RowY + 15.0f, SmallFont, 0.95f);
 }
 
 void ASVHUD::DrawCharacterSelectMenu(float ScreenWidth, float ScreenHeight)

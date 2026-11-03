@@ -135,6 +135,10 @@ public:
 	void OnKeyEsc();
 	void OnKeySpace();
 	void OnKeySpaceReleased();
+	void OnKeyEnter();
+	void OnMenuUp();
+	void OnMenuDown();
+	void OnKeyTab();
 
 	/** Campus Landmark Fast Travel */
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|FastTravel")
