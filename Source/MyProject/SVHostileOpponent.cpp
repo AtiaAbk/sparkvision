@@ -38,10 +38,22 @@ void ASVHostileOpponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UMaterialInterface* CadreHelmet = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Cadre_Helmet.MI_Cadre_Helmet")));
-	UMaterialInterface* DenimMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
-	if (CadreHelmet) GetMesh()->SetMaterial(0, CadreHelmet);
-	if (DenimMat) GetMesh()->SetMaterial(1, DenimMat);
+	UMaterialInterface* TorsoMat = nullptr;
+	UMaterialInterface* LegsMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
+
+	if (HostileOutfitStyle == 1)
+	{
+		// Variant B: Dark Grey Street Windbreaker
+		TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Cadre_Windbreaker_Grey.MI_Cadre_Windbreaker_Grey")));
+	}
+	else
+	{
+		// Variant A: Dark Blue Motorcycle Helmet & Jacket
+		TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Cadre_Helmet.MI_Cadre_Helmet")));
+	}
+
+	if (LegsMat) GetMesh()->SetMaterial(0, LegsMat);
+	if (TorsoMat) GetMesh()->SetMaterial(1, TorsoMat);
 }
 
 void ASVHostileOpponent::Tick(float DeltaTime)

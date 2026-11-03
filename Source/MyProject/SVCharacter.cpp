@@ -1214,24 +1214,72 @@ void ASVCharacter::SelectProtagonist(bool bFemale)
 		GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 	}
 
-	if (bFemale)
+	SetProtagonistOutfit(ProtagonistOutfitStyle);
+
+	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Protagonist swapped to: %s"), bFemale ? TEXT("Female (Rina - Biochemistry)") : TEXT("Male (Shovon - Physics)"));
+}
+
+void ASVCharacter::SetProtagonistOutfit(int32 OutfitIndex)
+{
+	ProtagonistOutfitStyle = OutfitIndex;
+
+	if (bIsFemaleProtagonist)
 	{
-		UMaterialInterface* SalwarMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_SalwarKameez_Pastel.MI_Student_SalwarKameez_Pastel")));
-		if (SalwarMat)
+		UMaterialInterface* OutfitMat = nullptr;
+		if (OutfitIndex == 1)
 		{
-			GetMesh()->SetMaterial(0, SalwarMat);
-			GetMesh()->SetMaterial(1, SalwarMat);
+			// Mustard Yellow Contemporary Kurti
+			OutfitMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_Kurti_Mustard.MI_Student_Kurti_Mustard")));
+		}
+		else if (OutfitIndex == 2)
+		{
+			// Rose-Tan Hijab Ensemble
+			OutfitMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_Hijab_Rose.MI_Student_Hijab_Rose")));
+		}
+		else
+		{
+			// Signature Pastel Floral Salwar Kameez
+			OutfitMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_SalwarKameez_Pastel.MI_Student_SalwarKameez_Pastel")));
+		}
+
+		if (OutfitMat)
+		{
+			GetMesh()->SetMaterial(0, OutfitMat);
+			GetMesh()->SetMaterial(1, OutfitMat);
 		}
 	}
 	else
 	{
-		UMaterialInterface* MaroonMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_MaroonTorso.MI_Student_MaroonTorso")));
-		UMaterialInterface* DenimMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
-		if (DenimMat) GetMesh()->SetMaterial(0, DenimMat);
-		if (MaroonMat) GetMesh()->SetMaterial(1, MaroonMat);
+		UMaterialInterface* TorsoMat = nullptr;
+		UMaterialInterface* LegsMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_DenimLegs.MI_Student_DenimLegs")));
+
+		if (OutfitIndex == 1)
+		{
+			// Traditional White Panjabi + Denim/Pajama
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_Panjabi_White.MI_Student_Panjabi_White")));
+		}
+		else if (OutfitIndex == 2)
+		{
+			// Collegiate Navy Shirt + Khaki Chinos
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/Characters/Mannequins/Materials/Manny/MI_Student_NavyTorso.MI_Student_NavyTorso")));
+			LegsMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/Characters/Mannequins/Materials/Manny/MI_Student_KhakiLegs.MI_Student_KhakiLegs")));
+		}
+		else if (OutfitIndex == 3)
+		{
+			// Casual Charcoal Tee + Indigo Denim
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_CharcoalTorso.MI_Student_CharcoalTorso")));
+		}
+		else
+		{
+			// Hero Signature Dhaka University Maroon Shirt + Indigo Denim
+			TorsoMat = Cast<UMaterialInterface>(StaticLoadObject(UMaterialInterface::StaticClass(), nullptr, TEXT("/Game/SparkVision/Materials/MI_Student_MaroonTorso.MI_Student_MaroonTorso")));
+		}
+
+		if (LegsMat) GetMesh()->SetMaterial(0, LegsMat);
+		if (TorsoMat) GetMesh()->SetMaterial(1, TorsoMat);
 	}
 
-	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Protagonist swapped to: %s"), bFemale ? TEXT("Female (Rina - Biochemistry)") : TEXT("Male (Shovon - Physics)"));
+	UE_LOG(LogTemp, Log, TEXT("[ASVCharacter] Protagonist Outfit set to index %d"), OutfitIndex);
 }
 
 FSVWaypoint ASVCharacter::GetActiveWaypoint() const

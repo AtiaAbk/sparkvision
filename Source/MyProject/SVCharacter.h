@@ -163,8 +163,14 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Character")
 	bool bIsFemaleProtagonist = false;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Character")
+	int32 ProtagonistOutfitStyle = 0;
+
 	UFUNCTION(BlueprintCallable, Category = "SparkVision|Character")
 	void SelectProtagonist(bool bFemale);
+
+	UFUNCTION(BlueprintCallable, Category = "SparkVision|Character")
+	void SetProtagonistOutfit(int32 OutfitIndex);
 
 	/** 5 Landmark Waypoints & Climax Mission */
 	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Mission")

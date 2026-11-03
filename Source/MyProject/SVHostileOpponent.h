@@ -30,6 +30,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Combat")
 	float AttackRange = 180.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SparkVision|Combat")
+	int32 HostileOutfitStyle = 0;
+
 	UPROPERTY(BlueprintReadOnly, Category = "SparkVision|Combat")
 	bool bIsDefeated = false;
 
