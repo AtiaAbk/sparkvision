@@ -6,7 +6,8 @@
 [![Scale](https://img.shields.io/badge/Scale-1%3A1%20Metric%20(UTM%2046N)-success)](#3-geographical-accuracy--sector-blueprint)
 [![Framerate](https://img.shields.io/badge/Framerate-60%20FPS%20(Software%20Lumen)-brightgreen)](#9-hardware-performance--optimization-apple-silicon-m4)
 [![Definition of Done](https://img.shields.io/badge/DoD%20Quality%20Score-97.0%20%2F%20100-blue)](Documentation/Quality_Scoring_And_Definition_Of_Done.md)
-[![Git LFS](https://img.shields.io/badge/Git-LFS%20Enabled-orange?logo=gitlfs&logoColor=white)](#12-repository--git-status)
+[![Contributors](https://img.shields.io/badge/Contributors-AtiaAbk%20%7C%20monirsaikat-blueviolet?logo=github&logoColor=white)](#12-contributors--acknowledgments)
+[![Git LFS](https://img.shields.io/badge/Git-LFS%20Enabled-orange?logo=gitlfs&logoColor=white)](#13-repository--git-status)
 
 > **SparkVision** is a premier 1:1 metric-scale digital twin and semi-open-world 3D adventure game environment reconstructing the historic **University of Dhaka (DU)** campus in Unreal Engine 5.8. Combining the atmospheric depth and martial movement of *Where Winds Meet* with authentic Bangladeshi heritage and cultural realism, SparkVision preserves the living spirit, architectural grandeur, and historical turning points of Dhaka University.
 
@@ -307,7 +308,20 @@ Configured in [`Config/DefaultEngine.ini`](Config/DefaultEngine.ini) for macOS o
 
 ---
 
-## 12. Repository & Git Status
+## 12. Contributors & Acknowledgments
+
+This project is the culmination of extensive historical research, 1:1 metric architectural reconstruction, and real-time game development. Sincere credit and recognition go to the core contributors and collaborators whose merged work brought SparkVision to life:
+
+| Contributor | Role & Core Merged Contributions | Profile |
+| :--- | :--- | :---: |
+| **Atia Sanjida** | **Lead Architect & Developer**<br>• 1:1 Metric Digital Twin architecture & UTM Zone 46N coordinate projection<br>• Curzon Hall verbatim reconstruction, modular kits & PBR materials<br>• Unreal Engine 5.8 C++20 gameplay architecture, camera & HUD<br>• Living campus ecology, natural ground master shaders & pond simulation<br>• Apple Silicon M4 Software Lumen tuning & 60 FPS performance suite | [@AtiaAbk](https://github.com/AtiaAbk) |
+| **Moniruzzaman Saikat** | **Core Contributor & Collaborator**<br>• Historical ledger research, timeline calibration & archival verification<br>• Interactive notice board mechanics, Central Library & TSC document cards<br>• Objective progression systems & Raju Memorial Sculpture plaque inspection<br>• Character rig coarse-tessellation, shadow pass optimizations & frustum culling<br>• Street dressing & scene dressing for campus traversal levels | [@monirsaikat](https://github.com/monirsaikat) |
+
+Special thanks to the faculty, students, and architectural heritage preservationists of the **University of Dhaka** whose historical records, PWD surveys, and lived experiences made this verbatim virtual preservation possible.
+
+---
+
+## 13. Repository & Git Status
 
 * **Production Branch**: `main`
 * **Backup & Archive Branch**: `backup` (Safely preserves prior state on GitHub remote)
