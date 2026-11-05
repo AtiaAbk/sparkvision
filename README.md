@@ -315,7 +315,7 @@ This project is the culmination of extensive historical research, 1:1 metric arc
 | Contributor | Role & Core Merged Contributions | Profile |
 | :--- | :--- | :---: |
 | **Atia Sanjida** | **Lead Architect & Developer**<br>• 1:1 Metric Digital Twin architecture & UTM Zone 46N coordinate projection<br>• Curzon Hall verbatim reconstruction, modular kits & PBR materials<br>• Unreal Engine 5.8 C++20 gameplay architecture, camera & HUD<br>• Living campus ecology, natural ground master shaders & pond simulation<br>• Apple Silicon M4 Software Lumen tuning & 60 FPS performance suite | [@AtiaAbk](https://github.com/AtiaAbk) |
-| **Moniruzzaman Saikat** | **Core Contributor & Collaborator**<br>• Historical ledger research, timeline calibration & archival verification<br>• Interactive notice board mechanics, Central Library & TSC document cards<br>• Objective progression systems & Raju Memorial Sculpture plaque inspection<br>• Character rig coarse-tessellation, shadow pass optimizations & frustum culling<br>• Street dressing & scene dressing for campus traversal levels | [@monirsaikat](https://github.com/monirsaikat) |
+
 
 Special thanks to the faculty, students, and architectural heritage preservationists of the **University of Dhaka** whose historical records, PWD surveys, and lived experiences made this verbatim virtual preservation possible.
 
